@@ -17,51 +17,61 @@ body {
     font-family: Arial;
 }
 
-header {
+.header {
     grid-area: header;
     padding: 20px 10px;
     background: #009a58;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__text {
     font-size: 30px;
     color: white;
 }
 
-aside {
+.theme-change {
+    color: white;
+}
+
+.side-bar {
     grid-area: aside;
     background: #f2f2f2;
     padding: 10px;
 }
 
-aside ul {
+.outer-list {
     list-style-type: none;
 }
 
-aside ul li ul {
+.inner-list {
     margin-left: 30px;
 }
 
-main {
+.main {
     grid-area: main;
     margin-top: 20px;
     padding: 10px;
 }
 
-main h1, main h2, main p {
+.main__first-header, .main__second-header, .main__text {
     margin-left: 10px;
 }
 
-main h1 {
+.main__first-header {
     margin-bottom: 10px;
 }
 
-main > p {
+.main__text {
     margin-bottom: 30px;
 }
 
-main h2 {
+.main__second-header {
     margin-bottom: 30px;
 }
 
-.type__container {
+.type-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -69,38 +79,34 @@ main h2 {
     margin-bottom: 30px;
 }
 
-.type__block {
+.type-container__block {
     padding: 20px 10px;
     background: #f2f2f2;
 }
 
-.type__block p {
+.block-text {
     margin-top: 5px;
     color: #666671;
 }
 
-a {
+.block__link:link, .block__link:visited {
     color: #0099cc;
     text-decoration: underline;
     margin-left: 10px;
 }
 
-a:link, a:visited {
-    text-decoration: underline;
-}
-
-a:hover {
+.block__link:hover {
     text-decoration: none;
 }
 
-.fish__container {
+.fish-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
 }
 
-.fish__block {
+.fish-container__block {
     background: #f2f2f2;
     padding: 10px;
     display: grid;
@@ -112,50 +118,55 @@ a:hover {
     gap: 10px;
 }
 
-.photo {
+.block__photo {
     grid-area: photo;
     width: 70px;
     height: 70px;
     background: #c2c2c2;
 }
 
-.photo a {
+.fish-link {
     grid-area: link;
 }
 
-.buy {
+.block__buy {
     grid-area: buy;
     width: 72px;
     background: #c2c2c2;
     padding-top: 5px;
 }
 
-.buy a {
+.buy__link {
     display: block;
     color: black;
+}
+
+.buy__link:link, .buy__link:visited {
     text-decoration: none;
 }
 
-.buy a:hover {
+.buy__link:hover {
     font-weight: bold;
 }
 
 
 
-footer {
+.footer {
     grid-area: footer;
     padding: 15px 10px;
     display: flex;
     justify-content: space-between;
-    color: #666666;
     background: #f2f2f2;
 }
 
-footer a {
+.footer__text {
     color: #666666;
+}
+
+.footer__link:link, .footer__link:visited {
     text-decoration: none;
 }
 
-footer a:hover {
+.footer__link:hover {
     font-weight: bold;
 }
