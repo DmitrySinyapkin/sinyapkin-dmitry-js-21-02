@@ -182,12 +182,27 @@ body {
     font-weight: bold;
 }
 
-@media (min-width: 520px) and (max-width: 1200px) {
+@media (min-width: 769px) and (max-width: 1200px) {
     .fish-container {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(3, 1fr);
         gap: 10px;
+    }
+}
+
+@media (min-width: 521px) and (max-width: 768px) {
+    .type-container {
+        grid-template-columns: auto;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .fish-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 5px;
     }
 
     .fish-container__block {
