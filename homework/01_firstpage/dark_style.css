@@ -1,0 +1,48 @@
+body {
+    background: #666666;
+}
+
+.header {
+    background: black;
+}
+
+.side-bar {
+    background: #3a3a3c;
+    color: white;
+}
+
+.main {
+    color: white;
+}
+
+.type-container__block {
+    background: #3a3a3c;
+}
+
+.block-text {
+    color: orangered;
+}
+
+.block__link {
+    color: orange;
+}
+
+.fish-container__block {
+    background: #3a3a3c;
+}
+
+.block__buy {
+    background: black;
+}
+
+.buy__link {
+    color: orangered;
+}
+
+.footer {
+    background: black;
+}
+
+.footer__text {
+    color: orangered;
+}

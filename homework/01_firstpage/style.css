@@ -92,10 +92,13 @@ body {
     color: #666671;
 }
 
-.block__link:link, .block__link:visited {
+.block__link {
     color: #0099cc;
-    text-decoration: underline;
     margin-left: 10px;
+}
+
+.block__link:link, .block__link:visited {
+    text-decoration: underline;
 }
 
 .block__link:hover {
