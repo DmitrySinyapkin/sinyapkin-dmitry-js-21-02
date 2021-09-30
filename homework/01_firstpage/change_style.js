@@ -10,6 +10,7 @@ let buyButtons = document.querySelectorAll('.block__buy');
 let buyLinks = document.querySelectorAll('.buy__link');
 let footer = document.querySelector('.footer');
 let footerTexts = document.querySelectorAll('.footer__text');
+let footerLink = document.querySelector('.footer__link');
 let changer = document.querySelector('.theme-change');
 let changerCheck = changer.firstElementChild;
 
@@ -47,6 +48,7 @@ function changeTheme() {
         }
 
         footer.classList.add('footer_theme_dark');
+        footerLink.classList.add('footer__link_theme_dark');
 
         for (let text of footerTexts) {
             text.classList.add('footer__text_theme_dark');
@@ -82,6 +84,7 @@ function changeTheme() {
         }
 
         footer.classList.remove('footer_theme_dark');
+        footerLink.classList.remove('footer__link_theme_dark');
 
         for (let text of footerTexts) {
             text.classList.remove('footer__text_theme_dark');
