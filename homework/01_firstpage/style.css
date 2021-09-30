@@ -170,6 +170,10 @@ body {
     color: #666666;
 }
 
+.footer__link {
+    color: #666666;
+}
+
 .footer__link:link, .footer__link:visited {
     text-decoration: none;
 }
