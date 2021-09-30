@@ -6,21 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первая страница</title>
     <link rel="Stylesheet" href="style.css">
+    <link rel="Stylesheet" href="dark_style.css">
 </head>
 <body>
-    <header>Интернет-магазин "Не только красивое"</header>
-    <aside>
-        <ul>
-            <li>Морская рыба
-                <ul>
+    <header class="header">
+        <h1 class="header__text">Интернет-магазин "Не только красивое"</h1>
+        <label class="header__theme-change"><input type="checkbox"> Темная тема</label>
+    </header>
+    <aside class="side-bar">
+        <ul class="outer-list">
+            <li><span>Морская рыба</span>
+                <ul class="inner-list">
                     <li><label><input type="checkbox"> Акула</label></li>
                     <li><label><input type="checkbox"> Окунь</label></li>
                     <li><label><input type="checkbox"> Палтус</label></li>
                     <li><label><input type="checkbox"> Треска</label></li>
                 </ul>
             </li>
-            <li>Пресноводная рыба
-                <ul>
+            <li><span>Пресноводная рыба</span>
+                <ul class="inner-list">
                     <li><label><input type="checkbox"> Белоглазка</label></li>
                     <li><label><input type="checkbox"> Осётр</label></li>
                     <li><label><input type="checkbox"> Речной угорь</label></li>
@@ -29,56 +33,56 @@
             </li>
         </ul>
     </aside>
-    <main>
-        <h1>Рыбы на любой вкус</h1>
-        <p>Мы продаём рыбов, а не только показываем!</p>
-        <div class="type__container">
-            <div class="type__block">
-                <a>Замороженные рыбы</a>
-                <p>Мы заморозили рыбов для вас</p>
+    <main class="main">
+        <h2 class="main__first-header">Рыбы на любой вкус</h2>
+        <p class="main__text">Мы продаём рыбов, а не только показываем!</p>
+        <div class="type-container">
+            <div class="type-container__block">
+                <a href="" class="block__link">Замороженные рыбы</a>
+                <p class="block-text">Мы заморозили рыбов для вас</p>
             </div>
-            <div class="type__block">
-                <a>Живые рыбы</a>
-                <p>На кухню или на разведение</p>
+            <div class="type-container__block">
+                <a href="" class="block__link">Живые рыбы</a>
+                <p class="block-text">На кухню или на разведение</p>
             </div>
         </div>
-        <h2>Популярные</h2>
-        <div class="fish__container">
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Палтус</a>
-                <div class="buy"><a>Купить</a></div>
+        <h3 class="main__second-header">Популярные</h3>
+        <div class="fish-container">
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Палтус</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Сёмга</a>
-                <div class="buy"><a>Купить</a></div>
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Сёмга</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Сом</a>
-                <div class="buy"><a>Купить</a></div>
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Сом</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Мойва</a>
-                <div class="buy"><a>Купить</a></div>
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Мойва</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Сельдь</a>
-                <div class="buy"><a>Купить</a></div>
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Сельдь</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a>Тунец</a>
-                <div class="buy"><a>Купить</a></div>
+            <div class="fish-container__block">
+                <div class="block__photo"></div>
+                <a href="" class="block__link">Тунец</a>
+                <div class="block__buy"><a href="" class="buy__link">Купить</a></div>
             </div>
         </div>
     </main>
-    <footer>
-        <div><a>Контакты</a></div>
-        <div>&#169; 2021 ИП Рыбов О.А</div>
+    <footer class="footer">
+        <span><a href="" class="footer__link">Контакты</a></span>
+        <span>&#169; 2021 ИП Рыбов О.А</span>
     </footer>
 </body>
 </html>
