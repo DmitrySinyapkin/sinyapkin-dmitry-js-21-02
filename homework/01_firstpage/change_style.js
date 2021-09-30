@@ -10,7 +10,7 @@ let buyButtons = document.querySelectorAll('.block__buy');
 let buyLinks = document.querySelectorAll('.buy__link');
 let footer = document.querySelector('.footer');
 let footerTexts = document.querySelectorAll('.footer__text');
-let changer = document.querySelector('theme-change');
+let changer = document.querySelector('.theme-change');
 let changerCheck = changer.firstElementChild;
 
 changer.addEventListener('click', changeTheme);
