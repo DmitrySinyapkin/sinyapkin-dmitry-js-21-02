@@ -12,13 +12,14 @@ body {
         "aside  main"
         "footer footer";
     grid-template-rows: 80px auto 40px;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 240px 1fr;
     gap: 10px;
     font-family: Arial;
 }
 
 .header {
     grid-area: header;
+    width: 100%;
     padding: 20px 10px;
     background: #009a58;
     display: flex;
@@ -46,6 +47,7 @@ body {
 }
 
 .inner-list {
+    list-style-type: none;
     margin-left: 30px;
 }
 
@@ -72,6 +74,7 @@ body {
 }
 
 .type-container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -139,6 +142,7 @@ body {
 .buy__link {
     display: block;
     color: black;
+    text-align: center;
 }
 
 .buy__link:link, .buy__link:visited {
@@ -169,4 +173,61 @@ body {
 
 .footer__link:hover {
     font-weight: bold;
+}
+
+@media (min-width: 520px) and (max-width: 1200px) {
+    .fish-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 10px;
+    }
+
+    .fish-container__block {
+        padding: 3px;
+        grid-template-areas: 
+            "photo link"
+            "photo buy";
+        grid-template-columns: 35px 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .block__photo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .block__buy {
+        width: 60px;
+    }
+}
+
+@media (max-width: 520px) {
+    body {
+        grid-template-areas: 
+            "header"
+            "main"
+            "footer";
+        grid-template-rows: 80px auto 40px;
+        grid-template-columns: 100vw;
+    }
+
+    .side-bar {
+        display: none;
+    }
+
+    .fish-container__block {
+        grid-template-areas: 
+            "photo link"
+            "photo buy";
+        grid-template-columns: 40px 1fr;
+        grid-template-rows: repeat(2, 1fr);
+        gap: 10px;
+    }
+
+    .block__photo {
+        width: 40px;
+        height: 40px;
+    }
 }
