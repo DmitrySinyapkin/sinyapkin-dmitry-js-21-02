@@ -1,17 +1,17 @@
-body {
+.body_theme_dark {
     background: #666666;
 }
 
-.header {
+.header_theme_dark {
     background: black;
 }
 
-.side-bar {
+.side-bar_theme_dark {
     background: #3a3a3c;
     color: white;
 }
 
-.main {
+.main_theme_dark {
     color: white;
 }
 
@@ -19,30 +19,30 @@ body {
     background: #3a3a3c;
 }
 
-.block-text {
+.block-text_theme_dark {
     color: orangered;
 }
 
-.block__link {
+.block__link_theme_dark {
     color: orange;
 }
 
-.fish-container__block {
+.fish-container__block_theme_dark {
     background: #3a3a3c;
 }
 
-.block__buy {
+.block__buy_theme_dark {
     background: black;
 }
 
-.buy__link {
+.buy__link_theme_dark {
     color: orangered;
 }
 
-.footer {
+.footer_theme_dark {
     background: black;
 }
 
-.footer__text {
+.footer__text_theme_dark {
     color: orangered;
 }
