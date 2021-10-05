@@ -31,6 +31,10 @@
     background: #3a3a3c;
 }
 
+.fish-container__block_theme_dark:hover {
+    background: #3c3c31;
+}
+
 .block__buy_theme_dark {
     background: black;
 }

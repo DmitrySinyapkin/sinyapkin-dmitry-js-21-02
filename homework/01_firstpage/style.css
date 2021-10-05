@@ -136,10 +136,16 @@ body {
     grid-template-columns: 70px 100px 1fr;
     grid-template-rows: repeat(2, 1fr);
     gap: 10px;
+
+    transition: background 1s linear;
 }
 
 .fish-container__block_bg_gray {
     background: #f2f2f2;
+}
+
+.fish-container__block:hover {
+    background: #d2ffd2;
 }
 
 .block__photo {
