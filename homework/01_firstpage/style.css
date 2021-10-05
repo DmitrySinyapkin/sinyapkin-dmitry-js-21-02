@@ -25,6 +25,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    position: relative;
 }
 
 .header__text_size_30 {
@@ -37,6 +38,65 @@ body {
 
 .theme-change {
     color: white;
+}
+
+.loader {
+    position: absolute;
+    top: 30px;
+    right: 140px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.loader_opacity_70 {
+    opacity: 0.7;
+}
+
+.loader__text {
+    animation: blinking 1s ease-in infinite alternate;
+}
+
+@keyframes blinking {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.loader__text_size_10 {
+    font-size: 10px;
+}
+
+.loader__text_color_white {
+    color: white;
+}
+
+.loader__container {
+    width: 50px;
+    height: 4px;
+    border: 1px solid white;
+    border-radius: 20%;
+}
+
+.loader__line {
+    height: 100%;
+    border-radius: 20%;
+    background: white;
+
+    animation: line 3s linear infinite;
+}
+
+@keyframes line {
+    from {
+        width: 0%;
+    }
+    to {
+        width: 100%;
+    }
 }
 
 .side-bar {
