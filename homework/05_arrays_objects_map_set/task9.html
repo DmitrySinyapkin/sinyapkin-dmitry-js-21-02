@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 5 task 9</title>
+</head>
+<body>
+    <script>
+        function isAnagram(str1, str2) {
+            let sortedStr1 = str1.toLowerCase().split("").sort().join("");
+            let sortedStr2 = str2.toLowerCase().split("").sort().join("");
+
+            if (sortedStr1 == sortedStr2) {
+                alert(true);
+            } else {
+                alert(false);
+            }
+        }
+
+        isAnagram('тело','Лето'); // true
+        isAnagram('Сосна','насос'); // true
+        isAnagram('Масло','смолА'); // true
+        isAnagram('Кактус','пиво'); // false
+        isAnagram('водка','самогон'); // false
+    </script>
+</body>
+</html>
