@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 6 task 3</title>
+</head>
+<body>
+    <script>
+        function makeObject(arr) {
+            const resultObj = {};
+
+            for (let [key, value] of arr) {
+                if( Array.isArray(value) ) {
+                    resultObj[key] = makeObject(value);
+                } else {
+                    resultObj[key] = value;
+                }
+            }
+
+            return resultObj;
+        }
+
+        const testArr1 = [
+            ['name', 'Anna'],
+            ['age', '22'],
+            ['pets',
+                [
+                    ['dog', 'Faust'],
+                    ['cat', 'Balthazar']
+                ]
+            ]
+        ]
+
+        const testArr2 = [
+            ['name', 'Anna'],
+            ['age', '22'],
+            ['pets',
+                [
+                    ['animals',
+                        [
+                            ['dog', 'Faust'],
+                            ['cat', 'Balthazar']
+                        ]
+                    ],
+                    ['birds',
+                        [
+                            ['parrot', 'Kesha'],
+                        ]
+                    ]
+                ]
+            ]
+        ]
+
+        console.log( makeObject(testArr1) );
+        console.log( makeObject(testArr2) );
+    </script>
+</body>
+</html>

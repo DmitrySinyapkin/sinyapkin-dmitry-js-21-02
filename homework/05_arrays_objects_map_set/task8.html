@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 5 task 8</title>
+</head>
+<body>
+    <script>
+        function filterArray(arr, num1, num2) {
+            return arr.filter(item => item >= num1 && item <= num2);
+        }
+
+        const initialArr = [1,19,10,2,8,12,46,21,-10,44,15,20,5,22,14];
+
+        console.log(initialArr);
+        console.log( filterArray(initialArr, 5, 20) );
+    </script>
+</body>
+</html>
