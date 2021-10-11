@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 5 task 11</title>
+</head>
+<body>
+    <script>
+        function ModifiedObject() {
+            this.setProps = function(name, val, obj) {
+                Object.defineProperty(this, name, {
+                    value: val,
+                    writable: ( obj.hasOwnProperty('writable') ) ? obj['writable'] : true,
+                    configurable: ( obj.hasOwnProperty('configurable') ) ? obj['configurable'] : true,
+                    enumerable: ( obj.hasOwnProperty('enumerable') ) ? obj['enumerable'] : true
+                })
+            };
+        }
+
+        let newObj = new ModifiedObject();
+        newObj.setProps('key1', 'value1', {writable: true, configurable: true, enumerable: true});
+        newObj.setProps('key2', 'value2', {writable: false});
+        newObj.setProps('key3', 'value3', {writable: true, configurable: true, enumerable: false});
+        newObj.setProps('key4', 'value4', {});
+        newObj.setProps('key5', 'value5', {writable: false, configurable: false, enumerable: false});
+
+        console.log( Object.getOwnPropertyDescriptors(newObj) );
+        console.log( Object.entries(newObj) );
+        console.log(newObj.key2);
+    </script>
+</body>
+</html>

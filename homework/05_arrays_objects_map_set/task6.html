@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 5 task 6</title>
+</head>
+<body>
+    <script>
+        function Calculator() {
+            this.current = 0;
+
+            this.sum = function(num) {
+                this.current += num;
+            };
+
+            this.diff = function(num) {
+                this.current -= num;
+            };
+
+            this.mul = function(num) {
+                this.current *= num;
+            };
+
+            this.div = function(num) {
+                this.current /= num;
+            };
+
+            this.action = function(number, operation) {
+                switch(operation) {
+                    case '+':
+                        this.sum(number);
+                        break;
+                    case '-':
+                        this.diff(number);
+                        break;
+                    case '*':
+                        this.mul(number);
+                        break;
+                    case '/':
+                        this.div(number);
+                }
+            };
+
+            this.clear = function() {
+                this.current = 0;
+            }
+        }
+
+        let calc = new Calculator();
+
+        calc.action(100, '+');
+        console.log(calc.current); //100
+        calc.action(50, '-');
+        console.log(calc.current); //50
+        calc.action(5, '*');
+        console.log(calc.current); //250
+        calc.action(10, '/');
+        console.log(calc.current); //25
+        calc.clear();
+        console.log(calc.current); // 0
+    </script>
+</body>
+</html>
