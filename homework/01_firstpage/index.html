@@ -6,80 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Первая страница</title>
     <link rel="Stylesheet" href="style.css">
+    <link rel="Stylesheet" href="dark_style.css">
 </head>
 <body>
-    <header><h1>Интернет-магазин "Не только красивое"</h1></header>
-    <aside>
-        <ul>
-            <li><span>Морская рыба</span>
-                <ul>
-                    <li><label><input type="checkbox"> Акула</label></li>
-                    <li><label><input type="checkbox"> Окунь</label></li>
-                    <li><label><input type="checkbox"> Палтус</label></li>
-                    <li><label><input type="checkbox"> Треска</label></li>
+    <header class="header">
+        <h1 class="header__text header__text_size_30 header__text_color_white">Интернет-магазин "Не только красивое"</h1>
+        <label class="theme-change"><input type="checkbox" class="theme-change__changer"> Темная тема</label>
+        <div class="loader loader_opacity_70">
+            <div class="loader__text loader__text_size_10 loader__text_color_white">ЗАГРУЗКА</div>
+            <div class="loader__container"><div class="loader__line"></div>
+        </div>
+    </header>
+    <aside class="side-bar side-bar_bg_grey">
+        <ul class="outer-list">
+            <li class="outer-list__line"><span class="outer-list__text">Морская рыба</span>
+                <ul class="inner-list">
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Акула</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Окунь</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Палтус</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Треска</label></li>
                 </ul>
             </li>
-            <li><span>Пресноводная рыба</span>
-                <ul>
-                    <li><label><input type="checkbox"> Белоглазка</label></li>
-                    <li><label><input type="checkbox"> Осётр</label></li>
-                    <li><label><input type="checkbox"> Речной угорь</label></li>
-                    <li><label><input type="checkbox"> Налим</label></li>
+            <li class="outer-list__line"><span class="outer-list__text">Пресноводная рыба</span>
+                <ul class="inner-list">
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Белоглазка</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Осётр</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Речной угорь</label></li>
+                    <li class="inner-list__line"><label class="inner-list__text"><input type="checkbox" class="inner-list__check"> Налим</label></li>
                 </ul>
             </li>
         </ul>
     </aside>
-    <main>
-        <h2>Рыбы на любой вкус</h2>
-        <p>Мы продаём рыбов, а не только показываем!</p>
-        <div class="type__container">
-            <div class="type__block">
-                <a href="">Замороженные рыбы</a>
-                <p>Мы заморозили рыбов для вас</p>
+    <main class="main">
+        <h2 class="main__first-header">Рыбы на любой вкус</h2>
+        <p class="main__text">Мы продаём рыбов, а не только показываем!</p>
+        <div class="type-container">
+            <div class="type-container__block type-container__block_bg_gray">
+                <a href="" class="block__link block__link_color_blue">Замороженные рыбы</a>
+                <p class="block__text block__text_color_gray">Мы заморозили рыбов для вас</p>
             </div>
-            <div class="type__block">
-                <a href="">Живые рыбы</a>
-                <p>На кухню или на разведение</p>
+            <div class="type-container__block type-container__block_bg_gray">
+                <a href="" class="block__link block__link_color_blue">Живые рыбы</a>
+                <p class="block__text block__text_color_gray">На кухню или на разведение</p>
             </div>
         </div>
-        <h3>Популярные</h3>
-        <div class="fish__container">
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Палтус</a>
-                <div class="buy"><a href="">Купить</a></div>
+        <h2 class="main__second-header">Популярные</h2>
+        <div class="fish-container">
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Палтус</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Сёмга</a>
-                <div class="buy"><a href="">Купить</a></div>
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Сёмга</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Сом</a>
-                <div class="buy"><a href="">Купить</a></div>
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Сом</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Мойва</a>
-                <div class="buy"><a href="">Купить</a></div>
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Мойва</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Сельдь</a>
-                <div class="buy"><a href="">Купить</a></div>
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Сельдь</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
-            <div class="fish__block">
-                <div class="photo"></div>
-                <a href="">Тунец</a>
-                <div class="buy"><a href="">Купить</a></div>
+            <div class="fish-container__block fish-container__block_bg_gray">
+                <figure class="block__photo"><img class="photo__img" src="" alt=""></figure>
+                <a href="" class="block__link block__link_color_blue fish-link">Тунец</a>
+                <div class="block__buy block__buy_bg_gray"><a href="" class="buy__link buy__link_color_black">Купить</a></div>
             </div>
         </div>
     </main>
-    <footer>
-        <span><a href="">Контакты</a></span>
-        <span>&#169; 2021 ИП Рыбов О.А</span>
+    <footer class="footer">
+        <span class="footer__text footer__text_color_gray"><a href="" class="footer__link footer__link_color_gray">Контакты</a></span>
+        <span class="footer__text footer__text_color_gray">&#169; 2021 ИП Рыбов О.А</span>
     </footer>
+    <script src="change_style.js"></script>
 </body>
 </html>
 

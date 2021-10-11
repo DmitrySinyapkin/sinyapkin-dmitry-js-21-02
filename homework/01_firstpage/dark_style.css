@@ -1,0 +1,56 @@
+.body_theme_dark {
+    background: #666666;
+}
+
+.header_theme_dark {
+    background: black;
+}
+
+.side-bar_theme_dark {
+    background: #3a3a3c;
+    color: white;
+}
+
+.main_theme_dark {
+    color: white;
+}
+
+.type-container__block_theme_dark {
+    background: #3a3a3c;
+}
+
+.block-text_theme_dark {
+    color: orangered;
+}
+
+.block__link_theme_dark {
+    color: orange;
+}
+
+.fish-container__block_theme_dark {
+    background: #3a3a3c;
+}
+
+.fish-container__block_theme_dark:hover {
+    background: #3c3c31;
+}
+
+.block__buy_theme_dark {
+    background: black;
+}
+
+.buy__link_theme_dark {
+    color: orangered;
+}
+
+.footer_theme_dark {
+    background: black;
+}
+
+.footer__text_theme_dark {
+    color: orangered;
+}
+
+.footer__link_theme_dark {
+    color: orangered;
+}
