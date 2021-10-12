@@ -30,6 +30,16 @@
             }
         }
 
+        function setDescriptors(obj) {
+            Object.defineProperties(obj, {
+                'name': {configurable: false},
+                'eat': {enumerable: false, configurable: false, writable: false},
+                'rename': {enumerable: false, configurable: false, writable: false},
+                'say': {enumerable: false, configurable: false, writable: false},
+                'hunt': {enumerable: false, configurable: false, writable: false}
+            });
+        }
+
         // Cat
         function Cat(name) {
             Animal.call(this, name);
@@ -42,13 +52,7 @@
         }
 
         const cat = new Cat('Барсик');
-        Object.defineProperties(cat, {
-            'name': {configurable: false},
-            'eat': {enumerable: false, configurable: false, writable: false},
-            'rename': {enumerable: false, configurable: false, writable: false},
-            'say': {enumerable: false, configurable: false, writable: false},
-            'hunt': {enumerable: false, configurable: false, writable: false}
-        });
+        setDescriptors(cat);
 
         // Dog
         function Dog(name) {
@@ -59,13 +63,7 @@
         }
 
         const dog = new Dog('Шарик');
-        Object.defineProperties(dog, {
-            'name': {configurable: false},
-            'eat': {enumerable: false, configurable: false, writable: false},
-            'rename': {enumerable: false, configurable: false, writable: false},
-            'say': {enumerable: false, configurable: false, writable: false},
-            'hunt': {enumerable: false, configurable: false, writable: false}
-        });
+        setDescriptors(dog);
 
         // Parrot
         function Parrot(name) {
@@ -76,13 +74,7 @@
         }
 
         const parrot = new Parrot('Кеша');
-        Object.defineProperties(parrot, {
-            'name': {configurable: false},
-            'eat': {enumerable: false, configurable: false, writable: false},
-            'rename': {enumerable: false, configurable: false, writable: false},
-            'say': {enumerable: false, configurable: false, writable: false},
-            'hunt': {enumerable: false, configurable: false, writable: false}
-        });
+        setDescriptors(parrot);
 
 
         cat.rename('Vasya');
