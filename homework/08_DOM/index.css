@@ -1,0 +1,54 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    width: 30%;
+    margin: 10px;
+    padding: 10px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.button {
+    padding: 0px 5px;
+}
+
+table {
+    width: 30%;
+    margin: 10px;
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 50%;
+    padding: 2px 0px;
+    border: 1px solid black;
+}
+
+.style1 {
+    background: coral;
+    color: darkcyan;
+}
+
+.style2 {
+    background: darkslategray;
+    color: snow;
+}
+
+tr {
+    position: relative;
+}
+
+.delete-button {
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+    right: -10px
+}
+
