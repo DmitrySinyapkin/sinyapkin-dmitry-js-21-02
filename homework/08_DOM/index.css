@@ -55,6 +55,10 @@ tr {
     right: -70px;
 }
 
+.delete-button:hover {
+    visibility: visible;
+}
+
 .delete-button_visible {
     visibility: visible;
 }
