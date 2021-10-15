@@ -1,0 +1,65 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    width: 500px;
+    margin: 10px;
+    padding: 10px;
+}
+
+input {
+    margin-right: 10px;
+}
+
+.button {
+    padding: 0px 5px;
+}
+
+table {
+    width: 500px;
+    margin: 10px;
+    border-collapse: collapse;
+}
+
+th, td {
+    width: 500px;
+    padding: 2px 0px;
+    border: 1px solid black;
+}
+
+td {
+    text-align: center;
+}
+
+.style1 {
+    background: coral;
+    color: darkcyan;
+}
+
+.style2 {
+    background: darkslategray;
+    color: snow;
+}
+
+tr {
+    position: relative;
+}
+
+.delete-button {
+    visibility: hidden;
+    position: absolute;
+    top: 2px;
+    right: -70px;
+}
+
+.delete-button:hover {
+    visibility: visible;
+}
+
+.delete-button_visible {
+    visibility: visible;
+}
+

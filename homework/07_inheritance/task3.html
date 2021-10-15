@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Реализация с помощью классов</title>
+</head>
+<body>
+    <script>
+        class Animal {
+            constructor(name) {
+                this.name = name;
+            }
+
+            get name() {
+                return this._name;
+            }
+
+            set name(name) {
+                this._name = name;
+            }
+
+            eat() {
+                console.log(`${this.name} ест`);
+            }
+
+            say() {
+                console.log('неизвестное животное молчит');
+            }
+
+            rename(name) {
+                const pattern = /^[А-Я]([а-яА-Я]|-| )+$/g;
+                if ( pattern.test(name) ) {
+                    this._name = name;
+                } else {
+                    console.log('Неподходящая кличка');
+                }
+            }
+        }
+
+        class Cat extends Animal {
+            constructor(name) {
+                super(name);
+            }
+
+            say() {
+                console.log(`Кот ${this.name} мяукает`);
+            }
+
+            hunt() {
+                console.log(`${this.name} охотится`);
+            }
+        }
+
+        class Dog extends Animal {
+            constructor(name) {
+                super(name);
+            }
+
+            say() {
+                console.log(`Пес ${this.name} лает`);
+            }
+        }
+
+        class Parrot extends Animal {
+            constructor(name) {
+                super(name);
+            }
+
+            say() {
+                console.log(`Попугай ${this.name} умеет говорить`);
+            }
+        }
+
+        const cat = new Cat('Барсик');
+        const dog = new Dog('Шарик');
+        const parrot = new Parrot('Кеша');
+
+        cat.rename('Vasya');
+        cat.rename('Мистер Кусь');
+        cat.eat();
+        cat.say();
+        cat.hunt();
+
+        dog.rename('Рекс-за-жопу-кусь');
+        dog.eat();
+        dog.say();
+
+        parrot.rename('Иннокентий Великий');
+        parrot.eat();
+        parrot.say();
+
+        console.log(Object.entries(cat));
+        console.log(Object.entries(dog));
+        console.log(Object.entries(parrot));
+    </script>
+</body>
+</html>
