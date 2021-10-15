@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Функциональное наследование</title>
+</head>
+<body>
+    <script>
+        // Animal
+        function Animal(name) {
+            this.name = name;
+
+            this.eat = function() {
+                console.log(`${this.name} ест`);
+            };
+
+            this.say = function() {
+                console.log('неизвестное животное молчит');
+            };
+
+            this.rename = function(name) {
+                const pattern = /^[А-Я]([а-яА-Я]|-| )+$/g;
+                if ( pattern.test(name) ) {
+                    this.name = name;
+                } else {
+                    console.log('Неподходящая кличка');
+                }
+            }
+        }
+
+        function setDescriptors(obj) {
+            Object.defineProperties(obj, {
+                'name': {configurable: false},
+                'eat': {enumerable: false, configurable: false, writable: false},
+                'rename': {enumerable: false, configurable: false, writable: false},
+                'say': {enumerable: false, configurable: false, writable: false},
+                'hunt': {enumerable: false, configurable: false, writable: false}
+            });
+        }
+
+        // Cat
+        function Cat(name) {
+            Animal.call(this, name);
+            this.say = function() {
+                console.log(`Кот ${this.name} мяукает`);
+            };
+            this.hunt = function() {
+                console.log(`${this.name} охотится`);
+            };
+        }
+
+        const cat = new Cat('Барсик');
+        setDescriptors(cat);
+
+        // Dog
+        function Dog(name) {
+            Animal.call(this, name);
+            this.say = function() {
+                console.log(`Пес ${this.name} лает`);
+            };
+        }
+
+        const dog = new Dog('Шарик');
+        setDescriptors(dog);
+
+        // Parrot
+        function Parrot(name) {
+            Animal.call(this, name);
+            this.say = function() {
+                console.log(`Попугай ${this.name} умеет говорить`);
+            };
+        }
+
+        const parrot = new Parrot('Кеша');
+        setDescriptors(parrot);
+
+
+        cat.rename('Vasya');
+        cat.rename('Мистер Кусь');
+        cat.eat();
+        cat.say();
+        cat.hunt();
+
+        dog.rename('Рекс-за-жопу-кусь');
+        dog.eat();
+        dog.say();
+
+        parrot.rename('Иннокентий Великий');
+        parrot.eat();
+        parrot.say();
+
+        delete cat.name;
+
+        console.log(Object.entries(cat));
+        console.log(Object.entries(dog));
+        console.log(Object.entries(parrot));
+    </script>
+</body>
+</html>
