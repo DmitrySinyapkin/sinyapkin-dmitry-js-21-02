@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 1</title>
+</head>
+<body>
+    <script>
+        function printNumbersInterval(num1, num2) {
+            console.log('Выводим через setInterval');
+            let current = num1;
+            const timer = setInterval( () => {
+                console.log(current);
+                if (current == num2) {
+                    clearInterval(timer);
+                }
+                current++
+            }, 1000);
+        }
+
+        function printNumbersTimeout(num1, num2) {
+            console.log('Выводим через setTimeout');
+            let current = num1;
+            setTimeout(function run() {
+                console.log(current);
+                if (current < num2) {
+                    setTimeout(run, 1000);
+                }
+                current++;
+            }, 1000);
+        }
+
+        printNumbersInterval(1, 10);
+        setTimeout( () => printNumbersTimeout(11, 20), 11000);
+    </script>
+</body>
+</html>
