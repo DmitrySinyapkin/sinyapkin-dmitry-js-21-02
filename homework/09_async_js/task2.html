@@ -20,18 +20,18 @@
 <body>
     <p>Вы будете перенаправлены через <span>10</span> секунд<span class="ending"></span></p>
     <script>
-        const text = document.querySelector('p');
         const [count, ending] = document.querySelectorAll('span');
 
         let current = 9;
         setInterval( () => {
+            if (current < 1) {
+                window.location = 'https://maxima.life';
+            }
             ending.style.visibility = (current < 5 && current > 0) ? 'visible' : 'hidden';
             ending.innerHTML = (current < 2) ? 'у' : 'ы';
             count.innerHTML = current;
             current--;
         }, 1000);
-
-        setTimeout( () => window.location = 'https://maxima.life', 10000);
     </script>
 </body>
 </html>
