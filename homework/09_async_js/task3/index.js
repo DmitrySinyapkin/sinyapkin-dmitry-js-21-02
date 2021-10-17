@@ -1,14 +1,19 @@
 const tbody = document.querySelector('tbody');
+const urls = {
+    previous: null,
+    current: 'https://swapi.dev/api/people/',
+    next: null
+}
+
+const createFetch = (url) => (callback, errorCallback) => {
+    fetch(url)
+        .then(response => response.json())
+        .then(callback)
+        .catch(err => errorCallback(`Ошибка получения данных: ${err}`))
+}
 
 const swapi = {
-    getPeople(callback, errorCallback) {
-        fetch('https://swapi.dev/api/people/')
-            .then(response => {
-                return response.json();
-            })
-            .then(callback)
-            .catch(err => errorCallback(`Ошибка получения данных: ${err}`))
-    }
+    getPeople: createFetch(urls.current),
 }
 
 function printPeople(obj) {
@@ -36,3 +41,4 @@ function printPeople(obj) {
 }
 
 swapi.getPeople(printPeople, console.error);
+
