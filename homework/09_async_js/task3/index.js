@@ -1,9 +1,13 @@
 const tbody = document.querySelector('tbody');
+const [previousButton, nextButton] = document.querySelectorAll('button');
 const urls = {
     previous: null,
     current: 'https://swapi.dev/api/people/',
     next: null
 }
+
+previousButton.addEventListener('click', handlePreviousButton);
+nextButton.addEventListener('click', handleNextButton);
 
 const createFetch = (url) => (callback, errorCallback) => {
     fetch(url)
@@ -38,6 +42,21 @@ function printPeople(obj) {
 
         tbody.append(row);
     })
+
+    urls.previous = obj.previous;
+    urls.next = obj.next;
+}
+
+function handleNextButton() {
+    tbody.innerHTML = '';
+    urls.current = urls.next;
+    swapi.getPeople(printPeople, console.error);  
+}
+
+function handlePreviousButton() {
+    tbody.innerHTML = '';
+    urls.current = urls.previous;
+    swapi.getPeople(printPeople, console.error); 
 }
 
 swapi.getPeople(printPeople, console.error);
