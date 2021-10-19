@@ -1,11 +1,11 @@
 export function showLoader() {
     const dots = document.querySelectorAll('.loader-dot');
+    let timeout = 0;
 
-    dots[0].style.visibility = 'visible';
-    setTimeout(() => dots[1].style.visibility = 'visible', 300);
-    setTimeout(() => dots[2].style.visibility = 'visible', 600);
-    setTimeout(() => dots[3].style.visibility = 'visible', 900);
-    setTimeout(() => dots[4].style.visibility = 'visible', 1200);
+    dots.forEach(dot => {
+        setTimeout(() => dot.style.visibility = 'visible', timeout);
+        timeout += 300;
+    });
 
     setTimeout(() => dots.forEach(dot => dot.style.visibility = 'hidden'), 300 * (dots.length + 1));
 }
