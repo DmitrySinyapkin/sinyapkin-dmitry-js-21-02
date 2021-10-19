@@ -1,5 +1,4 @@
 export function showLoader() {
-    let timeout = 0;
     const dots = document.querySelectorAll('.loader-dot');
 
     dots[0].style.visibility = 'visible';
