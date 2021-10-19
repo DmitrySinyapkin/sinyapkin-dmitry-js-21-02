@@ -6,18 +6,21 @@ const urls = {
     next: null
 }
 
+previousButton.disabled = true;
 previousButton.addEventListener('click', handlePreviousButton);
 nextButton.addEventListener('click', handleNextButton);
 
-const createFetch = (url) => (callback, errorCallback) => {
-    fetch(url)
-        .then(response => response.json())
-        .then(callback)
-        .catch(err => errorCallback(`Ошибка получения данных: ${err}`))
+function createFetch(url) {
+    return (callback, errorCallback) => {
+        fetch(url)
+            .then(response => response.json())
+            .then(callback)
+            .catch(err => errorCallback(`Ошибка получения данных: ${err}`))
+    }
 }
 
 const swapi = {
-    getPeople: createFetch(urls.current),
+    getPeople: createFetch
 }
 
 function printPeople(obj) {
@@ -45,19 +48,21 @@ function printPeople(obj) {
 
     urls.previous = obj.previous;
     urls.next = obj.next;
+    previousButton.disabled = (urls.previous) ? false : true;
+    nextButton.disabled = (urls.next) ? false : true;
 }
 
 function handleNextButton() {
     tbody.innerHTML = '';
     urls.current = urls.next;
-    swapi.getPeople(printPeople, console.error);  
+    swapi.getPeople(urls.current)(printPeople, console.error); 
 }
 
 function handlePreviousButton() {
     tbody.innerHTML = '';
     urls.current = urls.previous;
-    swapi.getPeople(printPeople, console.error); 
+    swapi.getPeople(urls.current)(printPeople, console.error);
 }
 
-swapi.getPeople(printPeople, console.error);
+swapi.getPeople(urls.current)(printPeople, console.error);
 
