@@ -11,12 +11,10 @@ previousButton.addEventListener('click', handlePreviousButton);
 nextButton.addEventListener('click', handleNextButton);
 
 function createFetch(url) {
-    return (callback, errorCallback) => {
         fetch(url)
             .then(response => response.json())
-            .then(callback)
-            .catch(err => errorCallback(`Ошибка получения данных: ${err}`))
-    }
+            .then(printPeople)
+            .catch(console.error)
 }
 
 const swapi = {
@@ -55,14 +53,14 @@ function printPeople(obj) {
 function handleNextButton() {
     tbody.innerHTML = '';
     urls.current = urls.next;
-    swapi.getPeople(urls.current)(printPeople, console.error); 
+    swapi.getPeople(urls.current); 
 }
 
 function handlePreviousButton() {
     tbody.innerHTML = '';
     urls.current = urls.previous;
-    swapi.getPeople(urls.current)(printPeople, console.error);
+    swapi.getPeople(urls.current);
 }
 
-swapi.getPeople(urls.current)(printPeople, console.error);
+swapi.getPeople(urls.current);
 
