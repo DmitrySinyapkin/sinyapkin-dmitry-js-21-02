@@ -83,4 +83,3 @@ function handlePreviousButton() {
 }
 
 swapi.getPeople(urls.current);
-
