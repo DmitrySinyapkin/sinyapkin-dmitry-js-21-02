@@ -3,6 +3,7 @@ import './App.css';
 import { Footer } from './components/Footer/Footer';
 import { Header } from "./components/Header/Header";
 import { Sidebar } from './components/Sidebar/Sidebar';
+import { MainPage } from './pages/MainPage/MainPage';
 
 class App extends React.Component {
   render() {
@@ -14,7 +15,9 @@ class App extends React.Component {
         <aside>
           <Sidebar />
         </aside>
-        <main></main>
+        <main>
+          <MainPage />
+        </main>
         <footer>
           <Footer />
         </footer>

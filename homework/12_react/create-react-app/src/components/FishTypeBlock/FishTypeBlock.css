@@ -1,6 +1,7 @@
 .type__block {
     padding: 20px 10px;
     background: #f2f2f2;
+    flex-grow: 1;
 }
 
 .block__text {
