@@ -1,7 +1,7 @@
 import React from "react";
 import './MainPage.css';
-import { FishTypeBlock } from '../..components/FishTypeBlock';
-import { FishNameBlock } from '../../components/FishNameBlock';
+import { FishTypeBlock } from '../../components/FishTypeBlock/FishTypeBlock';
+import { FishNameBlock } from '../../components/FishNameBlock/FishNameBlock';
 
 export class MainPage extends React.Component {
     render() {
