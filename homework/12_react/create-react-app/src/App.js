@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Footer } from './components/Footer/Footer';
 import { Header } from "./components/Header/Header";
 import { Sidebar } from './components/Sidebar/Sidebar';
 
@@ -14,7 +15,9 @@ class App extends React.Component {
           <Sidebar />
         </aside>
         <main></main>
-        <footer></footer>
+        <footer>
+          <Footer />
+        </footer>
       </div>
     );
   }
