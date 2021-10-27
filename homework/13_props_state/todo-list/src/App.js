@@ -1,25 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { EnterBlock } from './components/enterBlock/EnterBlock';
+import { Footer } from './components/footer/Footer';
+import {Header} from './components/header/Header';
 
 export class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+        <header>
+          <Header name="ToDo list" />
         </header>
+        <div className="enter-block">
+          <EnterBlock />
+        </div>
+        <main></main>
+        <footer>
+          <Footer copyright="2021" />
+        </footer>
       </div>
     );
   }
