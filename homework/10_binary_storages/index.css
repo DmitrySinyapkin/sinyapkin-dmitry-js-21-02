@@ -1,0 +1,41 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+fieldset {
+    margin: 20px 10px;
+    padding: 20px;
+    width: 400px;
+    position: relative;
+}
+
+.gallery {
+    margin: 0px 10px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.gallery img {
+    width: 300px;
+    height: 300px;
+}
+
+.loader {
+    width: 48px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 6px;
+    left: 55px;
+}
+
+.loader-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: gray;
+    visibility: hidden;
+}

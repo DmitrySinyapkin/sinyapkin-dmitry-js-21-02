@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <style>
+        body {
+            text-align: center;
+        }
+        p {
+            margin-top: 30px;
+        }
+        .ending {
+            visibility: hidden;
+        }
+    </style>
+</head>
+<body>
+    <p>Вы будете перенаправлены через <span>10</span> секунд<span class="ending"></span></p>
+    <script>
+        const [count, ending] = document.querySelectorAll('span');
+
+        let current = 9;
+        setInterval( () => {
+            if (current < 1) {
+                window.location = 'https://maxima.life';
+            }
+            ending.style.visibility = (current < 5 && current > 0) ? 'visible' : 'hidden';
+            ending.innerHTML = (current < 2) ? 'у' : 'ы';
+            count.innerHTML = current;
+            current--;
+        }, 1000);
+    </script>
+</body>
+</html>
