@@ -1,0 +1,34 @@
+.content {
+    margin-top: 20px;
+    padding: 10px;
+}
+
+.first-header, .second-header, .content__text {
+    margin-left: 10px;
+}
+
+.first-header {
+    margin-bottom: 10px;
+}
+
+.content__text {
+    margin-bottom: 30px;
+}
+
+.second-header {
+    margin-bottom: 30px;
+}
+
+.type__container {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.fish__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}

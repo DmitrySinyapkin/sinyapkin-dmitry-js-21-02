@@ -1,0 +1,22 @@
+.type__block {
+    padding: 20px 10px;
+    background: #f2f2f2;
+    flex-grow: 1;
+}
+
+.block__text {
+    margin-top: 5px;
+    color: #666671;
+}
+
+.block__link {
+    color: #0099cc;
+}
+
+.block__link:link, .block__link:visited {
+    text-decoration: underline;
+}
+
+.block__link:hover {
+    text-decoration: none;
+}

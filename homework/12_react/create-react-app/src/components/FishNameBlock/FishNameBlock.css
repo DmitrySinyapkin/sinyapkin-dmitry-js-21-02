@@ -1,0 +1,56 @@
+.fish__block {
+    padding: 10px;
+    background: #f2f2f2;
+    display: grid;
+    grid-template-areas: 
+        "photo link ."
+        "photo buy  .";
+    grid-template-columns: 70px 100px 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    gap: 10px;
+}
+
+.block__photo {
+    grid-area: photo;
+    width: 70px;
+    height: 70px;
+    background: #c2c2c2;
+}
+
+.block-link {
+    grid-area: link;
+    color: #0099cc;
+}
+
+.block__link:link, .block__link:visited {
+    text-decoration: underline;
+}
+
+.block__link:hover {
+    text-decoration: none;
+}
+
+.block__buy {
+    grid-area: buy;
+    width: 72px;
+    padding-top: 5px;
+    background: #c2c2c2;
+}
+
+.buy__link {
+    display: block;
+    color: black;
+    text-align: center;
+}
+
+.buy__link_color_black {
+    color: black;
+}
+
+.buy__link:link, .buy__link:visited {
+    text-decoration: none;
+}
+
+.buy__link:hover {
+    font-weight: bold;
+}
