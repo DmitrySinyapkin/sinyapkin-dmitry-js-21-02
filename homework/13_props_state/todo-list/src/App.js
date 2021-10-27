@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import { EnterBlock } from './components/enterBlock/EnterBlock';
 import { Footer } from './components/footer/Footer';
-import {Header} from './components/header/Header';
+import { Header } from './components/header/Header';
 
 export class App extends React.Component {
   render() {
