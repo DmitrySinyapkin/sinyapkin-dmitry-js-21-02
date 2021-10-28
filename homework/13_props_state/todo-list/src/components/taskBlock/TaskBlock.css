@@ -1,6 +1,7 @@
 .task-block {
     width: 600px;
     margin: 0 auto;
+    margin-bottom: 5px;
     padding: 10px;
     border: 1px solid black;
     border-radius: 10px;
