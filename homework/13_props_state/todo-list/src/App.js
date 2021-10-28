@@ -57,7 +57,7 @@ export class App extends React.Component {
                                                 onClick={() => this.removeTask(index)} />)}
         </main>
         <footer>
-          <Footer copyright="2021" />
+          <Footer copyright="&#169; 2021 D_Sin" />
         </footer>
       </div>
     );
