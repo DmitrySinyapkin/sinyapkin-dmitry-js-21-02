@@ -20,7 +20,7 @@ export class TaskBlock extends React.Component {
                 </div>
                 <div className={`task-text ${this.state.done && 'done'}`}>{this.props.text}</div>
                 <div className="task-delete">
-                    <div className="del-btn">X</div>
+                    <div className="del-btn" onClick={this.props.onClick}>X</div>
                 </div>
             </div>
         );

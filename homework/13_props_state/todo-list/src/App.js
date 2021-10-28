@@ -8,9 +8,10 @@ import {TaskBlock} from './components/taskBlock/TaskBlock';
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text: ''};
+    this.state = {text: '', hasDeletedTask: false};
     this.textArr = localStorage.getItem('textArr') ? JSON.parse(localStorage.getItem('textArr')) :[];
     this.addTask = this.addTask.bind(this);
+    this.removeTask = this.removeTask.bind(this);
   }
 
   changeText = (event) => {
@@ -23,6 +24,13 @@ export class App extends React.Component {
     this.setState({text: ''});
   }
 
+  removeTask(index) {
+    this.setState({hasDeletedTask: true});
+    this.textArr.splice(index, 1);
+    localStorage.setItem('textArr', JSON.stringify(this.textArr));
+    this.setState({hasDeletedTask: false});
+  }
+
   render() {
     return (
       <div className="App">
@@ -33,7 +41,7 @@ export class App extends React.Component {
           <EnterBlock text={this.state.text} onChange={this.changeText} onClick={this.addTask}/>
         </div>
         <main>
-          {this.textArr.map((item, index) => <TaskBlock text={item} key={index} />)}
+          {this.textArr.map((item, index) => <TaskBlock text={item} key={index} onClick={() => this.removeTask(index)} />)}
         </main>
         <footer>
           <Footer copyright="2021" />
