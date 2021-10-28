@@ -25,3 +25,11 @@
     text-align: center;
     cursor: pointer;
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+.done {
+    text-decoration: line-through;
+}
