@@ -3,4 +3,22 @@
     margin: 0 auto;
     padding: 10px;
     border: 1px solid black;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task-text {
+    width: 500px;
+}
+
+.del-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    border: 1px solid red;
+    font-family: Arial;
+    color: red;
+    text-align: center;
+    cursor: pointer;
 }
