@@ -3,6 +3,7 @@
     margin: 0 auto;
     padding: 10px;
     border: 1px solid black;
+    border-radius: 10px;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -16,6 +17,7 @@
     width: 25px;
     height: 25px;
     border-radius: 50%;
+    padding-top: 3px;
     border: 1px solid red;
     font-family: Arial;
     color: red;
