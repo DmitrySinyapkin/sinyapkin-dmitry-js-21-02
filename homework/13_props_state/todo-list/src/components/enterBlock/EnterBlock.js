@@ -7,8 +7,8 @@ export class EnterBlock extends React.Component {
             <div className="enter-container">
                 <p>Нужно сделать</p>
                 <div className="line-container">
-                    <input type="text" className="input" />
-                    <button className="add-button">Добавить</button>
+                    <input type="text" value={this.props.text} onChange={this.props.onChange} className="input" />
+                    <button className="add-button" onClick={this.props.onClick}>Добавить</button>
                 </div>
             </div>
         );
