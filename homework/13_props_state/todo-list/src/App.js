@@ -8,10 +8,11 @@ import {TaskBlock} from './components/taskBlock/TaskBlock';
 export class App extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {text: '', hasDeletedTask: false};
+    this.state = {text: '', hasDeletedTask: false, isChecked: false};
     this.textArr = localStorage.getItem('textArr') ? JSON.parse(localStorage.getItem('textArr')) :[];
     this.addTask = this.addTask.bind(this);
     this.removeTask = this.removeTask.bind(this);
+    this.markDone = this.markDone.bind(this);
   }
 
   changeText = (event) => {
@@ -19,7 +20,7 @@ export class App extends React.Component {
   }
 
   addTask() {
-    this.textArr.push(this.state.text);
+    this.textArr.push({text: this.state.text, done: false});
     localStorage.setItem('textArr', JSON.stringify(this.textArr));
     this.setState({text: ''});
   }
@@ -29,6 +30,13 @@ export class App extends React.Component {
     this.textArr.splice(index, 1);
     localStorage.setItem('textArr', JSON.stringify(this.textArr));
     this.setState({hasDeletedTask: false});
+  }
+
+  markDone(index) {
+    this.setState({isChecked: true});
+    this.textArr[index].done = true;
+    localStorage.setItem('textArr', JSON.stringify(this.textArr));
+    this.setState({isChecked: false});
   }
 
   render() {
@@ -41,7 +49,12 @@ export class App extends React.Component {
           <EnterBlock text={this.state.text} onChange={this.changeText} onClick={this.addTask}/>
         </div>
         <main>
-          {this.textArr.map((item, index) => <TaskBlock text={item} key={index} onClick={() => this.removeTask(index)} />)}
+          {this.textArr.map((item, index) => <TaskBlock 
+                                                text={item.text}
+                                                done={item.done}
+                                                key={index}
+                                                markDone={() => this.markDone(index)}
+                                                onClick={() => this.removeTask(index)} />)}
         </main>
         <footer>
           <Footer copyright="2021" />
