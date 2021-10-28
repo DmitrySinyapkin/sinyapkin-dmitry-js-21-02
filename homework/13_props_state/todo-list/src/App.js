@@ -54,7 +54,9 @@ export class App extends React.Component {
                                                 done={item.done}
                                                 key={index}
                                                 markDone={() => this.markDone(index)}
-                                                onClick={() => this.removeTask(index)} />)}
+                                                onClick={() => this.removeTask(index)}
+                                              />
+                                          )}
         </main>
         <footer>
           <Footer copyright="&#169; 2021 D_Sin" />
