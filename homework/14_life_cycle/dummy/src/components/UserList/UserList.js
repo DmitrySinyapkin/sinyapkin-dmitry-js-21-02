@@ -7,14 +7,17 @@ import './UserList.css';
 
 const initialState = {
     users: [],
-    
+    currentPage: 0,
 }
+
+const pageNumbers = [0,1, 2, 3, 4];
 
 export class UserList extends React.Component {
     constructor(props) {
         super(props);
         this.state = initialState;
         this.loadUsers = this.loadUsers.bind(this);
+        this.changePage = this.changePage.bind(this);
     }
 
     loadUsers(page, limit) {
@@ -23,10 +26,13 @@ export class UserList extends React.Component {
 
     componentDidMount() {
         this.loadUsers(0, 10);
-        console.log(this.state.total);
     }
 
-
+    changePage(page) {
+        this.setState({currentPage: page});
+        this.loadUsers(page, 10);
+        console.log(this.state.currentPage);
+    }
 
     render() {
         return (
@@ -45,11 +51,14 @@ export class UserList extends React.Component {
                 </div>
                 <div className="pages__container">
                     <div className="pages__changer">
-                        <PageButton number="1"/>
-                        <PageButton number="2"/>
-                        <PageButton number="3"/>
-                        <PageButton number="4"/>
-                        <PageButton number="5"/>
+                        {pageNumbers.map((item) =>
+                            <PageButton
+                                number={item + 1}
+                                activeNumber={this.state.currentPage + 1}
+                                onClick={() => this.changePage(item)}
+                                key={item}
+                            />
+                        )}
                     </div>
                     <label>Темная тема <input className="theme-changer" type="checkbox"/></label>
                 </div>

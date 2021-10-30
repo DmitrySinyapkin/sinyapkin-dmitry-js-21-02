@@ -11,7 +11,7 @@ export class PageButton extends React.Component {
 
     render() {
         return (
-            <button className={this.state.active && 'button_active'}>{this.props.number}</button>
+            <button className={this.props.activeNumber === this.props.number && 'button_active'} onClick={this.props.onClick}>{this.props.number}</button>
         );
     }
 }
