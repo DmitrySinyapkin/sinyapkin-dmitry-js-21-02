@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Header } from './components/Header/Header';
+import { UserList } from './components/UserList/UserList';
 
 export class App extends React.Component {
   render() {
@@ -9,8 +10,9 @@ export class App extends React.Component {
         <header>
           <Header name="Пользователи"/>
         </header>
-        <main></main>
-        <footer></footer>
+        <main>
+          <UserList/>
+        </main>
       </div>
     );
   }

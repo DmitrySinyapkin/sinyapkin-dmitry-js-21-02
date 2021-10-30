@@ -6,10 +6,10 @@ export class User extends React.Component {
         return (
             <div className="user__container">
                 <figure className="user__photo">
-                    <img src={this.props.img} alt={this.props.alt}/>
+                    <img src={this.props.picture} alt={this.props.alt}/>
                 </figure>
                 <div className="user__name">
-                    <span>{this.props.name}</span>
+                    <span>{this.props.title} {this.props.firstName} {this.props.lastName}</span>
                 </div>
             </div>
         );

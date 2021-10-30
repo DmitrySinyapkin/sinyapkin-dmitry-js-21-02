@@ -1,15 +1,14 @@
-import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE, PAGE_FIELD, LIMIT_FIELD } from "../../constants/dummyApi"
+import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../../constants/dummyApi"
 
 
 export const getUserList = (page, limit, callback) => {
-    fetch(USER_LIST_URL, {
+    const url = USER_LIST_URL + `?page=${page}&limit=${limit}`
+    fetch(url, {
         method: 'GET',
         headers: new Headers({
-            [APP_ID_FIELD]: APP_ID_VALUE,
-            [PAGE_FIELD]: page.toString(),
-            [LIMIT_FIELD]: limit.toString(),
+            [APP_ID_FIELD]: APP_ID_VALUE
         }),
     }).then(response => response.json())
-      .then(response => callback(response.data))
+      .then(response => callback(response))
       .catch(console.error);
 }

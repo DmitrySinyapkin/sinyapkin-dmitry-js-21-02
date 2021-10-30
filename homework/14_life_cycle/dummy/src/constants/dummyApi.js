@@ -5,5 +5,3 @@ export const USER_LIST_URL = `${BASE_URL}user`;
 export const APP_ID_VALUE = '617d0f3dab5df4b9bd1507dd';
 
 export const APP_ID_FIELD = 'app-id';
-export const PAGE_FIELD = 'page';
-export const LIMIT_FIELD = 'limit';
