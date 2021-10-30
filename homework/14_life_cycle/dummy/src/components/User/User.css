@@ -1,0 +1,19 @@
+.user__container {
+    width: 566px;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    gap: 20px;
+}
+
+.user__photo {
+    width: 80px;
+    height: 80px;
+}
+
+.user__name {
+    font-family: Arial;
+    font-size: 25px;
+    color: #6b7280;
+}
