@@ -1,6 +1,6 @@
 import React from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
-import { getUserList } from "../api/dummyApi";
+import { getUserList } from "../../api/dummyApi";
 import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
 import './UserList.css';

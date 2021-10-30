@@ -1,4 +1,4 @@
-import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../../constants/dummyApi"
+import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../constants/dummyApi"
 
 
 export const getUserList = (page, limit, callback) => {
