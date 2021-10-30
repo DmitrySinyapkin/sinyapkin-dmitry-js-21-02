@@ -2,8 +2,12 @@
     padding: 20px 0px;
 }
 
-.header h1 {
+.header__text {
     font-family: Arial;
     font-size: 55px;
     color: black;
+}
+
+.header__text_dark {
+    color: white;
 }

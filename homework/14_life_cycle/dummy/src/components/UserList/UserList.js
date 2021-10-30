@@ -4,13 +4,14 @@ import { getUserList } from "../../api/dummyApi";
 import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
 import './UserList.css';
+import { ThemeContextConsumer } from "../../contexts/ThemeContext";
 
 const initialState = {
     users: [],
     currentPage: 0,
 }
 
-const pageNumbers = [0,1, 2, 3, 4];
+const pageNumbers = [0, 1, 2, 3, 4];
 
 export class UserList extends React.Component {
     constructor(props) {
@@ -60,7 +61,13 @@ export class UserList extends React.Component {
                             />
                         )}
                     </div>
-                    <label>Темная тема <input className="theme-changer" type="checkbox"/></label>
+                    <ThemeContextConsumer>
+                        {
+                            (context) => (
+                                <label className={context.darkTheme && "label_dark"}>Темная тема  <input className="theme-changer" type="checkbox" checked={context.darkTheme} onClick={context.toggleTheme}/></label> 
+                            )  
+                        }
+                    </ThemeContextConsumer>
                 </div>
             </div>
         );
