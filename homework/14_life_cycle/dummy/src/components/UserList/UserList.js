@@ -1,4 +1,5 @@
 import React from "react";
+import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
 import { getUserList } from "../api/dummyApi";
 import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
@@ -6,7 +7,7 @@ import './UserList.css';
 
 const initialState = {
     users: [],
-    total: 0,
+    
 }
 
 export class UserList extends React.Component {
@@ -17,7 +18,7 @@ export class UserList extends React.Component {
     }
 
     loadUsers(page, limit) {
-        getUserList(page, limit, response => this.setState({users: response.data, total: response.total}));
+        getUserList(page, limit, response => this.setState({users: response.data}));
     }
 
     componentDidMount() {
@@ -32,12 +33,14 @@ export class UserList extends React.Component {
             <div className="userlist">
                 <div className="userlist__container">
                     {this.state.users.map((item, index) =>
-                        <User 
-                            title={item.title}
-                            firstName={item.firstName}
-                            lastName={item.lastName}
-                            picture={item.picture}
-                        />
+                        <ComponentWithHelper text={item.id} key={index}>
+                            <User 
+                                title={item.title}
+                                firstName={item.firstName}
+                                lastName={item.lastName}
+                                picture={item.picture}
+                            />
+                        </ComponentWithHelper>
                     )}
                 </div>
                 <div className="pages__container">
