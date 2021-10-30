@@ -32,7 +32,6 @@ export class UserList extends React.Component {
     changePage(page) {
         this.setState({currentPage: page});
         this.loadUsers(page, 10);
-        console.log(this.state.currentPage);
     }
 
     render() {
