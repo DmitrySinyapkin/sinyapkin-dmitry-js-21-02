@@ -1,9 +1,15 @@
-const BASE_URL = 'https://dummyapi.io/data/v1/';
+import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE, PAGE_FIELD, LIMIT_FIELD } from "../../constants/dummyApi"
 
-export const USER_LIST_URL = `${BASE_URL}user`;
 
-export const APP_ID_VALUE = '617d0f3dab5df4b9bd1507dd';
-
-export const APP_ID_FIELD = 'app-id';
-export const PAGE_FIELD = 'page';
-export const LIMIT_FIELD = 'limit';
+export const getUserList = (page, limit, callback) => {
+    fetch(USER_LIST_URL, {
+        method: 'GET',
+        headers: new Headers({
+            [APP_ID_FIELD]: APP_ID_VALUE,
+            [PAGE_FIELD]: page.toString(),
+            [LIMIT_FIELD]: limit.toString(),
+        }),
+    }).then(response => response.json())
+      .then(response => callback(response.data))
+      .catch(console.error);
+}
