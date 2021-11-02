@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
 import { getUserList } from "../../api/dummyApi";
 import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
 import './UserList.css';
-import { ThemeContextConsumer } from "../../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const pageNumbers = [0, 1, 2, 3, 4];
+    const themeContext = useContext(ThemeContext);
 
     const loadUsers = (page, limit) => {
         getUserList(page, limit, response => setUsers(response.data));
@@ -49,13 +50,7 @@ export const UserList = () => {
                         />
                     )}
                 </div>
-                <ThemeContextConsumer>
-                    {
-                        (context) => (
-                            <label className={context.darkTheme && "label_dark"}>Темная тема  <input className="theme-changer" type="checkbox" checked={context.darkTheme} onClick={context.toggleTheme}/></label> 
-                        )  
-                    }
-                </ThemeContextConsumer>
+                <label className={themeContext.darkTheme && "label_dark"}>Темная тема  <input className="theme-changer" type="checkbox" checked={themeContext.darkTheme} onClick={themeContext.toggleTheme}/></label>
             </div>
         </div>
         );

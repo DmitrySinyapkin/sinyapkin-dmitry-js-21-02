@@ -1,17 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 import './Header.css';
-import { ThemeContextConsumer } from "../../contexts/ThemeContext";
+import { ThemeContext } from "../../contexts/ThemeContext";
 
 export const Header = (props) => {
+    const themeContext = useContext(ThemeContext);
     return (
-        <ThemeContextConsumer>
-            {
-                (context) => (
-                    <div className="header">
-                        <h1 className={`header__text ${context.darkTheme && "header__text_dark"}`}>{props.name}</h1>
-                    </div>
-                )  
-            }
-        </ThemeContextConsumer>
+        <div className="header">
+            <h1 className={`header__text ${themeContext.darkTheme && "header__text_dark"}`}>{props.name}</h1>
+        </div>
     );
 };
