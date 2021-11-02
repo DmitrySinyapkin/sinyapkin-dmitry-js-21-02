@@ -1,17 +1,15 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
 import { getUserList } from "../../api/dummyApi";
 import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
 import './UserList.css';
-import { ThemeContext } from "../../contexts/ThemeContext";
 import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const pageNumbers = [0, 1, 2, 3, 4];
-    const themeContext = useContext(ThemeContext);
 
     const loadUsers = (page, limit) => {
         getUserList(page, limit, response => setUsers(response.data));
