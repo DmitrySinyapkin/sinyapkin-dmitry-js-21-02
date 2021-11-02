@@ -1,34 +1,30 @@
-import React from "react";
+import React, { useState } from "react";
 import './ComponentWithHelper.css';
 
-export default class ComponentWithHelper extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { hovered: false };
-        this.mouseOut = this.mouseOut.bind(this);
-        this.mouseOver = this.mouseOver.bind(this);
-      }
+const ComponentWithHelper = (props) => {
+  const [hovered, setHovered] = useState(false);
     
-      mouseOver(event) {
-        this.setState({ hovered: true });
-        event.stopPropagation();
-      }
+  const mouseOver = (event) => {
+    setHovered(true);
+    event.stopPropagation();
+  };
     
-      mouseOut(event) {
-        this.setState({ hovered: false });
-        event.stopPropagation();
-      }
+  const mouseOut = (event) => {
+    setHovered(false);
+    event.stopPropagation();
+  };
     
-      render() {
-        return (
+  return (
           <div
             className="component-with-helper"
-            onMouseOut={this.mouseOut}
-            onMouseOver={this.mouseOver}
+            onMouseOut={mouseOut}
+            onMouseOver={mouseOver}
           >
-            {this.state.hovered && <div className="component-with-helper__helper">{this.props.text}</div>}
-            {this.props.children}
+            {hovered && <div className="component-with-helper__helper">{props.text}</div>}
+            {props.children}
           </div>
         );
-      }
-}
+      
+};
+
+export default ComponentWithHelper;
