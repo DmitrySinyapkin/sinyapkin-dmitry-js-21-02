@@ -17,7 +17,7 @@ export const UserList = () => {
 
     useEffect(() => {
         loadUsers(0, 10);
-    }); 
+    }, []); 
 
     const changePage = (page) => {
         setCurrentPage(page);
