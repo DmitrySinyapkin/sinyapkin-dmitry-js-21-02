@@ -5,6 +5,7 @@ import { PageButton } from "../PageButton/PageButton";
 import { User } from "../User/User";
 import './UserList.css';
 import { ThemeContext } from "../../contexts/ThemeContext";
+import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -50,7 +51,7 @@ export const UserList = () => {
                         />
                     )}
                 </div>
-                <label className={themeContext.darkTheme && "label_dark"}>Темная тема  <input className="theme-changer" type="checkbox" checked={themeContext.darkTheme} onClick={themeContext.toggleTheme}/></label>
+                <ThemeChanger/>
             </div>
         </div>
         );
