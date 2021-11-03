@@ -1,0 +1,17 @@
+.userlist__container {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+}
+
+.pages__container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.pages__changer {
+    display: flex;
+    gap: 2px;
+}
