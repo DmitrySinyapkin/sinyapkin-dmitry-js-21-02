@@ -1,0 +1,35 @@
+.task-block {
+    width: 600px;
+    margin: 0 auto;
+    margin-bottom: 5px;
+    padding: 10px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.task-text {
+    width: 500px;
+}
+
+.del-btn {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    padding-top: 3px;
+    border: 1px solid red;
+    font-family: Arial;
+    color: red;
+    text-align: center;
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.done {
+    text-decoration: line-through;
+}
