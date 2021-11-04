@@ -5,6 +5,7 @@ import { PageButton } from "../../components/PageButton/PageButton";
 import { User } from "../../components/User/User";
 import './UserList.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
+import { Link } from "react-router-dom";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
@@ -29,12 +30,14 @@ export const UserList = () => {
             <div className="userlist__container">
                 {users.map((item, index) =>
                     <ComponentWithHelper text={item.id} key={index}>
-                        <User 
-                            title={item.title}
-                            firstName={item.firstName}
-                            lastName={item.lastName}
-                            picture={item.picture}
-                        />
+                        <Link to={`/${item.id}`}>
+                            <User 
+                                title={item.title}
+                                firstName={item.firstName}
+                                lastName={item.lastName}
+                                picture={item.picture}
+                            />
+                        </Link>
                     </ComponentWithHelper>
                 )}
                 </div>
