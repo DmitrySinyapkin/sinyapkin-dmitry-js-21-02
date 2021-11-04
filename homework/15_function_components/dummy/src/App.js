@@ -4,7 +4,7 @@ import { Header } from './components/Header/Header';
 import { UserList } from './forms/UserList/UserList';
 import { ThemeContext } from './contexts/ThemeContext';
 import { HashRouter, Routes, Route } from 'react-router-dom';
-import { UserPage } from './forms/UserPage/UserPage';
+import UserPage from './forms/UserPage/UserPage';
 
 const App = () => {
   const themeContext = useContext(ThemeContext);

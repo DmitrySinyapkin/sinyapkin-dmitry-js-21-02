@@ -1,19 +1,23 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router";
+import { useNavigate, useParams } from "react-router";
 import { getUserData } from "../../api/dummyApi";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { UserData } from "../../components/UserData/UserData";
 import './UserPage.css';
 
-export const UserPage = () => {
+const UserPage = () => {
     const [user, setUser] = useState({});
     const params = useParams();
+    const navigate = useNavigate();
 
     useEffect(() => {
         getUserData(params.id, response => setUser(response));
-        console.log(params.id);
     }, []);
+
+    const handleBackButton = () => {
+        navigate('/');
+    } 
 
     return (
         <div>
@@ -30,9 +34,11 @@ export const UserPage = () => {
                 picture={user.picture}
             />
             <div className="footer">
-                {/*<BackButton onClick={}/>*/}
+                <BackButton onClick={handleBackButton}/>
                 <ThemeChanger/>
             </div>
         </div>
     );
 }
+
+export default UserPage;
