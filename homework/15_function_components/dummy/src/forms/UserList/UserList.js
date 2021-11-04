@@ -30,7 +30,7 @@ export const UserList = () => {
             <div className="userlist__container">
                 {users.map((item, index) =>
                     <ComponentWithHelper text={item.id} key={index}>
-                        <Link to={`/${item.id}`}>
+                        <Link to={`${item.id}`}>
                             <User 
                                 title={item.title}
                                 firstName={item.firstName}

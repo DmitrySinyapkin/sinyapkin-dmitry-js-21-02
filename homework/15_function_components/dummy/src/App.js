@@ -3,7 +3,8 @@ import './App.css';
 import { Header } from './components/Header/Header';
 import { UserList } from './forms/UserList/UserList';
 import { ThemeContext } from './contexts/ThemeContext';
-import { HashRouter} from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
+import { UserPage } from './forms/UserPage/UserPage';
 
 const App = () => {
   const themeContext = useContext(ThemeContext);
@@ -15,7 +16,10 @@ const App = () => {
               <Header name="Пользователи"/>
             </header>
             <main>
-              <UserList/>
+              <Routes>
+                <Route exact path={'/'} element={<UserList/>}/>
+                <Route path={':id'} element={<UserPage/>}/>
+              </Routes>
             </main>
           </div>
         </div>
