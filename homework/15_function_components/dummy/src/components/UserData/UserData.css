@@ -1,0 +1,31 @@
+.user-data__container {
+    width: 100%;
+    padding: 20px;
+    border-radius: 5px;
+    background: white;
+    display: flex;
+    gap: 20px;
+}
+
+.user-data__data {
+    font-family: Arial;
+    font-size: 25px;
+    color: #6b7280;
+}
+
+.user-data__container_dark {
+    background: black;
+}
+
+.user-data__data_dark {
+    color: white;
+}
+
+.user-data__data div {
+    margin-bottom: 10px;
+}
+
+.fullname {
+    font-size: 40px;
+    margin: 20px 0px;
+}
