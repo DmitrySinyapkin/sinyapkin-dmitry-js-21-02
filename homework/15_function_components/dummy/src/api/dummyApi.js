@@ -17,6 +17,6 @@ export const getUserList = (page, limit, callback) => {
 }
 
 export const getUserData = (id, callback) => {
-    const url = USER_LIST_URL + `/:${id}`;
+    const url = USER_LIST_URL + `/${id}`;
     createFetch(url, callback);
 }
