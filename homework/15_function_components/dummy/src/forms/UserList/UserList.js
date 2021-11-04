@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
 import { getUserList } from "../../api/dummyApi";
-import { PageButton } from "../PageButton/PageButton";
-import { User } from "../User/User";
+import { PageButton } from "../../components/PageButton/PageButton";
+import { User } from "../../components/User/User";
 import './UserList.css';
-import { ThemeChanger } from "../ThemeChanger/ThemeChanger";
+import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
