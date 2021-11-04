@@ -12,7 +12,7 @@ export const UserPage = () => {
 
     useEffect(() => {
         getUserData(params.id, response => setUser(response));
-        console.log(user);
+        console.log(params.id);
     }, []);
 
     return (
@@ -24,8 +24,8 @@ export const UserPage = () => {
                 lastName={user.lastName}
                 gender={user.gender}
                 email={user.email}
-                dateOfBirth={user.dateOfBirth}
-                registerDate={user.registerDate}
+                dateOfBirth={user.dateOfBirth.slice(0,10)}
+                registerDate={user.registerDate.slice(0,10)}
                 phone={user.phone}
                 picture={user.picture}
             />
