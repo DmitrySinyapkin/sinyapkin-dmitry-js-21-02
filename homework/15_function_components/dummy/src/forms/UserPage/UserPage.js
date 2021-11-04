@@ -24,8 +24,8 @@ export const UserPage = () => {
                 lastName={user.lastName}
                 gender={user.gender}
                 email={user.email}
-                dateOfBirth={user.dateOfBirth.slice(0,10)}
-                registerDate={user.registerDate.slice(0,10)}
+                dateOfBirth={user.dateOfBirth}
+                registerDate={user.registerDate}
                 phone={user.phone}
                 picture={user.picture}
             />
