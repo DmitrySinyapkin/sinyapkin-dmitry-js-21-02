@@ -24,3 +24,8 @@
 .user-data__data div {
     margin-bottom: 10px;
 }
+
+.fullname {
+    font-size: 40px;
+    margin: 20px 0px;
+}

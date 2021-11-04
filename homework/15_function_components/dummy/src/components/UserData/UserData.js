@@ -11,10 +11,12 @@ export const UserData = (props) => {
             </figure>
             <div className={`user-data__data ${themeContext.darkTheme && "user-data__data_dark"}`}>
                 <div>ID: {props.id}</div>
-                <div>{props.title} {props.firstName} {props.lastName}</div>
-                <div>Gender: {props.gender}   Date of birth: {props.dateOfBirth}</div>
-                <div>Phone: {props.phone}   E-mail: {props.email}</div>
-                <div>Address: {props.location.street}, {props.location.city}, {props.location.state}, {props.location.country}</div>
+                <div>Register date: {props.registerDate}</div>
+                <div className="fullname">{props.title} {props.firstName} {props.lastName}</div>
+                <div>Gender: {props.gender}</div>
+                <div>Date of birth: {props.dateOfBirth}</div>
+                <div>Phone: {props.phone}</div>
+                <div>E-mail: {props.email}</div>
             </div>
         </div>
     );
