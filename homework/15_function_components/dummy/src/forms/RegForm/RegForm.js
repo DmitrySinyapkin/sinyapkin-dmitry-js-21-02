@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './RegForm.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Form, Input, Select } from 'antd';
@@ -15,6 +15,10 @@ export const RegForm = () => {
     const [gender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [id, setId] = useState('');
+
+    useEffect(() => {
+        setId('');
+    }, []);
 
     const handleRegButton = (firstName, lastName, email, title, gender, phone) => {
         const user = {
