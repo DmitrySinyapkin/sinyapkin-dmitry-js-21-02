@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import './App.css';
 import { Header } from './components/Header/Header';
 import { UserList } from './forms/UserList/UserList';
@@ -8,12 +8,17 @@ import UserPage from './forms/UserPage/UserPage';
 
 const App = () => {
   const themeContext = useContext(ThemeContext);
+  const [pageType, setPageType] = useState('users');
+
+  const handleMenuClick = (event) => {
+    setPageType(event.key);
+  }
   return (
       <HashRouter>
         <div className={`App ${themeContext.darkTheme && "App_dark"}`}>
           <div className="body">
             <header>
-              <Header name="Пользователи"/>
+              <Header onClick={handleMenuClick} name={(pageType === 'users') ? "Пользователи" : "Регистрация"}/>
             </header>
             <main>
               <Routes>
