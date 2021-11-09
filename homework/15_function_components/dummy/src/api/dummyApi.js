@@ -15,7 +15,8 @@ function createPostFetch(url, data, callback) {
     fetch(url, {
         method: 'POST',
         headers: new Headers({
-            [APP_ID_FIELD]: APP_ID_VALUE
+            [APP_ID_FIELD]: APP_ID_VALUE,
+            'Content-Type': 'application/json;charset=utf-8'
         }),
         body: data,
     }).then(response => response.json())
@@ -36,6 +37,5 @@ export const getUserData = (id, callback) => {
 export const addUser = (user, callback) => {
     const url = USER_LIST_URL + `/create`;
     const userData = JSON.stringify(user);
-    console.log(userData);
     createPostFetch(url, userData, callback);
 }
