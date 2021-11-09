@@ -3,7 +3,7 @@ import './RegForm.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Form, Input, Select } from 'antd';
 import { addUser } from "../../api/dummyApi";
-import { useNavigate } from "react-router";
+import { Navigate } from 'react-router-dom';
 
 const { Option } = Select;
 
@@ -16,8 +16,6 @@ export const RegForm = () => {
     const [phone, setPhone] = useState('');
     const [id, setId] = useState('');
 
-    const navigate = useNavigate();
-
     const handleRegButton = (firstName, lastName, email, title, gender, phone) => {
         const user = {
             firstName: firstName,
@@ -28,11 +26,7 @@ export const RegForm = () => {
             phone: phone
         };
 
-        addUser(user, response => console.log(response));
-
-        if (id) {
-            navigate('/:id');
-        }
+        addUser(user, response => setId(response.id));
     }
 
     return (
@@ -131,6 +125,7 @@ export const RegForm = () => {
                 <button className="reg-button" onClick={() => handleRegButton(firstName, lastName, email, title, gender, phone)}>Отправить</button>
                 <ThemeChanger/>
             </div>
+            {id && <Navigate to={`/${id}`}/>}
         </div>
     );
 }
