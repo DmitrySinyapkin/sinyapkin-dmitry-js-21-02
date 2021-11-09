@@ -5,6 +5,7 @@ import { UserList } from './forms/UserList/UserList';
 import { ThemeContext } from './contexts/ThemeContext';
 import { HashRouter, Routes, Route } from 'react-router-dom';
 import UserPage from './forms/UserPage/UserPage';
+import { RegForm } from './forms/RegForm/RegForm';
 
 const App = () => {
   const themeContext = useContext(ThemeContext);
@@ -13,6 +14,7 @@ const App = () => {
   const handleMenuClick = (event) => {
     setPageType(event.key);
   }
+
   return (
       <HashRouter>
         <div className={`App ${themeContext.darkTheme && "App_dark"}`}>
@@ -24,6 +26,7 @@ const App = () => {
               <Routes>
                 <Route exact path={'/'} element={<UserList/>}/>
                 <Route path={'/:id'} element={<UserPage/>}/>
+                <Route path={'/create'} element={<RegForm/>}/>
               </Routes>
             </main>
           </div>

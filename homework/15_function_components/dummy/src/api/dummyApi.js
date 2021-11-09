@@ -1,6 +1,6 @@
 import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../constants/dummyApi"
 
-function createFetch(url, callback) {
+function createGetFetch(url, callback) {
     fetch(url, {
         method: 'GET',
         headers: new Headers({
@@ -11,12 +11,31 @@ function createFetch(url, callback) {
       .catch(console.error);
 }
 
+function createPostFetch(url, data, callback) {
+    fetch(url, {
+        method: 'POST',
+        headers: new Headers({
+            [APP_ID_FIELD]: APP_ID_VALUE
+        }),
+        body: data,
+    }).then(response => response.json())
+      .then(response => callback(response))
+      .catch(console.error);
+}
+
 export const getUserList = (page, limit, callback) => {
     const url = USER_LIST_URL + `?page=${page}&limit=${limit}`;
-    createFetch(url, callback);
+    createGetFetch(url, callback);
 }
 
 export const getUserData = (id, callback) => {
     const url = USER_LIST_URL + `/${id}`;
-    createFetch(url, callback);
+    createGetFetch(url, callback);
+}
+
+export const addUser = (user, callback) => {
+    const url = USER_LIST_URL + `/create`;
+    const userData = JSON.stringify(user);
+    console.log(userData);
+    createPostFetch(url, userData, callback);
 }
