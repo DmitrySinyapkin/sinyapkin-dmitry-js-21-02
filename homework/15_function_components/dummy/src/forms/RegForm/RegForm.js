@@ -7,7 +7,7 @@ import { Navigate } from 'react-router-dom';
 
 const { Option } = Select;
 
-export const RegForm = () => {
+export const RegForm = (props) => {
     const [firstName, setFistName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -15,6 +15,8 @@ export const RegForm = () => {
     const [gender, setGender] = useState('');
     const [phone, setPhone] = useState('');
     const [id, setId] = useState('');
+
+    const handleRegButtonClick = props.onClick; 
 
     useEffect(() => {
         setId('');
@@ -31,6 +33,7 @@ export const RegForm = () => {
         };
 
         addUser(user, response => setId(response.id));
+        handleRegButtonClick();
     }
 
     return (

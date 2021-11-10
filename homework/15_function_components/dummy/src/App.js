@@ -15,6 +15,10 @@ const App = () => {
     setPageType(event.key);
   }
 
+  const handleRegClick = () => {
+    setPageType('users');
+  }
+
   return (
       <HashRouter>
         <div className={`App ${themeContext.darkTheme && "App_dark"}`}>
@@ -26,7 +30,7 @@ const App = () => {
               <Routes>
                 <Route exact path={'/'} element={<UserList/>}/>
                 <Route path={'/:id'} element={<UserPage/>}/>
-                <Route path={'/create'} element={<RegForm/>}/>
+                <Route path={'/create'} element={<RegForm onClick={handleRegClick}/>}/>
               </Routes>
             </main>
           </div>
