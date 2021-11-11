@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router";
-import { getUserData } from "../../api/dummyApi";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { UserData } from "../../components/UserData/UserData";
 import './UserPage.css';
+import { loadUserDataAction } from "../../actions/user";
+import userDataStore from "../../stores/user";
 
 const UserPage = () => {
     const [user, setUser] = useState({});
@@ -12,7 +13,9 @@ const UserPage = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        getUserData(params.id, response => setUser(response));
+        userDataStore.on('change', () => setUser(userDataStore.getUserData()));
+        loadUserDataAction(params.id);
+        setUser(userDataStore.getUserData());
     }, []);
 
     const handleBackButton = () => {
