@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
-import { getUserList } from "../../api/dummyApi";
 import { PageButton } from "../../components/PageButton/PageButton";
 import { User } from "../../components/User/User";
 import './UserList.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Link } from "react-router-dom";
+import { loadUserListAction } from "../../actions/userList";
+import userListStore from "../../stores/userList";
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
     const pageNumbers = [0, 1, 2, 3, 4];
 
-    const loadUsers = (page, limit) => {
-        getUserList(page, limit, response => setUsers(response.data));
-    }
-
     useEffect(() => {
-        loadUsers(0, 10);
+        userListStore.on('change', () => setUsers(userListStore.getUserList()));
+        loadUserListAction(0, 10);
     }, []); 
 
     const changePage = (page) => {
         setCurrentPage(page);
-        loadUsers(page, 10);
+        loadUserListAction(page, 10);
     }
 
     return (
