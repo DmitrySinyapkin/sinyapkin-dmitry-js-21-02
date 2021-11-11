@@ -15,7 +15,6 @@ export const UserList = () => {
 
     const loadUsers = (page, limit) => {
         userListStore.on('change', () => setUsers(userListStore.getUserList()));
-        setUsers(userListStore.getUserList());
         loadUserListAction(page, limit);
     } 
 

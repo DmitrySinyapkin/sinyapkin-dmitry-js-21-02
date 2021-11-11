@@ -15,7 +15,6 @@ const UserPage = () => {
     useEffect(() => {
         userDataStore.on('change', () => setUser(userDataStore.getUserData()));
         loadUserDataAction(params.id);
-        setUser(userDataStore.getUserData());
     }, []);
 
     const handleBackButton = () => {
