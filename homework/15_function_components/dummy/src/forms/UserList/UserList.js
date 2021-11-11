@@ -14,8 +14,9 @@ export const UserList = () => {
     const pageNumbers = [0, 1, 2, 3, 4];
 
     const loadUsers = (page, limit) => {
-        loadUserListAction(page, limit);
+        userListStore.on('change', () => setUsers(userListStore.getUserList()));
         setUsers(userListStore.getUserList());
+        loadUserListAction(page, limit);
     } 
 
     useEffect(() => {
