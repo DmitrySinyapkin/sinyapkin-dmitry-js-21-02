@@ -10,17 +10,16 @@ async function createGetFetch(url) {
     return await response.json();
 }
 
-function createPostFetch(url, data, callback) {
-    fetch(url, {
+async function createPostFetch(url, data) {
+    const response = await fetch(url, {
         method: 'POST',
         headers: new Headers({
             [APP_ID_FIELD]: APP_ID_VALUE,
             'Content-Type': 'application/json;charset=utf-8'
         }),
         body: data,
-    }).then(response => response.json())
-      .then(response => callback(response))
-      .catch(console.error);
+    });
+    return await response.json();
 }
 
 export const getUserList = (page, limit) => {
@@ -33,8 +32,8 @@ export const getUserData = (id) => {
     return createGetFetch(url);
 }
 
-export const addUser = (user, callback) => {
+export const addUser = (user) => {
     const url = USER_LIST_URL + `/create`;
     const userData = JSON.stringify(user);
-    createPostFetch(url, userData, callback);
+    return createPostFetch(url, userData);
 }
