@@ -10,7 +10,7 @@ class UserDataStore extends EventEmitter {
     }
 
     loadUserData = (user) => {
-        this.user = user;
+        this.user = {...user};
         this.emit('change');
     }
 

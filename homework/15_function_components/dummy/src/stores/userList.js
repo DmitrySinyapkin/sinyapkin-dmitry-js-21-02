@@ -10,7 +10,7 @@ class UserListStore extends EventEmitter {
     }
 
     loadUserList = (users) => {
-        this.users = users;
+        this.users = [...users];
         this.emit('change');
     }
 
