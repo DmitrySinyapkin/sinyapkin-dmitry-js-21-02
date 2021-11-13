@@ -15,4 +15,6 @@
 
 .reg-button {
     width: 150px;
+    background: white;
+    border-radius: 5px;
 }

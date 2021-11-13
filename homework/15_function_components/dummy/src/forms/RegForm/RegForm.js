@@ -83,7 +83,6 @@ export const RegForm = (props) => {
                             <Option value="mrs">mrs</Option>
                             <Option value="miss">miss</Option>
                             <Option value="dr">dr</Option>
-                            <Option value="">none</Option>
                         </Select>
                     </Form.Item>
                     <Form.Item

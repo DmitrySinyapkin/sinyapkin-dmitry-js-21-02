@@ -4,13 +4,13 @@ import dispatcher from '../dispatcher';
 class UserListStore extends EventEmitter {
     constructor() {
         super();
-        this.users = [];
+        this.users = {};
         this.loadUserList = this.loadUserList.bind(this);
         this.getUserList = this.getUserList.bind(this);
     }
 
     loadUserList = (users) => {
-        this.users = [...users];
+        this.users = {...users};
         this.emit('change');
     }
 
