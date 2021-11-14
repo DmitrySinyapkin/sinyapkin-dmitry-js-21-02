@@ -2,8 +2,9 @@ import React, { useState, useEffect } from "react";
 import './RegForm.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Form, Input, Select } from 'antd';
-import { addUser } from "../../api/dummyApi";
 import { Navigate } from 'react-router-dom';
+import { addUserAction } from "../../actions/addUser";
+import addUserStore from "../../stores/addUser";
 
 const { Option } = Select;
 
@@ -20,6 +21,7 @@ export const RegForm = (props) => {
 
     useEffect(() => {
         setId('');
+        addUserStore.on('change', () => setId(addUserStore.getUserId()));
     }, []);
 
     const handleRegButton = (firstName, lastName, email, title, gender, phone) => {
@@ -32,7 +34,7 @@ export const RegForm = (props) => {
             phone: phone
         };
 
-        addUser(user, response => setId(response.id));
+        addUserAction(user);
         handleRegButtonClick();
     }
 
@@ -81,7 +83,6 @@ export const RegForm = (props) => {
                             <Option value="mrs">mrs</Option>
                             <Option value="miss">miss</Option>
                             <Option value="dr">dr</Option>
-                            <Option value="">none</Option>
                         </Select>
                     </Form.Item>
                     <Form.Item
