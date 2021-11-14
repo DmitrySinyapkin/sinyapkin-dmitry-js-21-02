@@ -1,22 +1,39 @@
 import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../constants/dummyApi"
 
-function createFetch(url, callback) {
-    fetch(url, {
+async function createGetFetch(url) {
+    const response = await fetch(url, {
         method: 'GET',
         headers: new Headers({
             [APP_ID_FIELD]: APP_ID_VALUE
         }),
-    }).then(response => response.json())
-      .then(response => callback(response))
-      .catch(console.error);
+    });
+    return await response.json();
 }
 
-export const getUserList = (page, limit, callback) => {
+async function createPostFetch(url, data) {
+    const response = await fetch(url, {
+        method: 'POST',
+        headers: new Headers({
+            [APP_ID_FIELD]: APP_ID_VALUE,
+            'Content-Type': 'application/json;charset=utf-8'
+        }),
+        body: data,
+    });
+    return await response.json();
+}
+
+export const getUserList = (page, limit) => {
     const url = USER_LIST_URL + `?page=${page}&limit=${limit}`;
-    createFetch(url, callback);
+    return createGetFetch(url);
 }
 
-export const getUserData = (id, callback) => {
+export const getUserData = (id) => {
     const url = USER_LIST_URL + `/${id}`;
-    createFetch(url, callback);
+    return createGetFetch(url);
+}
+
+export const addUser = (user) => {
+    const url = USER_LIST_URL + `/create`;
+    const userData = JSON.stringify(user);
+    return createPostFetch(url, userData);
 }

@@ -1,28 +1,34 @@
 import React, { useEffect, useState } from "react";
 import ComponentWithHelper from "../../wrappers/ComponentWithHelper";
-import { getUserList } from "../../api/dummyApi";
-import { PageButton } from "../../components/PageButton/PageButton";
 import { User } from "../../components/User/User";
 import './UserList.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Link } from "react-router-dom";
+import { loadUserListAction } from "../../actions/userList";
+import userListStore from "../../stores/userList";
+import { Pagination } from 'antd';
+import 'antd/dist/antd.css';
 
 export const UserList = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(0);
-    const pageNumbers = [0, 1, 2, 3, 4];
+    const [total, setTotal] = useState(0);
+    const [pageSize, setPageSize] = useState(10);
 
-    const loadUsers = (page, limit) => {
-        getUserList(page, limit, response => setUsers(response.data));
+    const setUserListStates = () => {
+        setUsers(userListStore.getUserList().data);
+        setTotal(userListStore.getUserList().total);
     }
 
     useEffect(() => {
-        loadUsers(0, 10);
+        userListStore.on('change', () => setUserListStates());
+        loadUserListAction(0, pageSize);
     }, []); 
 
-    const changePage = (page) => {
+    const changePage = (page, limit) => {
         setCurrentPage(page);
-        loadUsers(page, 10);
+        setPageSize(limit)
+        loadUserListAction(page - 1, limit);
     }
 
     return (
@@ -43,14 +49,13 @@ export const UserList = () => {
                 </div>
             <div className="pages__container">
                 <div className="pages__changer">
-                    {pageNumbers.map((item) =>
-                        <PageButton
-                            number={item + 1}
-                            activeNumber={currentPage + 1}
-                            onClick={() => changePage(item)}
-                            key={item}
-                        />
-                    )}
+                    <Pagination
+                        current={currentPage}
+                        pageSize={pageSize}
+                        total={total}
+                        onChange={changePage}
+                        pageSizeOptions={[10, 20, 30, 50]}
+                    />
                 </div>
                 <ThemeChanger/>
             </div>
