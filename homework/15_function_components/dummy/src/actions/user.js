@@ -1,9 +1,4 @@
-import { getUserData } from "../api/dummyApi";
-import dispatcher from "../dispatcher";
-
-export const loadUserDataAction = (id) => {
-    getUserData(id).then(response => dispatcher.dispatch({
-        type: 'LOAD_USER_DATA',
-        payload: response,
-    }));
-}
+export const loadUserDataAction = (userData) => ({
+        type: 'USER_PAGE/LOAD_USER_DATA',
+        userData,
+});
