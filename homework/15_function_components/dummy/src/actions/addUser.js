@@ -9,7 +9,7 @@ const preventRedirectAction = () => ({
     type: 'REGFORM/PREVENT_REDIRECT'
 });
 
-export const setNewUserId = (firstName, lastName, email, title, gender, phone) => (dispatch) => {
+export const addNewUser = (firstName, lastName, email, title, gender, phone) => (dispatch) => {
     const user = {
         firstName: firstName,
         lastName: lastName,

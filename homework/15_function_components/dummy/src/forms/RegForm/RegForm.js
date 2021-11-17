@@ -10,7 +10,7 @@ import * as actions from '../../actions/addUser';
 
 const { Option } = Select;
 
-const RegForm = ({ onClick, id, redirect, setNewUserId, preventRedirect}) => {
+const RegForm = ({ onClick, id, redirect, addNewUser, preventRedirect}) => {
     const [firstName, setFistName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ const RegForm = ({ onClick, id, redirect, setNewUserId, preventRedirect}) => {
     }, []);
 
     const handleRegButton = (firstName, lastName, email, title, gender, phone) => {
-        setNewUserId(firstName, lastName, email, title, gender, phone);
+        addNewUser(firstName, lastName, email, title, gender, phone);
         handleRegButtonClick();
     }
 
