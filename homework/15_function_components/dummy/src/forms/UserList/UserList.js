@@ -4,25 +4,24 @@ import { User } from "../../components/User/User";
 import './UserList.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Link } from "react-router-dom";
-import { loadUserListAction } from "../../actions/userList";
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { getUserList } from "../../api/dummyApi";
+import * as actions from '../../actions/userList';
 
 const UserList = ({users, total, loadUserList}) => {
     const [currentPage, setCurrentPage] = useState(0);
     const [pageSize, setPageSize] = useState(10);
 
     useEffect(() => {
-        getUserList(0, 10).then(response => loadUserList(response));
+        loadUserList(0, 10);
     }, []); 
 
     const changePage = (page, limit) => {
         setCurrentPage(page);
         setPageSize(limit)
-        getUserList(page - 1, limit).then(response => loadUserList(response));
+        loadUserList(page - 1, limit);
     }
 
     return (
@@ -62,7 +61,5 @@ export default connect(
         users: state.users.users,
         total: state.users.total,
     }),
-    (dispatch) => ({
-        loadUserList: bindActionCreators(loadUserListAction, dispatch)
-    })
+    (dispatch) => bindActionCreators(actions, dispatch),
 )(UserList);
