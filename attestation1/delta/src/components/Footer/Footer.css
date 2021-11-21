@@ -6,3 +6,8 @@
   justify-content: space-between;
   align-items: center;
 }
+@media (max-width: 768px) {
+  .footer .footer__copyright {
+    display: none;
+  }
+}

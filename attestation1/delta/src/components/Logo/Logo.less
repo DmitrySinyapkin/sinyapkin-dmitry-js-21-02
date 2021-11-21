@@ -6,6 +6,10 @@
     display: flex;
     gap: @gap-size;
 
+    @media (max-width: 768px) {
+        display: none;
+    }
+
     h1 {
         font-size: @logo-font-size;
     }
