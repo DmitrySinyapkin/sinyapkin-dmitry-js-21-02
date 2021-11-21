@@ -21,6 +21,7 @@ header, footer {
 
 a {
   text-decoration: none;
+  color: inherit;
 }
 
 @media (min-width: 1025px) and (max-width: 1200px) {
@@ -38,5 +39,9 @@ a {
 @media (max-width: 768px) {
   .content-wrapper {
     width: 320px;
+  }
+
+  main > .content-wrapper {
+    width: 100%;
   }
 }

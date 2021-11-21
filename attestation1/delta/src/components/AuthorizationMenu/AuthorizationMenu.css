@@ -9,3 +9,12 @@
 .auth-menu .auth-menu__second {
   padding: 0 10px;
 }
+.user {
+  display: flex;
+  gap: 3px;
+}
+@media (max-width: 768px) {
+  .user .name {
+    display: none;
+  }
+}
