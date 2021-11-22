@@ -9,7 +9,7 @@ const TopMenu = () => {
     return (
         <div className="menu">
             <Menu style={{ fontSize: '16px'}} mode="horizontal">
-                <Menu.Item key="users" icon={<UserOutlined />}>Пользователи</Menu.Item>
+                <Menu.Item key="users" icon={<UserOutlined />}><Link to="/users">Пользователи</Link></Menu.Item>
                 <Menu.Item key="posts" icon={<PictureOutlined />}><Link to="/">Посты</Link></Menu.Item>
             </Menu>
         </div>
