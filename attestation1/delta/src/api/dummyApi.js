@@ -1,4 +1,4 @@
-import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE } from "../constants/dummyApi"
+import { USER_LIST_URL, APP_ID_FIELD, APP_ID_VALUE, POST_LIST_URL } from "../constants/dummyApi"
 
 async function createGetFetch(url) {
     const response = await fetch(url, {
@@ -36,4 +36,9 @@ export const addUserApi = (user) => {
     const url = USER_LIST_URL + `/create`;
     const userData = JSON.stringify(user);
     return createPostFetch(url, userData);
+}
+
+export const getPostListApi = (page, limit) => {
+    const url = POST_LIST_URL + `?page=${page}&limit=${limit}`;
+    return createGetFetch(url);
 }

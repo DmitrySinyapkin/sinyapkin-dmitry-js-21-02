@@ -3,6 +3,7 @@ import { HashRouter, Routes, Route } from 'react-router-dom'
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import AuthForm from './forms/AuthForm/AuthForm';
+import PostList from './forms/PostList/PostList';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <main>
           <div className="content-wrapper">
             <Routes>
+              <Route path={'/'} element={<PostList />} />
               <Route path={'/auth'} element={<AuthForm />} />
             </Routes>
           </div>
