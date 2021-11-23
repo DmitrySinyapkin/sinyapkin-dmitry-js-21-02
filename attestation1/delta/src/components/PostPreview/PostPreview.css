@@ -42,3 +42,6 @@
   grid-area: text;
   font-size: 10px;
 }
+.hidden {
+  display: none;
+}

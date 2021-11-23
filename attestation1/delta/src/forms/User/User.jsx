@@ -60,6 +60,7 @@ const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser,
                                                     date={item.publishDate}
                                                     picture={item.image}
                                                     text={item.text}
+                                                    hidden
                                                 /> 
                                          )}
                                     </div>
