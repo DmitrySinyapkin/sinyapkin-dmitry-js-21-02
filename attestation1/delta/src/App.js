@@ -5,6 +5,7 @@ import Footer from './components/Footer/Footer';
 import AuthForm from './forms/AuthForm/AuthForm';
 import PostList from './forms/PostList/PostList';
 import UserList from './forms/UserList/UserList';
+import User from './forms/User/User';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
             <Routes>
               <Route path={'/'} element={<PostList />} />
               <Route path={'/users'} element={<UserList />} />
+              <Route path={'/users/:id'} element={<User />} />
               <Route path={'/auth'} element={<AuthForm />} />
             </Routes>
           </div>

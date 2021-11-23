@@ -42,3 +42,8 @@ export const getPostListApi = (page, limit) => {
     const url = POST_LIST_URL + `?page=${page}&limit=${limit}`;
     return createGetFetch(url);
 }
+
+export const getPostListByUserApi = (id, page, limit) => {
+    const url = USER_LIST_URL + `/${id}/post?page=${page}&limit=${limit}`;
+    return createGetFetch(url);
+}

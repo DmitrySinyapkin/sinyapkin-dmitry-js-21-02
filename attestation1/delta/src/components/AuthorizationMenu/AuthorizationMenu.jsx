@@ -9,10 +9,13 @@ import { Avatar } from 'antd';
 const AuthorizationMenu = ({ authUser, authorized, cancelUser }) => {
     return ( authorized ? 
                             <div className="auth-menu">
-                                <div className="auth-menu__first user">
-                                    <Avatar shape="circle" src={authUser.picture} />
-                                    <div className="name">{authUser.firstName}</div>
-                                </div>
+                                <Link to={`/users/${authUser.id}`}>
+                                    <div className="auth-menu__first user">
+                                        <Avatar shape="circle" src={authUser.picture} />
+                                        <div className="name">{authUser.firstName}</div>
+                                    
+                                    </div>
+                                </Link>
                                 <div className="auth-menu__second"><a href="" onClick={cancelUser}>Выход</a></div>
                             </div>
                         :

@@ -6,6 +6,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/loadUserList';
 import UserPreview from "../../components/UserPreview/UserPreview";
+import { Link } from "react-router-dom";
 
 const UserList = ({ users, total, loading, loadUserList}) => {
     const [current, setCurrent] = useState(0);
@@ -30,12 +31,14 @@ const UserList = ({ users, total, loading, loadUserList}) => {
                    <div className="users__page">
                         <div className="users__container">
                             {users.map((item, index) =>
-                                <UserPreview
-                                    key={index}
-                                    id={item.id}
-                                    fullName={`${item.title} ${item.firstName} ${item.lastName}`}
-                                    picture={item.picture}
-                                /> 
+                                <Link to={`${item.id}`}>
+                                    <UserPreview
+                                        key={index}
+                                        id={item.id}
+                                        fullName={`${item.title} ${item.firstName} ${item.lastName}`}
+                                        picture={item.picture}
+                                    /> 
+                                </Link>
                             )}
                         </div>
                         <div className="users__footer">
