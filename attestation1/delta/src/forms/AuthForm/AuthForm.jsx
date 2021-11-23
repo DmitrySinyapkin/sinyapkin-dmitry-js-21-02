@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './AuthForm.css';
+import { Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/authorization';
@@ -28,6 +29,7 @@ const AuthForm = ({redirectId, authorized, authorizeUser}) => {
                     <div className="auth-form__reg">Еще нет аккаунта? Зарегистрироваться</div>
                 </div>
             </div>
+            {authorized && <Navigate to={`/users/${redirectId}`} />}
         </div>
     );
 }
