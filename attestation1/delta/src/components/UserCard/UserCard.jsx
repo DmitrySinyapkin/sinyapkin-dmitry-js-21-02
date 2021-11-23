@@ -10,8 +10,8 @@ const UserCard = (props) => {
                 <div className="user__info">
                     <h2>{props.fullName}</h2>
                     <div className="info__line"><span className="info__title">Пол: </span><span>{props.gender}</span></div>
-                    <div className="info__line"><span className="info__title">Дата рождения: </span><span>{props.dateOfBirth}</span></div>
-                    <div className="info__line"><span className="info__title">Дата регистрации: </span><span>{props.registerDate}</span></div>
+                    <div className="info__line"><span className="info__title">Дата рождения: </span><span>{props.dateOfBirth.slice(0, 10)}</span></div>
+                    <div className="info__line"><span className="info__title">Дата регистрации: </span><span>{props.registerDate.slice(0, 10)}</span></div>
                     <div className="info__line"><span className="info__title">E-mail: </span><span>{props.email}</span></div>
                     <div className="info__line"><span className="info__title">Телефон: </span><span>{props.phone}</span></div>
                 </div>
