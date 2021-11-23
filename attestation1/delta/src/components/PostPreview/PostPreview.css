@@ -41,6 +41,7 @@
 .post__container .post__text-preview {
   grid-area: text;
   font-size: 10px;
+  text-align: center;
 }
 .hidden {
   display: none;
