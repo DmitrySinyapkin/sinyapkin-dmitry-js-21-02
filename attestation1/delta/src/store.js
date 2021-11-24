@@ -5,6 +5,7 @@ import authorizationReducer from './reducers/authorizationReducer';
 import postListReducer from './reducers/postListReducer';
 import userListReducer from './reducers/userListReducer';
 import userDataReducer from './reducers/userDataReducer';
+import registerUserReducer from './reducers/registerUserReducer';
 
 const store = createStore(
     combineReducers(
@@ -13,6 +14,7 @@ const store = createStore(
             posts: postListReducer,
             users: userListReducer,
             userData: userDataReducer,
+            newUser: registerUserReducer,
         }
     ),
     composeWithDevTools(applyMiddleware(thunk)),

@@ -6,6 +6,7 @@ import AuthForm from './forms/AuthForm/AuthForm';
 import PostList from './forms/PostList/PostList';
 import UserList from './forms/UserList/UserList';
 import User from './forms/User/User';
+import RegForm from './forms/RegForm/RegForm';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route path={'/users'} element={<UserList />} />
               <Route path={'/users/:id'} element={<User />} />
               <Route path={'/auth'} element={<AuthForm />} />
+              <Route path={'/reg'} element={<RegForm />} />
             </Routes>
           </div>
         </main>

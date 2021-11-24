@@ -34,7 +34,9 @@ const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser,
                             :
                                 <UserCard
                                     picture={user.picture}
-                                    fullName={`${user.title} ${user.firstName} ${user.lastName}`}
+                                    title={user.title}
+                                    firstName={user.firstName}
+                                    lastName={user.lastName}
                                     gender={user.gender}
                                     dateOfBirth={user.dateOfBirth}
                                     registerDate={user.registerDate}
@@ -56,7 +58,9 @@ const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser,
                                                     key={index}
                                                     id={item.owner.id}
                                                     avatar={item.owner.picture}
-                                                    fullName={`${item.owner.title} ${item.owner.firstName} ${item.owner.lastName}`}
+                                                    title={item.owner.title}
+                                                    firstName={item.owner.firstName}
+                                                    lastName={item.owner.lastName}
                                                     date={item.publishDate}
                                                     picture={item.image}
                                                     text={item.text}

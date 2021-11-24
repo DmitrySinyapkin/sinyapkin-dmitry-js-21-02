@@ -21,7 +21,7 @@ const AuthorizationMenu = ({ authUser, authorized, cancelUser }) => {
                         :
                             <div className="auth-menu">
                                 <div className="auth-menu__first"><Link to="/auth">Вход</Link></div>
-                                <div className="auth-menu__second">Регистрация</div>
+                                <div className="auth-menu__second"><Link to="/reg">Регистрация</Link></div>
                             </div>
     );
 }

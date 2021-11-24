@@ -8,7 +8,7 @@ const UserCard = (props) => {
             <figure><img src={props.picture} alt="Load Error" /></figure>
             <div className="user__data">
                 <div className="user__info">
-                    <h2>{props.fullName}</h2>
+                    <h2>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</h2>
                     <div className="info__line"><span className="info__title">Пол: </span><span>{props.gender}</span></div>
                     <div className="info__line"><span className="info__title">Дата рождения: </span><span>{props.dateOfBirth}</span></div>
                     <div className="info__line"><span className="info__title">Дата регистрации: </span><span>{props.registerDate}</span></div>

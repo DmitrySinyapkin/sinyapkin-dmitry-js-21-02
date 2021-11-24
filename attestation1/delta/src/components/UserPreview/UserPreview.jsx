@@ -9,7 +9,7 @@ const UserPreview = (props) => {
                 <img src={props.picture} alt="Load Error" />
             </figure>
             <HelperWrapper text={props.id}>
-                <div className="user__name">{props.fullName}</div>
+                <div className="user__name">{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</div>
             </HelperWrapper>
         </div>
     );

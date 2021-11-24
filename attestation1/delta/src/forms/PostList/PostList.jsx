@@ -34,7 +34,9 @@ const PostList = ({ posts, total, loading, loadPostList}) => {
                                     key={index}
                                     id={item.owner.id}
                                     avatar={item.owner.picture}
-                                    fullName={`${item.owner.title} ${item.owner.firstName} ${item.owner.lastName}`}
+                                    title={item.owner.title}
+                                    firstName={item.owner.firstName}
+                                    lastName={item.owner.lastName}
                                     date={item.publishDate}
                                     picture={item.image}
                                     text={item.text}

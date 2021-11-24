@@ -35,7 +35,9 @@ const UserList = ({ users, total, loading, loadUserList}) => {
                                     <UserPreview
                                         key={index}
                                         id={item.id}
-                                        fullName={`${item.title} ${item.firstName} ${item.lastName}`}
+                                        title={item.title}
+                                        firstName={item.firstName}
+                                        lastName={item.lastName}
                                         picture={item.picture}
                                     /> 
                                 </Link>

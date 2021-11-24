@@ -9,7 +9,7 @@ const PostPreview = (props) => {
         <div className="post__container">
             <Avatar className={`post__avatar ${props.hidden && "hidden"}`} shape="circle" src={props.avatar} />
             <HelperWrapper text={props.id}>
-                <div className={`post__name ${props.hidden && "hidden"}`}><Link to={`/users/${props.id}`}>{props.fullName}</Link></div>
+                <div className={`post__name ${props.hidden && "hidden"}`}><Link to={`/users/${props.id}`}>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</Link></div>
             </HelperWrapper>
             <div className={`post__date ${props.hidden && "hidden"}`}>{props.date.slice(0, 10)}</div>
             <figure className="post__picture">

@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import './AuthForm.css';
-import { Navigate } from 'react-router-dom';
+import { Navigate, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/authorization';
@@ -26,7 +26,7 @@ const AuthForm = ({redirectId, authorized, authorizeUser}) => {
                     <div className="auth-form__label">ID:</div>
                     <div><input className="auth-form__input" type="text" placeholder="Введите свой ID" onChange={(event) => setId(event.target.value)} /></div>
                     <div><button className="auth-form__button" onClick={handleButtonClick}>Войти</button></div>
-                    <div className="auth-form__reg">Еще нет аккаунта? Зарегистрироваться</div>
+                    <div className="auth-form__reg">Еще нет аккаунта? <Link to={'/reg'}>Зарегистрироваться</Link></div>
                 </div>
             </div>
             {authorized && <Navigate to={`/users/${redirectId}`} />}
