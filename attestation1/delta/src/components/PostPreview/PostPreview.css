@@ -22,6 +22,11 @@
   grid-area: name;
   font-size: 14px;
 }
+@media (max-width: 768px) {
+  .post__container .post__name {
+    font-size: 10px;
+  }
+}
 .post__container .post__date {
   grid-area: date;
   font-size: 10px;

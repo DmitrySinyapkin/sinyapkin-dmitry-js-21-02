@@ -30,7 +30,7 @@
         .img-sizes;
         border-radius: @picture-radius;
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
             width: 180px;
             height: 180px;
         }
@@ -53,13 +53,17 @@
         .user__info h2 {
             font-size: @name-font-size;
             margin-bottom: @container-gap;
+
+            @media (max-width: 800px) {
+                font-size: @font-size;
+            }
         }
 
         .info__line {
             font-size: @font-size;
             margin-bottom: @text-gap;
 
-            @media (max-width: 768px) {
+            @media (max-width: 800px) {
                 font-size: @edit-font-size;
             }
         }
@@ -67,7 +71,7 @@
         .user__id {
             font-size: @font-size;
 
-            @media (max-width: 768px) {
+            @media (max-width: 800px) {
                 font-size: @edit-font-size;
             }
         }
@@ -86,7 +90,7 @@
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
     .edit__text {
         display: none;
     }
