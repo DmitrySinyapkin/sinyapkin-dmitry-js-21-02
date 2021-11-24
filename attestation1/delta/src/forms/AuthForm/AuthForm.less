@@ -16,6 +16,7 @@
         height: 70vh;
         background: @bg-color;
         border-radius: @border-radius;
+        color: black;
 
         display: flex;
         flex-direction: column;
@@ -37,8 +38,12 @@
         }
 
         button {
-            color: #ffffff;
+            color: #ffff;
             background: black; 
+        }
+
+        .auth-form__button_dark {
+            background: #1890ff; 
         }
 
         .auth-form__reg {
@@ -46,5 +51,9 @@
             font-size: 10px;
             text-align: center;
         }
+    }
+
+    .auth-form_dark {
+        background: #98989d;
     }
 }

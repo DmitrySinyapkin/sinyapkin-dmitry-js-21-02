@@ -9,7 +9,7 @@ import * as actions from '../../actions/loadUserData';
 import UserCard from "../../components/UserCard/UserCard";
 import PostPreview from "../../components/PostPreview/PostPreview";
 
-const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList }) => {
+const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList }) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(3);
     const params = useParams();
@@ -44,6 +44,7 @@ const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser,
                                     phone={user.phone}
                                     id={user.id}
                                     authId={authUser.id}
+                                    darkTheme={darkTheme}
                                 />
             }
             {userPostsLoading ?
@@ -65,6 +66,7 @@ const User = ({ user, userDataLoading, posts, total, userPostsLoading, authUser,
                                                     picture={item.image}
                                                     text={item.text}
                                                     hidden
+                                                    darkTheme={darkTheme}
                                                 /> 
                                          )}
                                     </div>
@@ -90,6 +92,7 @@ export default connect(
         total: state.userData.total,
         userPostsLoading: state.userData.postsLoading,
         authUser: state.auth.authUser,
+        darkTheme: state.theme.darkTheme,
     }),
     (dispatch) => bindActionCreators(actions, dispatch),
 )(User);

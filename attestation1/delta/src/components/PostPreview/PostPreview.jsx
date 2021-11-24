@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const PostPreview = (props) => {
     return (
-        <div className="post__container">
+        <div className={`post__container ${props.darkTheme && 'post_dark'}`}>
             <Avatar className={`post__avatar ${props.hidden && "hidden"}`} shape="circle" src={props.avatar} />
             <HelperWrapper text={props.id}>
                 <div className={`post__name ${props.hidden && "hidden"}`}><Link to={`/users/${props.id}`}>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</Link></div>

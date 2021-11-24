@@ -51,3 +51,6 @@
 .hidden {
   display: none;
 }
+.post_dark {
+  background: black;
+}

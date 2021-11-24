@@ -4,7 +4,7 @@ import HelperWrapper from "../../wrappers/HelperWrapper/HelperWrapper";
 
 const UserPreview = (props) => {
     return (
-        <div className="user__container">
+        <div className={`user__container ${props.darkTheme && 'user_dark'}`}>
             <figure className="user__picture">
                 <img src={props.picture} alt="Load Error" />
             </figure>

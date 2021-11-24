@@ -7,7 +7,7 @@ import * as actions from '../../actions/authorization';
 
 
 
-const AuthForm = ({redirectId, authorized, authorizeUser}) => {
+const AuthForm = ({ darkTheme, redirectId, authorized, authorizeUser}) => {
     const [id, setId] = useState('');
 
     const handleButtonClick = () => {
@@ -20,7 +20,7 @@ const AuthForm = ({redirectId, authorized, authorizeUser}) => {
 
     return (
         <div className="auth-form__page">
-            <div className="auth-form">
+            <div className={`auth-form ${darkTheme && 'auth-form_dark'}`}>
                 <div className="auth-form__container">
                     <h2>Вход</h2>
                     <div className="auth-form__label">ID:</div>
@@ -38,6 +38,7 @@ export default connect(
     (state) => ({
         redirectId: state.auth.authUser.id,
         authorized: state.auth.authorized,
+        darkTheme: state.theme.darkTheme,
     }),
     (dispatch) => bindActionCreators(actions, dispatch),
 )(AuthForm);

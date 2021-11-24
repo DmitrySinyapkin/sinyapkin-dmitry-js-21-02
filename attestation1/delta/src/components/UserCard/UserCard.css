@@ -73,6 +73,10 @@
 .user__container .user__edit_visible {
   display: block;
 }
+.user_dark {
+  background: black;
+  color: #ffff;
+}
 @media (max-width: 800px) {
   .edit__text {
     display: none;

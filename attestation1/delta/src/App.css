@@ -24,6 +24,15 @@ a {
   color: inherit;
 }
 
+.App__dark {
+  background: #666671;
+  color: #ffffff;
+}
+
+.header-footer__dark {
+  background: black;
+}
+
 @media (min-width: 1025px) and (max-width: 1200px) {
   .content-wrapper {
     width: 1024px;

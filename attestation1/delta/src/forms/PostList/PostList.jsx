@@ -7,7 +7,7 @@ import { bindActionCreators } from "redux";
 import * as actions from '../../actions/loadPostList';
 import PostPreview from "../../components/PostPreview/PostPreview";
 
-const PostList = ({ posts, total, loading, loadPostList}) => {
+const PostList = ({ darkTheme, posts, total, loading, loadPostList}) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(6);
 
@@ -40,6 +40,7 @@ const PostList = ({ posts, total, loading, loadPostList}) => {
                                     date={item.publishDate}
                                     picture={item.image}
                                     text={item.text}
+                                    darkTheme={darkTheme}
                                 /> 
                             )}
                         </div>
@@ -61,6 +62,7 @@ export default connect(
         posts: state.posts.postList,
         total: state.posts.total,
         loading: state.posts.loading,
+        darkTheme: state.theme.darkTheme,
     }),
     (dispatch) => bindActionCreators(actions, dispatch),
 )(PostList);

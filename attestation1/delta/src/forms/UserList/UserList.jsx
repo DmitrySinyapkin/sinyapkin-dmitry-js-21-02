@@ -8,7 +8,7 @@ import * as actions from '../../actions/loadUserList';
 import UserPreview from "../../components/UserPreview/UserPreview";
 import { Link } from "react-router-dom";
 
-const UserList = ({ users, total, loading, loadUserList}) => {
+const UserList = ({ darkTheme, users, total, loading, loadUserList}) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(6);
 
@@ -39,6 +39,7 @@ const UserList = ({ users, total, loading, loadUserList}) => {
                                         firstName={item.firstName}
                                         lastName={item.lastName}
                                         picture={item.picture}
+                                        darkTheme={darkTheme}
                                     /> 
                                 </Link>
                             )}
@@ -61,6 +62,7 @@ export default connect(
         users: state.users.userList,
         total: state.users.total,
         loading: state.users.loading,
+        darkTheme: state.theme.darkTheme,
     }),
     (dispatch) => bindActionCreators(actions, dispatch),
 )(UserList);

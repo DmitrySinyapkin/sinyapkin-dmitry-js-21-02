@@ -1,5 +1,6 @@
 import './App.css';
 import { HashRouter, Routes, Route } from 'react-router-dom'
+import { connect } from 'react-redux';
 import Header from './components/Header/Header';
 import Footer from './components/Footer/Footer';
 import AuthForm from './forms/AuthForm/AuthForm';
@@ -8,13 +9,13 @@ import UserList from './forms/UserList/UserList';
 import User from './forms/User/User';
 import RegForm from './forms/RegForm/RegForm';
 
-function App() {
+function App({ darkTheme }) {
   return (
     <HashRouter>
-      <div className="App">
-        <header>
+      <div className={`App ${darkTheme && "App__dark"}`}>
+        <header className={darkTheme && "header-footer__dark"}>
           <div className="content-wrapper">
-            <Header />
+            <Header darkTheme={darkTheme}/>
           </div>
         </header>
         <main>
@@ -28,7 +29,7 @@ function App() {
             </Routes>
           </div>
         </main>
-        <footer>
+        <footer className={darkTheme && "header-footer__dark"}>
           <div className="content-wrapper">
             <Footer />
           </div>
@@ -38,4 +39,9 @@ function App() {
   );
 }
 
-export default App;
+export default connect(
+  (state) => ({
+      darkTheme: state.theme.darkTheme,
+  }),
+  () => {},
+)(App);

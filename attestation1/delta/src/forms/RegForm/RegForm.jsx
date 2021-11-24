@@ -7,7 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/registerUser';
 
-const RegForm = ({ id, redirect, addNewUser, preventRedirect }) => {
+const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [gender, setGender] = useState('');
@@ -38,7 +38,7 @@ const RegForm = ({ id, redirect, addNewUser, preventRedirect }) => {
 
     return (
         <div className="reg-form__page">
-            <div className="reg-form__container">
+            <div className={`reg-form__container ${darkTheme && 'reg-form_dark'}`}>
                 <Form onFinish={handleSubmit} onFinishFailed={handleFailedValidation}>
                     <h2>Регистрация</h2>
                     <Form.Item
@@ -133,6 +133,7 @@ export default connect(
     (state) => ({
         id: state.newUser.newUserId,
         redirect: state.newUser.redirect,
+        darkTheme: state.theme.darkTheme,
     }),
     (dispatch) => bindActionCreators(actions, dispatch),
 )(RegForm);

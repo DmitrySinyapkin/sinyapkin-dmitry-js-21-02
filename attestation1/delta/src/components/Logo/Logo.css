@@ -10,3 +10,6 @@
 .logo__container h1 {
   font-size: 25px;
 }
+.logo__container .h1_dark {
+  color: #ffff;
+}

@@ -4,11 +4,11 @@ import Logo from "../Logo/Logo";
 import TopMenu from "../Menu/TopMenu";
 import AuthorizationMenu from "../AuthorizationMenu/AuthorizationMenu";
 
-const Header = () => {
+const Header = (props) => {
     return (
         <div className="header">
-            <Logo />
-            <TopMenu />
+            <Logo darkTheme={props.darkTheme} />
+            <TopMenu darkTheme={props.darkTheme} />
             <AuthorizationMenu />
         </div>
     );
