@@ -11,8 +11,11 @@ const cancelUserAction = () => ({
 
 export const authorizeUser = (id) => (dispatch) => {
     getUserDataApi(id)
-        .then(response => dispatch(authUserAction(response)))
-        .catch(error => alert(`Ошибка загрузки: ${error}`));
+        .then(response => response.id ? 
+                    dispatch(authUserAction(response)) 
+                : 
+                    alert('Ошибка входа! Введите корректный ID!')
+            );
 }
 
 export const cancelUser = () => (dispatch) => {
