@@ -1,15 +1,19 @@
 import { Pagination } from "antd";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useLayoutEffect } from "react";
 import { useParams } from "react-router";
 import Loader from "../../components/Loader/Loader";
 import './User.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import * as actions from '../../actions/loadUserData';
+import { loadUserData, loadUserPostList } from '../../actions/loadUserData';
+import { openPost, closePost } from '../../actions/loadPostList';
 import UserCard from "../../components/UserCard/UserCard";
 import PostPreview from "../../components/PostPreview/PostPreview";
+import ModalWrapper from "../../wrappers/ModalWrapper/ModalWrapper";
+import OpenPost from "../OpenPost/OpenPost";
 
-const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList }) => {
+
+const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList, post, isOpen, openPost, closePost }) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(3);
     const params = useParams();
@@ -19,11 +23,24 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
         loadUserPostList(params.id, 0, 3);
     }, []);
 
+    useLayoutEffect(() => {
+        closePost();
+}, [])
+
     const changePage = (page, limit) => {
         setCurrent(page);
         setPageSize(limit);
         loadUserPostList(user.id, page - 1, limit);
     }
+
+    const openModal = (post) => {
+        openPost(post);
+    }
+
+    const closeModal = () => {
+        closePost();
+    }
+    
 
     return (
         <div className="user-form">
@@ -55,6 +72,7 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                 <div>
                                     <div className="user-posts__container">
                                         {posts.map((item, index) =>
+                                            <div onClick={() => openModal(item)}>
                                                 <PostPreview
                                                     key={index}
                                                     id={item.owner.id}
@@ -68,6 +86,7 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                                     hidden
                                                     darkTheme={darkTheme}
                                                 /> 
+                                            </div>
                                          )}
                                     </div>
                                     <div className="posts__footer">
@@ -80,6 +99,19 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                      </div>
                                 </div>
             }
+            <ModalWrapper isOpen={isOpen} closeModal={closeModal}>
+                {isOpen && <OpenPost
+                                id={post.id}
+                                avatar={post.owner.picture}
+                                ownerId={post.owner.id}
+                                title={post.owner.title}
+                                firstName={post.owner.firstName}
+                                lastName={post.owner.lastName}
+                                publishDate={post.publishDate.slice(0, 10)}
+                                picture={post.image}
+                                text={post.text}
+                            />}
+            </ModalWrapper>
         </div>
     );
 }
@@ -93,6 +125,13 @@ export default connect(
         userPostsLoading: state.userData.postsLoading,
         authUser: state.auth.authUser,
         darkTheme: state.theme.darkTheme,
+        post: state.posts.post,
+        isOpen: state.posts.isOpen,
     }),
-    (dispatch) => bindActionCreators(actions, dispatch),
+    (dispatch) => ({
+        loadUserData: bindActionCreators(loadUserData, dispatch),
+        loadUserPostList: bindActionCreators(loadUserPostList, dispatch),
+        openPost: bindActionCreators(openPost, dispatch),
+        closePost: bindActionCreators(closePost, dispatch),
+    }),
 )(User);

@@ -13,9 +13,26 @@ const loadingPostListSuccessAction = (postList) => ({
     postList,
 });
 
+const openPostAction = (post) => ({
+    type: 'POST_PREVIEW/OPEN_POST',
+    post,
+});
+
+const closePostAction = () => ({
+    type: 'POST_PREVIEW/CLOSE_POST',
+});
+
 export const loadPostList = (page, limit) => (dispatch) => {
     dispatch(showLoadingAction());
     getPostListApi(page, limit)
         .then(response => dispatch(loadingPostListSuccessAction(response)))
         .finally(() => dispatch(hideLoadingAction()));
+}
+
+export const openPost = (post) => (dispatch) => {
+    dispatch(openPostAction(post));
+}
+
+export const closePost = () => (dispatch) => {
+    dispatch(closePostAction());
 }

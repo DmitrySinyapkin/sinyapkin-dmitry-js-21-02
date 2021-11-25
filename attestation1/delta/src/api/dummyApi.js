@@ -47,3 +47,13 @@ export const getPostListByUserApi = (id, page, limit) => {
     const url = USER_LIST_URL + `/${id}/post?page=${page}&limit=${limit}`;
     return createGetFetch(url);
 }
+
+export const getPostByIdApi = (id) => {
+    const url = POST_LIST_URL + `/${id}`;
+    return createGetFetch(url);
+}
+
+export const getCommentsApi = (postId, page, limit) => {
+    const url = POST_LIST_URL + `/${postId}/comment?page=${page}&limit=${limit}`;
+    return createGetFetch(url);
+}
