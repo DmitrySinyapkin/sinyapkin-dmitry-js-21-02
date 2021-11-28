@@ -22,6 +22,18 @@ async function createPostFetch(url, data) {
     return await response.json();
 }
 
+async function createPutFetch(url, data) {
+    const response = await fetch(url, {
+        method: 'PUT',
+        headers: new Headers({
+            [APP_ID_FIELD]: APP_ID_VALUE,
+            'Content-Type': 'application/json;charset=utf-8'
+        }),
+        body: data,
+    });
+    return await response.json();
+}
+
 export const getUserListApi = (page, limit) => {
     const url = USER_LIST_URL + `?page=${page}&limit=${limit}`;
     return createGetFetch(url);
@@ -56,4 +68,10 @@ export const getPostByIdApi = (id) => {
 export const getCommentsApi = (postId, page, limit) => {
     const url = POST_LIST_URL + `/${postId}/comment?page=${page}&limit=${limit}`;
     return createGetFetch(url);
+}
+
+export const udateUserApi = (id, data) => {
+    const url = USER_LIST_URL + `/${id}`;
+    const newData = JSON.stringify(data);
+    return createPutFetch(url, newData);
 }

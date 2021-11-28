@@ -6,6 +6,7 @@ const initialState = {
     postList: [],
     total: 0,
     postsLoading: false,
+    editorOpened: false,
 }
 
 const showUserLoading = (draft) => {
@@ -39,6 +40,16 @@ const loadUserPosts = (draft, response) => {
     return draft;
 }
 
+const openEditor = (draft) => {
+    draft.editorOpened = true;
+    return draft;
+}
+
+const closeEditor = (draft) => {
+    draft.editorOpened = false;
+    return draft;
+}
+
 
 const userDataReducer = (state = initialState, action) => produce(state, (draft) => {
     switch (action.type) {
@@ -54,6 +65,12 @@ const userDataReducer = (state = initialState, action) => produce(state, (draft)
             return hidePostsLoading(draft);
         case 'USER/LOADING_USER_POST_LIST':
             return loadUserPosts(draft, action.postList);
+        case 'EDIT_PROFILE/UPDATE_USER_DATA':
+            return loadUserData(draft, action.userData);
+        case 'EDIT_PROFILE/OPEN_EDITOR':
+            return openEditor(draft);
+        case 'EDIT_PROFILE/CLOSE_EDITOR':
+            return closeEditor(draft);
         default:
             return state;
     }

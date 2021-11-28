@@ -17,7 +17,7 @@ const UserCard = (props) => {
                 </div>
                 <div className="user__id"><span className="info__title">ID: </span><span>{props.id}</span></div>
             </div>
-            <div className={`user__edit ${(props.authId === props.id) && "user__edit_visible"}`}><FormOutlined /><span className="edit__text">Редактировать</span></div>
+            <div className={`user__edit ${(props.authId === props.id) && "user__edit_visible"}`} onClick={props.edit}><FormOutlined /><span className="edit__text">Редактировать</span></div>
         </div>
     );
 }

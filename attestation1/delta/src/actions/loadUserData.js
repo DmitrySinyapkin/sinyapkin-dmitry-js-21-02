@@ -1,4 +1,4 @@
-import { getUserDataApi, getPostListByUserApi } from "../api/dummyApi";
+import { getUserDataApi, getPostListByUserApi, udateUserApi } from "../api/dummyApi";
 
 const showUserLoadingAction = () => ({
     type: 'USER/SHOW_LOADING',
@@ -24,7 +24,21 @@ const hidePostsLoadingAction = () => ({
 const loadingUserPostList = (postList) => ({
     type: 'USER/LOADING_USER_POST_LIST',
     postList,
-})
+});
+
+const updateUserDataAction = (userData) => ({
+    type: 'EDIT_PROFILE/UPDATE_USER_DATA',
+    userData,
+});
+
+const openEditorAction = () => ({
+    type: 'EDIT_PROFILE/OPEN_EDITOR',
+});
+
+const closeEditorAction = () => ({
+    type: 'EDIT_PROFILE/CLOSE_EDITOR',
+});
+
 
 export const loadUserData = (id) => (dispatch) => {
     dispatch(showUserLoadingAction());
@@ -40,3 +54,15 @@ export const loadUserPostList = (id, page, limit) => (dispatch) => {
         .finally(() => dispatch(hidePostsLoadingAction()));
 }
 
+export const updateUserData = (id, data) => (dispatch) => {
+    udateUserApi(id, data)
+        .then(response => dispatch(updateUserDataAction(response)));
+}
+
+export const openEditor = () => (dispatch) => {
+    dispatch(openEditorAction());
+}
+
+export const closeEditor = () => (dispatch) => {
+    dispatch(closeEditorAction());
+}

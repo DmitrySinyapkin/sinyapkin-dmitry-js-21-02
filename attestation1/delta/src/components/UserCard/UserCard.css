@@ -73,6 +73,7 @@
 }
 .user__container .user__edit_visible {
   display: block;
+  cursor: pointer;
 }
 .user_dark {
   background: black;

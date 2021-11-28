@@ -5,15 +5,16 @@ import Loader from "../../components/Loader/Loader";
 import './User.css';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
-import { loadUserData, loadUserPostList } from '../../actions/loadUserData';
+import { openEditor, closeEditor, updateUserData, loadUserData, loadUserPostList } from '../../actions/loadUserData';
 import { openPost, closePost } from '../../actions/loadPostList';
 import UserCard from "../../components/UserCard/UserCard";
 import PostPreview from "../../components/PostPreview/PostPreview";
 import ModalWrapper from "../../wrappers/ModalWrapper/ModalWrapper";
 import OpenPost from "../OpenPost/OpenPost";
+import EditProfile from "../EditProfile/EditProfile";
 
 
-const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList, post, isOpen, openPost, closePost }) => {
+const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList, post, isOpen, openPost, closePost, editorOpened, openEditor, closeEditor, updateUserData  }) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(3);
     const params = useParams();
@@ -40,7 +41,6 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
     const closeModal = () => {
         closePost();
     }
-    
 
     return (
         <div className="user-form">
@@ -62,6 +62,7 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                     id={user.id}
                                     authId={authUser.id}
                                     darkTheme={darkTheme}
+                                    edit={openEditor}
                                 />
             }
             {userPostsLoading ?
@@ -112,6 +113,15 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                 text={post.text}
                             />}
             </ModalWrapper>
+            <ModalWrapper isOpen={editorOpened} closeModal={closeEditor}>
+                {editorOpened && <EditProfile
+                                    darkTheme={darkTheme}
+                                    user={user}
+                                    updateUserData={updateUserData}
+                                    closeEditor={closeEditor}
+                                />
+                }
+            </ModalWrapper>
         </div>
     );
 }
@@ -123,6 +133,7 @@ export default connect(
         posts: state.userData.postList,
         total: state.userData.total,
         userPostsLoading: state.userData.postsLoading,
+        editorOpened: state.userData.editorOpened,
         authUser: state.auth.authUser,
         darkTheme: state.theme.darkTheme,
         post: state.posts.post,
@@ -133,5 +144,8 @@ export default connect(
         loadUserPostList: bindActionCreators(loadUserPostList, dispatch),
         openPost: bindActionCreators(openPost, dispatch),
         closePost: bindActionCreators(closePost, dispatch),
+        openEditor: bindActionCreators(openEditor, dispatch),
+        closeEditor: bindActionCreators(closeEditor, dispatch),
+        updateUserData: bindActionCreators(updateUserData, dispatch),
     }),
 )(User);
