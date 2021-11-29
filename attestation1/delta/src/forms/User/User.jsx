@@ -74,9 +74,8 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                 <div>
                                     <div className="user-posts__container">
                                         {posts.map((item, index) =>
-                                            <div onClick={() => openModal(item)}>
+                                            <div onClick={() => openModal(item)} key={index}>
                                                 <PostPreview
-                                                    key={index}
                                                     id={item.owner.id}
                                                     avatar={item.owner.picture}
                                                     title={item.owner.title}

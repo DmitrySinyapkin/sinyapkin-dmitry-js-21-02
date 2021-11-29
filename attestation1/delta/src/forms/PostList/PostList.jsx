@@ -44,9 +44,8 @@ const PostList = ({ darkTheme, posts, total, loading, post, isOpen, loadPostList
                    <div className="posts__page">
                         <div className="posts__container">
                             {posts.map((item, index) =>
-                                <div onClick={() => openModal(item)}>
+                                <div onClick={() => openModal(item)} key={index}>
                                     <PostPreview
-                                        key={index}
                                         id={item.owner.id}
                                         avatar={item.owner.picture}
                                         title={item.owner.title}
