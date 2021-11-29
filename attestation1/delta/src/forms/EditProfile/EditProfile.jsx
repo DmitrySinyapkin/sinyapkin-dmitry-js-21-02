@@ -3,7 +3,7 @@ import './EditProfile.css';
 import { Upload, Button, Form, Input, Radio } from 'antd';
 import { UPLOAD_API_KEY, UPLOAD_URL } from "../../constants/imgbbApi";
 
-const EditProfile = ({ darkTheme, user, updateUserData, closeEditor}) => {
+const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, updateUserData, closeEditor}) => {
     const [firstName, setFirstName] = useState(user.firstName);
     const [lastName, setLastName] = useState(user.lastName);
     const [gender, setGender] = useState(user.gender);
@@ -44,6 +44,7 @@ const EditProfile = ({ darkTheme, user, updateUserData, closeEditor}) => {
     }
 
     const handleSubmit = () => {
+        const id = authUser.id;
         const updatedUser = {
             firstName: firstName,
             lastName: lastName,
@@ -54,6 +55,8 @@ const EditProfile = ({ darkTheme, user, updateUserData, closeEditor}) => {
         }
 
         updateUserData(user.id, updatedUser);
+        cancelUser();
+        authorizeUser(id);
         closeEditor();
     }
 
@@ -64,7 +67,7 @@ const EditProfile = ({ darkTheme, user, updateUserData, closeEditor}) => {
     return (
         <div className={`edit ${darkTheme && 'edit_dark'}`}>
             <figure>
-                <img src={user.picture} alt="Нет фото" />
+                <img src={picture} alt="Нет фото" />
             </figure>
             <div className="edit__img-buttons">
                 <Upload {...uploadProps}>

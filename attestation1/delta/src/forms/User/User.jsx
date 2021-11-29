@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import { openEditor, closeEditor, updateUserData, loadUserData, loadUserPostList } from '../../actions/loadUserData';
 import { openPost, closePost } from '../../actions/loadPostList';
+import { authorizeUser, cancelUser } from '../../actions/authorization';
 import UserCard from "../../components/UserCard/UserCard";
 import PostPreview from "../../components/PostPreview/PostPreview";
 import ModalWrapper from "../../wrappers/ModalWrapper/ModalWrapper";
@@ -14,7 +15,7 @@ import OpenPost from "../OpenPost/OpenPost";
 import EditProfile from "../EditProfile/EditProfile";
 
 
-const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, loadUserData, loadUserPostList, post, isOpen, openPost, closePost, editorOpened, openEditor, closeEditor, updateUserData  }) => {
+const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading, authUser, authorizeUser, cancelUser, loadUserData, loadUserPostList, post, isOpen, openPost, closePost, editorOpened, openEditor, closeEditor, updateUserData  }) => {
     const [current, setCurrent] = useState(0);
     const [pageSize, setPageSize] = useState(3);
     const params = useParams();
@@ -117,7 +118,10 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                 {editorOpened && <EditProfile
                                     darkTheme={darkTheme}
                                     user={user}
+                                    authUser={authUser}
                                     updateUserData={updateUserData}
+                                    authorizeUser={authorizeUser}
+                                    cancelUser={cancelUser}
                                     closeEditor={closeEditor}
                                 />
                 }
@@ -147,5 +151,7 @@ export default connect(
         openEditor: bindActionCreators(openEditor, dispatch),
         closeEditor: bindActionCreators(closeEditor, dispatch),
         updateUserData: bindActionCreators(updateUserData, dispatch),
+        authorizeUser: bindActionCreators(authorizeUser, dispatch),
+        cancelUser: bindActionCreators(cancelUser, dispatch),
     }),
 )(User);

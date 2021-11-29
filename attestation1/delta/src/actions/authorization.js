@@ -21,4 +21,3 @@ export const authorizeUser = (id) => (dispatch) => {
 export const cancelUser = () => (dispatch) => {
     dispatch(cancelUserAction());
 }
-
