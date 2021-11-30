@@ -8,22 +8,20 @@
 }
 
 .user__container {
-    flex: 1 1 30%;
+    //flex: 1 1 30%;
     width: @size;
-    height: @size;
+    max-height: @size;
     padding: @padding;
     background: #ffff;
     border-radius: @radius;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    gap: 20px;
     align-items: center;
 
     .user__picture {
-        width: 280px;
+        width: 260px;
         height: 200px;
-        display: flex;
-        justify-content: center;
         border-radius: @radius;
 
         img {

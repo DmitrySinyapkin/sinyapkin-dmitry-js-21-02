@@ -31,9 +31,8 @@ const UserList = ({ darkTheme, users, total, loading, loadUserList}) => {
                    <div className="users__page">
                         <div className="users__container">
                             {users.map((item, index) =>
-                                <Link to={`${item.id}`}>
+                                <Link to={`${item.id}`} key={index}>
                                     <UserPreview
-                                        key={index}
                                         id={item.id}
                                         title={item.title}
                                         firstName={item.firstName}

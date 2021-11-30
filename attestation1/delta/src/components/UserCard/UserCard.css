@@ -1,6 +1,6 @@
 .img-sizes {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
 }
 .user__container {
   width: 100%;
@@ -15,8 +15,8 @@
   position: relative;
 }
 .user__container figure {
-  width: 300px;
-  height: 300px;
+  width: 260px;
+  height: 260px;
   border-radius: 16px;
 }
 @media (max-width: 800px) {
