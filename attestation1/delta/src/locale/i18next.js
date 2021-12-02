@@ -16,5 +16,5 @@ i18next
         },
     });
 
-    i18next.changeLanguage('ru');
+    i18next.changeLanguage(localStorage.getItem('lang') ? localStorage.getItem('lang') : 'ru');
     

@@ -7,12 +7,16 @@ const { Option } = Select;
 
 const LanguageChanger = () => {
     const handleLanguageChange = (value) => {
+        localStorage.setItem('lang', value);
         i18next.changeLanguage(value);
     }
 
     return (
         <div className="language-changer">
-            <Select defaultValue="ru" onChange={handleLanguageChange}>
+            <Select
+                defaultValue={localStorage.getItem('lang') ? localStorage.getItem('lang') : 'ru'}
+                onChange={handleLanguageChange}
+            >
                 <Option value="ru">Ru</Option>
                 <Option value="en">En</Option>
             </Select>
