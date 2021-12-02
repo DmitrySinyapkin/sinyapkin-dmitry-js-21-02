@@ -6,6 +6,7 @@ import { Navigate } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/registerUser';
+import { useTranslation } from "react-i18next";
 
 const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
     const [firstName, setFirstName] = useState('');
@@ -14,6 +15,8 @@ const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
     const [dateOfBirth, setDateOfBirth] = useState('');
     const [email, setEmail] = useState('');
     const [phone, setPhone] = useState('');
+
+    const { t } = useTranslation();
 
     const handleSubmit = () => {
         const user = {
@@ -29,7 +32,7 @@ const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
     }
 
     const handleFailedValidation = () => {
-        alert('Ошибка заполнения формы! Введите корректные данные!');
+        alert(t('alerts.regForm'));
     }
 
     useEffect(() => {
@@ -40,54 +43,55 @@ const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
         <div className="reg-form__page">
             <div className={`reg-form__container ${darkTheme && 'reg-form_dark'}`}>
                 <Form onFinish={handleSubmit} onFinishFailed={handleFailedValidation}>
-                    <h2>Регистрация</h2>
+                    <h2>{t('regForm.header')}</h2>
                     <Form.Item
                         name="firstName"
-                        label="Имя"
+                        label={t('user.name')}
                         rules={[
                             {
                                 required: true,
-                                message: 'Только латинские и русские буквы',
+                                message: t('validation.latters'),
                                 pattern: /^[a-zA-Zа-яА-яёЁ]+$/,
                             },
                         ]}
                     >
-                        <Input placeholder="Введите имя" onChange={(event) => setFirstName(event.target.value)} />
+                        <Input placeholder={t('regForm.placeholders.name')} onChange={(event) => setFirstName(event.target.value)} />
                     </Form.Item>
                     <Form.Item
                         name="lastName"
-                        label="Фамилия"
+                        label={t('user.surname')}
                         rules={[
                             {
                                 required: true,
-                                message: 'Только латинские и русские буквы',
+                                message: t('validation.latters'),
                                 pattern: /^[a-zA-Zа-яА-яёЁ]+$/,
                             },
                         ]}
                     >
-                        <Input placeholder="Введите фамилию" onChange={(event) => setLastName(event.target.value)} />
+                        <Input placeholder={t('regForm.placeholders.surname')} onChange={(event) => setLastName(event.target.value)} />
                     </Form.Item>
-                    <Form.Item name="gender" label="Пол" rules={[
+                    <Form.Item name="gender" label={t('user.gender')} rules={[
                             {
                                 required: true,
+                                message: t('validation.gender'),
                             },
                         ]}>
                         <Radio.Group onChange={(event) => setGender(event.target.value)}>
-                            <Radio value="male">Мужской</Radio>
-                            <Radio value="female">Женский</Radio>
+                            <Radio value="male">{t('user.male')}</Radio>
+                            <Radio value="female">{t('user.female')}</Radio>
                         </Radio.Group>
                     </Form.Item>
                     <Form.Item
                         name="dateOfBirth"
-                        label="Дата рождения"
+                        label={t('user.birthday')}
                         rules={[
                             {
-                                message: 'Введите дату рождения в формате ГГГГ-ММ-ДД',
+                                message: t('validation.birthday'),
                                 pattern: /[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/,
                             },
                         ]}
                     >
-                        <Input placeholder="ГГГГ-ММ-ДД" onChange={(event) => setDateOfBirth(event.target.value)} />
+                        <Input placeholder={t('regForm.placeholders.birthday')} onChange={(event) => setDateOfBirth(event.target.value)} />
                     </Form.Item>
                     <Form.Item
                         name="email"
@@ -95,11 +99,11 @@ const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
                         rules={[
                             {
                             type: 'email',
-                            message: 'Введите корректный  E-mail!',
+                            message: t('validation.email'),
                             },
                             {
                             required: true,
-                            message: 'Введите корректный E-mail!',
+                            message: t('validation.email'),
                             },
                         ]}
                     >
@@ -107,22 +111,22 @@ const RegForm = ({ darkTheme, id, redirect, addNewUser, preventRedirect }) => {
                     </Form.Item>
                     <Form.Item
                         name="phone"
-                        label="Телефон"
+                        label={t('user.phone')}
                         rules={[
                             {
                                 required: true,
-                                message: 'Введите корректный номер телефона',
+                                message: t('validation.phone'),
                                 pattern: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/,
                             },
                         ]}
                     >
-                        <Input placeholder="Введите номер телефона" onChange={(event) => setPhone(event.target.value)} />
+                        <Input placeholder={t('regForm.placeholders.phone')} onChange={(event) => setPhone(event.target.value)} />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit">Зарегистрироваться</Button>
+                        <Button type="primary" htmlType="submit">{t('regForm.button')}</Button>
                     </Form.Item>
                 </Form>
-                <div className="reg-form__auth">Уже есть аккаунт? <Link to={'/auth'}>Войти</Link></div>
+                <div className="reg-form__auth">{t('regForm.message')}<Link to={'/auth'}>{t('regForm.link')}</Link></div>
             </div>
             {redirect && <Navigate to={`/users/${id}`}/>}
         </div>

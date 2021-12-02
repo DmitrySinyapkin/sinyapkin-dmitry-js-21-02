@@ -22,6 +22,7 @@ export const APP_EN = {
         changePhoto: 'Change photo',
         deletePhoto: 'Delete photo',
         save: 'Save',
+        noPhoto: 'No photo',
     },
     regForm: {
         header: 'Registration',
@@ -42,4 +43,16 @@ export const APP_EN = {
         link: 'Register',
         placeholder: 'Enter your ID',
     },
+    validation: {
+        latters: 'Only Latin and Russian letters',
+        birthday: 'Enter your birthday in format YYYY-MM-DD',
+        email: 'Enter correct E-mail!',
+        phone: 'Enter correct phone number',
+        gender: 'Mark your gender',
+    },
+    alerts: {
+        regForm: 'Form filling error! Please enter correct data!',
+        authForm: 'Login failed! Enter the correct ID!',
+        loadPhoto: 'Loading photo error!',
+    }
 };

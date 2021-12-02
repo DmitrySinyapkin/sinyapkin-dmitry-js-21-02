@@ -9,12 +9,12 @@ const cancelUserAction = () => ({
     type: 'AUTH_MENU/CANCEL_USER',
 });
 
-export const authorizeUser = (id) => (dispatch) => {
+export const authorizeUser = (id, errorMessage) => (dispatch) => {
     getUserDataApi(id)
         .then(response => response.id ? 
                     dispatch(authUserAction(response)) 
                 : 
-                    alert('Ошибка входа! Введите корректный ID!')
+                    alert(errorMessage)
             );
 }
 
