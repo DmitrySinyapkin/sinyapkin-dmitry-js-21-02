@@ -11,7 +11,7 @@ const sendGetRequest = (url) => {
 
 const sendRequestWithBody = (url, text) => {
     return fetch(url, {
-      method: 'PUT',
+      method: 'POST',
       headers: {
         'content-type': 'text/plain',
       },
