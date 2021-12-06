@@ -26,7 +26,7 @@ const saveTextToFile = () => {
 const getTextFromFile = () => {
     sendGetRequest(BASE_URL)
         .then(response => input.value = response)
-        .catch(error => console.log(error));
+        .catch(error => alert(error));
 }
 
 
