@@ -2,7 +2,11 @@ const FileRepository = require('../repositories/fileRepository');
 
 class FileService {
     getTextFromFile(req, res) {
-        res.status(200).send(FileRepository.getTextFromFile());
+        try {
+            res.status(200).send(FileRepository.getTextFromFile());
+        } catch(err) {
+            res.status(520).send(err);
+        }
     }
 
     saveTextToFile(req, res) {
