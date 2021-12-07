@@ -2,17 +2,11 @@ const fs = require("fs");
 
 class FileRepository {
     getTextFromFile() {
-        fs.readFile('../../files/file', 'utf8', (error, data) => {
-            if (error) {
-                console.log(error);
-            } else {
-                return data;
-            }
-        });
+        return fs.readFileSync('files/file.txt', 'utf8');
     }
 
     saveTextToFile(text) {
-        fs.writeFile('../../files/file', text, (error) => {
+        fs.writeFile('files/file.txt', text, (error) => {
             if (error) console.log(error);
         });
     }
