@@ -9,8 +9,7 @@ const sendGetRequest = (url) => {
     })
 }
 
-const sendRequestWithBody = (url, text) => {
-    const data = JSON.stringify({text: text})
+const sendRequestWithBody = (url, data) => {
     return fetch(url, {
       method: 'POST',
       headers: {
@@ -21,7 +20,8 @@ const sendRequestWithBody = (url, text) => {
 }
 
 const saveTextToFile = () => {
-    sendRequestWithBody(BASE_URL, input.value);
+  const data = JSON.stringify({text: input.value})
+  sendRequestWithBody(BASE_URL, data);
 }
 
 const getTextFromFile = () => {
