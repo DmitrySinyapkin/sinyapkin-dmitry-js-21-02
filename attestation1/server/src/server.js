@@ -27,4 +27,4 @@ app.use((err, req, res, next) => {
   next();
 })
 
-app.listen(port, host, () => console.log(`Server started at ${host}:${port}`));
+app.listen(port, host, () => console.log(`Server started at http://${host}:${port}`));

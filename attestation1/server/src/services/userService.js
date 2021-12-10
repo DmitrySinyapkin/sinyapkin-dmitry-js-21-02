@@ -11,6 +11,16 @@ class UserService {
                 res.status(520).json(error);
             })
     }
+    getUser(req, res) {
+        userRepository.getUser(req.params.id)
+            .then(response => {
+                const result = JSON.stringify(response);
+                res.status(200).send(result);
+            })
+            .catch(error => {
+                res.status(520).json(error);
+            })
+    }
 }
 
 module.exports = new UserService;
