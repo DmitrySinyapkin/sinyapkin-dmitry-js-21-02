@@ -1,7 +1,7 @@
 const utils = require('../utils/commonUtils');
 
 class UserMapper {
-    mapUserDates(user) {
+    changeDatesFormat(user) {
         return {
             ...user,
             dateOfBirth: utils.changeDateFormat(user.dateOfBirth),
