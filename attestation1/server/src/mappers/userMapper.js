@@ -1,12 +1,11 @@
-const utils = require('../utils/commonUtils');
+const userUtils = require('../utils/userUtils');
 
 class UserMapper {
     changeDatesFormat(user) {
-        return {
-            ...user,
-            dateOfBirth: utils.changeDateFormat(user.dateOfBirth),
-            registerDate: utils.changeDateFormat(user.registerDate),
-        }
+        return userUtils.changeDatesFormat(user);
+    }
+    convertDateToIsoString(user) {
+        return userUtils.convertDateToIsoString(user);
     }
 }
 

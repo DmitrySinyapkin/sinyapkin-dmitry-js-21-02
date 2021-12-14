@@ -1,8 +1,9 @@
 const api = require('../api/dummyApi');
+const userMapper = require('../mappers/userMapper');
 
 class UserActions {
     addUser(user) {
-        api.addUser(user)
+        api.addUser(userMapper.convertDateToIsoString(user))
             .then(response => {
                 return response;
             })
@@ -11,7 +12,7 @@ class UserActions {
             })
     }
     updateUser(id, data) {
-        api.updateUser(id, data)
+        api.updateUser(id, userMapper.convertDateToIsoString(data))
             .then(response => {
                 return response;
             })

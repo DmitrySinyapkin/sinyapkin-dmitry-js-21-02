@@ -5,6 +5,11 @@ class CommonUtils {
         const month = (date.getMonth() < 10) ? '0' + date.getMonth() : date.getMonth();
         return `${day}.${month}.${date.getFullYear()}`;
     }
+    dateToIsoString(stringDate) {
+        const arr = stringDate.split('.');
+        const date = new Date(+arr[2], +arr[1] - 1, +arr[0]);
+        return new Date(date.getTime() - (date.getTimezoneOffset() * 60000)).toISOString();
+    }
 }
 
 module.exports = new CommonUtils();
