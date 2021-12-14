@@ -34,5 +34,36 @@ module.exports = {
         UPDATE_USER_INVOKE: '[UserActions.updateUser] invoked dummyApi.updateUser user id={} updared data={}',
         UPDATE_USER_REPLY_SUCCESS: '[UserActions.updateUser] reply={}',
         UPDATE_USER_REPLY_ERROR: '[UserActions.updateUser] error={}',
-    }
+    },
+    postService: {
+        GET_POST_LIST_PARAMS: '[PostService.getPostList] page={} limit={}',
+        GET_POST_LIST_SUCCESS: '[PostService.getPostList] success status={} response={}',
+        GET_POST_LIST_ERROR: '[PostService.getPostList] error status={} response={}',
+
+        GET_POST_LIST_BY_USER_PARAMS: '[PostService.getPostListByUser] user id={} page={} limit={}',
+        GET_POST_LIST_BY_USER_SUCCESS: '[PostService.getPostListByUser] success status={} response={}',
+        GET_POST_LIST_BY_USER_ERROR: '[PostService.getPostListByUser] error status={} response={}',
+    },
+    postRepository: {
+        GET_POST_LIST_INVOKE: '[PostRepository.getPostList] invoked dummyApi.getPostList',
+        GET_POST_LIST_REPLY_SUCCESS: '[PostRepository.getPostList] reply={}',
+        GET_POST_LIST_REPLY_ERROR: '[PostRepository.getPostList] error={}',
+        GET_POST_LIST_REPLY_RESULT: '[PostRepository.getPostList] result={}',
+
+        GET_POST_LIST_BY_USER_INVOKE: '[PostRepository.getPostListByUser] invoked dummyApi.getPostListByUser',
+        GET_POST_LIST_BY_USER_REPLY_SUCCESS: '[PostRepository.getPostListByUser] reply={}',
+        GET_POST_LIST_BY_USER_REPLY_ERROR: '[PostRepository.getPostListByUser] error={}',
+        GET_POST_LIST_BY_USER_REPLY_RESULT: '[PostRepository.getPostListByUser] result={}',
+    },
+    commentService: {
+        GET_COMMENTS_PARAMS: '[CommentService.getComments] post id={} page={} limit={}',
+        GET_COMMENTS_SUCCESS: '[CommentService.getComments] success status={} response={}',
+        GET_COMMENTS_ERROR: '[CommentService.getComments] error status={} response={}',
+    },
+    commentRepository: {
+        GET_COMMENTS_INVOKE: '[CommentRepository.getComments] invoked dummyApi.getComments',
+        GET_COMMENTS_REPLY_SUCCESS: '[CommentRepository.getComments] reply={}',
+        GET_COMMENTS_REPLY_ERROR: '[CommentRepository.getComments] error={}',
+        GET_COMMENTS_REPLY_RESULT: '[CommentRepository.getComments] result={}',
+    },
 }
