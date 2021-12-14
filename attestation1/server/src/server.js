@@ -1,16 +1,16 @@
 const express = require('express');
 const {host, port} = require('../config/serverConfig');
 const router = require('./routes/index');
-//const logger = require('./logger');
-//const context = require('request-context');
-//const { v4: generateUUID } = require('uuid');
+const logger = require('./logger');
+const context = require('request-context');
+const { v4: generateUUID } = require('uuid');
 
 const app = express();
 
 app.use(express.json());
-//app.use(context.middleware('request'));
+app.use(context.middleware('request'));
 app.use((req, res, next) => {
-  //context.set('uuid', generateUUID());
+  context.set('uuid', generateUUID());
   res.type('text/plain')
     .set('Access-Control-Allow-Origin', '*')
     .set('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS')
@@ -22,7 +22,7 @@ app.use('/', router);
 
 app.use((err, req, res, next) => {
   console.log(err);
-  //logger.fatal(err);
+  logger.fatal(err);
   res.status(500).send(err.toString());
   next();
 })
