@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(context.middleware('request'));
 app.use((req, res, next) => {
   context.set('uuid', generateUUID());
-  res.type('text/plain')
+  res.type('application/json')
     .set('Access-Control-Allow-Origin', '*')
     .set('Access-Control-Allow-Methods', 'GET, POST, PUT, OPTIONS')
     .set("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
