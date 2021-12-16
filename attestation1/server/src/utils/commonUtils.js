@@ -5,7 +5,7 @@ class CommonUtils {
         return moment(stringDate).format('DD.MM.YYYY');
     }
     dateToIsoString(stringDate) {
-        return moment(stringDate).format();
+        return moment(stringDate, 'DD.MM.YYYY').toISOString();
     }
 }
 

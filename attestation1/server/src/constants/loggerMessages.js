@@ -30,10 +30,12 @@ module.exports = {
         ADD_USER_INVOKE: '[UserActions.addUser] invoked dummyApi.addUser new user={}',
         ADD_USER_REPLY_SUCCESS: '[UserActions.addUser] reply={}',
         ADD_USER_REPLY_ERROR: '[UserActions.addUser] error={}',
+        ADD_USER_REPLY_RESULT: '[UserActions.addUser] result={}',
 
-        UPDATE_USER_INVOKE: '[UserActions.updateUser] invoked dummyApi.updateUser user id={} updared data={}',
+        UPDATE_USER_INVOKE: '[UserActions.updateUser] invoked dummyApi.updateUser user id={} updated data={}',
         UPDATE_USER_REPLY_SUCCESS: '[UserActions.updateUser] reply={}',
         UPDATE_USER_REPLY_ERROR: '[UserActions.updateUser] error={}',
+        UPDATE_USER_REPLY_RESULT: '[UserActions.updateUser] result={}',
     },
     postService: {
         GET_POST_LIST_PARAMS: '[PostService.getPostList] page={} limit={}',
