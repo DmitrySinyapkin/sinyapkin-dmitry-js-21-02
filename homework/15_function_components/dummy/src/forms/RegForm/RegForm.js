@@ -3,38 +3,29 @@ import './RegForm.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Form, Input, Select } from 'antd';
 import { Navigate } from 'react-router-dom';
-import { addUserAction } from "../../actions/addUser";
-import addUserStore from "../../stores/addUser";
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import * as actions from '../../actions/addUser';
+
 
 const { Option } = Select;
 
-const RegForm = (props) => {
+const RegForm = ({ onClick, id, redirect, addNewUser, preventRedirect}) => {
     const [firstName, setFistName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
     const [title, setTitle] = useState('');
     const [gender, setGender] = useState('');
     const [phone, setPhone] = useState('');
-    const [id, setId] = useState('');
 
-    const handleRegButtonClick = props.onClick; 
+    const handleRegButtonClick = onClick; 
 
     useEffect(() => {
-        setId('');
-        addUserStore.on('change', () => setId(addUserStore.getUserId()));
+        preventRedirect();
     }, []);
 
     const handleRegButton = (firstName, lastName, email, title, gender, phone) => {
-        const user = {
-            firstName: firstName,
-            lastName: lastName,
-            email: email,
-            title: title,
-            gender: gender,
-            phone: phone
-        };
-
-        addUserAction(user);
+        addNewUser(firstName, lastName, email, title, gender, phone);
         handleRegButtonClick();
     }
 
@@ -133,9 +124,16 @@ const RegForm = (props) => {
                 <button className="reg-button" onClick={() => handleRegButton(firstName, lastName, email, title, gender, phone)}>Отправить</button>
                 <ThemeChanger/>
             </div>
-            {id && <Navigate to={`/${id}`}/>}
+            {redirect && <Navigate to={`/${id}`}/>}
         </div>
     );
 }
 
-export default RegForm;
+export default connect(
+    (state) => ({
+        id: state.newUser.newUserId,
+        redirect: state.newUser.redirect,
+    }),
+    (dispatch) => bindActionCreators(actions, dispatch),
+)(RegForm);
+

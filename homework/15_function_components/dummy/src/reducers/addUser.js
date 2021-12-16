@@ -1,19 +1,27 @@
 import produce from 'immer';
-import { addUser } from '../api/dummyApi';
 
 const initialState = {
     newUserId: '',
+    redirect: false,
 }
 
-const addUserData = (draft, newUser) => {
-    addUser(newUser).then(response => draft.newUserId = response.id);
+const setNewUserId = (draft, newUserId) => {
+    draft.newUserId = newUserId;
+    draft.redirect = true;
+    return draft;
+}
+
+const preventRedirect = (draft) => {
+    draft.redirect = false;
     return draft;
 }
 
 const addUserReducer = (state = initialState, action) => produce(state, (draft) => {
     switch (action.type) {
         case 'REGFORM/ADD_USER':
-            return addUserData(draft, action.user);
+            return setNewUserId(draft, action.userId);
+        case 'REGFORM/PREVENT_REDIRECT':
+            return preventRedirect(draft);  
         default:
             return state; 
     }
