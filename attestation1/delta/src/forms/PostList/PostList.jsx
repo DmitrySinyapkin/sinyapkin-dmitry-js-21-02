@@ -76,7 +76,7 @@ const PostList = ({ darkTheme, posts, total, loading, post, isOpen, loadPostList
                                         title={post.owner.title}
                                         firstName={post.owner.firstName}
                                         lastName={post.owner.lastName}
-                                        publishDate={post.publishDate.slice(0, 10)}
+                                        publishDate={post.publishDate}
                                         picture={post.image}
                                         text={post.text}
                             />}

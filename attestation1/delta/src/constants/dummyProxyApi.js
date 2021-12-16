@@ -1,4 +1,4 @@
-const BASE_URL = 'http://127.0.0.1:3000/';
+const BASE_URL = 'http://127.0.0.1:8080/';
 
 export const USER_LIST_URL = `${BASE_URL}user`;
 

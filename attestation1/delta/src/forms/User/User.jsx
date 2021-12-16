@@ -22,7 +22,7 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
 
     useEffect(() => {
         loadUserData(params.id);
-        loadUserPostList(params.id, 0, 3);
+        loadUserPostList(params.id, 0, 6);
     }, []);
 
     useLayoutEffect(() => {
@@ -108,7 +108,7 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
                                 title={post.owner.title}
                                 firstName={post.owner.firstName}
                                 lastName={post.owner.lastName}
-                                publishDate={post.publishDate.slice(0, 10)}
+                                publishDate={post.publishDate}
                                 picture={post.image}
                                 text={post.text}
                             />}
