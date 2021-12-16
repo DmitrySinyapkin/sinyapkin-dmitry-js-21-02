@@ -8,7 +8,7 @@ import addUserStore from "../../stores/addUser";
 
 const { Option } = Select;
 
-export const RegForm = (props) => {
+const RegForm = (props) => {
     const [firstName, setFistName] = useState('');
     const [lastName, setLastName] = useState('');
     const [email, setEmail] = useState('');
@@ -137,3 +137,5 @@ export const RegForm = (props) => {
         </div>
     );
 }
+
+export default RegForm;
