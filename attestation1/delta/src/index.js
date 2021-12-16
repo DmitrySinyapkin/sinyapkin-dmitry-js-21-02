@@ -6,6 +6,7 @@ import { Provider } from 'react-redux';
 import store from './store';
 import { ConfigProvider } from 'antd';
 import ruRU from 'antd/lib/locale/ru_RU';
+import './locale/i18next';
 
 ReactDOM.render(
   <React.StrictMode>

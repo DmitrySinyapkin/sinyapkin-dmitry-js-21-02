@@ -4,14 +4,17 @@ import { Navigate, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/authorization';
+import { useTranslation } from "react-i18next";
 
 
 
 const AuthForm = ({ darkTheme, redirectId, authorized, authorizeUser}) => {
     const [id, setId] = useState('');
 
+    const { t } = useTranslation();
+
     const handleButtonClick = () => {
-        authorizeUser(id);
+        authorizeUser(id, t('alerts.authForm'));
     };
 
     useEffect(() => {
@@ -22,11 +25,11 @@ const AuthForm = ({ darkTheme, redirectId, authorized, authorizeUser}) => {
         <div className="auth-form__page">
             <div className={`auth-form ${darkTheme && 'auth-form_dark'}`}>
                 <div className="auth-form__container">
-                    <h2>Вход</h2>
+                    <h2>{t('authForm.header')}</h2>
                     <div className="auth-form__label">ID:</div>
-                    <div><input className="auth-form__input" type="text" placeholder="Введите свой ID" onChange={(event) => setId(event.target.value)} /></div>
-                    <div><button className="auth-form__button" onClick={handleButtonClick}>Войти</button></div>
-                    <div className="auth-form__reg">Еще нет аккаунта? <Link to={'/reg'}>Зарегистрироваться</Link></div>
+                    <div><input className="auth-form__input" type="text" placeholder={t('authForm.placeholder')} onChange={(event) => setId(event.target.value)} /></div>
+                    <div><button className="auth-form__button" onClick={handleButtonClick}>{t('authForm.button')}</button></div>
+                    <div className="auth-form__reg">{t('authForm.message')}<Link to={'/reg'}>{t('authForm.link')}</Link></div>
                 </div>
             </div>
             {authorized && <Navigate to={`/users/${redirectId}`} />}

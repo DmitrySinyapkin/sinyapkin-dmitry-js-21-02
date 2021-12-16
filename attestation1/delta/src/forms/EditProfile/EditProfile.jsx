@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import './EditProfile.css';
 import { Upload, Button, Form, Input, Radio } from 'antd';
 import { UPLOAD_API_KEY, UPLOAD_URL } from "../../constants/imgbbApi";
+import { useTranslation } from "react-i18next";
 
 const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, updateUserData, closeEditor}) => {
     const [firstName, setFirstName] = useState(user.firstName);
@@ -11,6 +12,8 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
     const [picture, setPicture] = useState(user.picture);
     const [phone, setPhone] = useState(user.phone);
     const [upload, setUpload] = useState('');
+
+    const { t } = useTranslation();
     
     const uploadProps = {
         action: UPLOAD_URL,
@@ -33,7 +36,7 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
             if (info.file.status === 'done') {
                 setPicture(info.file.response.data.display_url);
             } else if (info.file.status === 'error') {
-                alert('Ошибка загрузки фотографии!');
+                alert(t('alerts.loadPhoto'));
                 console.log(info.event);
             }
         },
@@ -61,27 +64,27 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
     }
 
     const handleFailedValidation = () => {
-        alert('Ошибка заполнения формы! Введите корректные данные!');
+        alert(t('alerts.regForm'));
     }
 
     return (
         <div className={`edit ${darkTheme && 'edit_dark'}`}>
             <figure>
-                <img src={picture} alt="Нет фото" />
+                <img src={picture} alt={t('user.noPhoto')} />
             </figure>
             <div className="edit__img-buttons">
                 <Upload {...uploadProps}>
-                    <Button>Обновить фотографию</Button>
+                    <Button>{t('user.changePhoto')}</Button>
                 </Upload>
-                <Button onClick={handlePhotoDelete}>Удалить фотографию</Button>
+                <Button onClick={handlePhotoDelete}>{t('user.deletePhoto')}</Button>
             </div>
             <Form onFinish={handleSubmit} onFinishFailed={handleFailedValidation}>
                     <Form.Item
                         name="firstName"
-                        label="Имя"
+                        label={t('user.name')}
                         rules={[
                             {
-                                message: 'Только латинские и русские буквы',
+                                message: t('validation.latters'),
                                 pattern: /^[a-zA-Zа-яА-яёЁ]+$/,
                             },
                         ]}
@@ -90,28 +93,28 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
                     </Form.Item>
                     <Form.Item
                         name="lastName"
-                        label="Фамилия"
+                        label={t('user.surname')}
                         rules={[
                             {
-                                message: 'Только латинские и русские буквы',
+                                message: t('validation.latters'),
                                 pattern: /^[a-zA-Zа-яА-яёЁ]+$/,
                             },
                         ]}
                     >
                         <Input defaultValue={user.lastName} onChange={(event) => setLastName(event.target.value)} />
                     </Form.Item>
-                    <Form.Item name="gender" label="Пол">
+                    <Form.Item name="gender" label={t('user.gender')}>
                         <Radio.Group defaultValue={user.gender === 'male' ? 'male' : 'female'} onChange={(event) => setGender(event.target.value)}>
-                            <Radio value="male">Мужской</Radio>
-                            <Radio value="female">Женский</Radio>
+                            <Radio value="male">{t('user.male')}</Radio>
+                            <Radio value="female">{t('user.female')}</Radio>
                         </Radio.Group>
                     </Form.Item>
                     <Form.Item
                         name="dateOfBirth"
-                        label="Дата рождения"
+                        label={t('user.birthday')}
                         rules={[
                             {
-                                message: 'Введите дату рождения в формате ГГГГ-ММ-ДД',
+                                message: t('validation.birthday'),
                                 pattern: /[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/,
                             },
                         ]}
@@ -120,10 +123,10 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
                     </Form.Item>
                     <Form.Item
                         name="phone"
-                        label="Телефон"
+                        label={t('user.phone')}
                         rules={[
                             {
-                                message: 'Введите корректный номер телефона',
+                                message: t('validation.phone'),
                                 pattern: /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/,
                             },
                         ]}
@@ -131,7 +134,7 @@ const EditProfile = ({ darkTheme, user, authUser, authorizeUser, cancelUser, upd
                         <Input defaultValue={user.phone} onChange={(event) => setPhone(event.target.value)} />
                     </Form.Item>
                     <Form.Item>
-                        <Button type="primary" htmlType="submit">Сохранить</Button>
+                        <Button type="primary" htmlType="submit">{t('user.save')}</Button>
                     </Form.Item>
             </Form>
         </div>

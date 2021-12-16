@@ -6,6 +6,11 @@
   justify-content: space-between;
   align-items: center;
 }
+.footer .footer__changers {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
 @media (max-width: 768px) {
   .footer .footer__copyright {
     display: none;

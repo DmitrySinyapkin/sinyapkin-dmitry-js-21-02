@@ -5,8 +5,11 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from "redux";
 import * as actions from '../../actions/authorization';
 import { Avatar } from 'antd';
+import { useTranslation } from "react-i18next";
 
 const AuthorizationMenu = ({ authUser, authorized, cancelUser }) => {
+    const { t } = useTranslation();
+
     return ( authorized ? 
                             <div className="auth-menu">
                                 <Link to={`/users/${authUser.id}`}>
@@ -16,12 +19,12 @@ const AuthorizationMenu = ({ authUser, authorized, cancelUser }) => {
                                     
                                     </div>
                                 </Link>
-                                <div className="auth-menu__second"><a href="" onClick={cancelUser}>Выход</a></div>
+                                <div className="auth-menu__second"><a href="" onClick={cancelUser}>{t('login.cancel')}</a></div>
                             </div>
                         :
                             <div className="auth-menu">
-                                <div className="auth-menu__first"><Link to="/auth">Вход</Link></div>
-                                <div className="auth-menu__second"><Link to="/reg">Регистрация</Link></div>
+                                <div className="auth-menu__first"><Link to="/auth">{t('login.enter')}</Link></div>
+                                <div className="auth-menu__second"><Link to="/reg">{t('login.reg')}</Link></div>
                             </div>
     );
 }
