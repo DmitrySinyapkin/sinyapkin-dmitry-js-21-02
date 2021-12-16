@@ -4,31 +4,24 @@ import { User } from "../../components/User/User";
 import './UserList.css';
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { Link } from "react-router-dom";
-import { loadUserListAction } from "../../actions/userList";
-import userListStore from "../../stores/userList";
 import { Pagination } from 'antd';
 import 'antd/dist/antd.css';
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import * as actions from '../../actions/userList';
 
-export const UserList = () => {
-    const [users, setUsers] = useState([]);
+const UserList = ({users, total, loadUserList}) => {
     const [currentPage, setCurrentPage] = useState(0);
-    const [total, setTotal] = useState(0);
     const [pageSize, setPageSize] = useState(10);
 
-    const setUserListStates = () => {
-        setUsers(userListStore.getUserList().data);
-        setTotal(userListStore.getUserList().total);
-    }
-
     useEffect(() => {
-        userListStore.on('change', () => setUserListStates());
-        loadUserListAction(0, pageSize);
+        loadUserList(0, 10);
     }, []); 
 
     const changePage = (page, limit) => {
         setCurrentPage(page);
         setPageSize(limit)
-        loadUserListAction(page - 1, limit);
+        loadUserList(page - 1, limit);
     }
 
     return (
@@ -62,3 +55,11 @@ export const UserList = () => {
         </div>
         );
     };
+
+export default connect(
+    (state) => ({
+        users: state.users.users,
+        total: state.users.total,
+    }),
+    (dispatch) => bindActionCreators(actions, dispatch),
+)(UserList);

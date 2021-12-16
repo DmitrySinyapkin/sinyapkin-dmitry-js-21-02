@@ -1,0 +1,8 @@
+.menu {
+  min-width: 300px;
+}
+@media (max-width: 768px) {
+  .menu {
+    min-width: 100px;
+  }
+}

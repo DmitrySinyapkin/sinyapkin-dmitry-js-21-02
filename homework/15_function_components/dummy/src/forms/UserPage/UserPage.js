@@ -1,20 +1,19 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useNavigate, useParams } from "react-router";
 import { BackButton } from "../../components/BackButton/BackButton";
 import { ThemeChanger } from "../../components/ThemeChanger/ThemeChanger";
 import { UserData } from "../../components/UserData/UserData";
 import './UserPage.css';
-import { loadUserDataAction } from "../../actions/user";
-import userDataStore from "../../stores/user";
+import { connect } from 'react-redux';
+import { bindActionCreators } from "redux";
+import * as actions from '../../actions/user';
 
-const UserPage = () => {
-    const [user, setUser] = useState({});
+const UserPage = ({user, loadUserData}) => {
     const params = useParams();
     const navigate = useNavigate();
 
     useEffect(() => {
-        userDataStore.on('change', () => setUser(userDataStore.getUserData()));
-        loadUserDataAction(params.id);
+        loadUserData(params.id);
     }, []);
 
     const handleBackButton = () => {
@@ -43,4 +42,10 @@ const UserPage = () => {
     );
 }
 
-export default UserPage;
+export default connect(
+    (state) => ({
+        user: state.userData.user,
+    }),
+    (dispatch) => bindActionCreators(actions, dispatch),
+)(UserPage);
+

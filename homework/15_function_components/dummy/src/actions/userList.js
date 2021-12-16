@@ -1,9 +1,11 @@
-import { getUserList } from '../api/dummyApi';
-import dispatcher from '../dispatcher';
+import { getUserList } from "../api/dummyApi";
 
-export const loadUserListAction = (page, limit) => {
-    getUserList(page, limit).then(response => dispatcher.dispatch({
-        type: 'LOAD_USER_LIST',
-        payload: response,
-    }));
+const loadUserListAction = (userList) => ({
+    type: 'USER_LIST/LOAD_USER_LIST',
+    userList,
+});
+
+export const loadUserList = (page, limit) => (dispatch) => {
+    getUserList(page, limit)
+        .then(response => dispatch(loadUserListAction(response)));
 }
