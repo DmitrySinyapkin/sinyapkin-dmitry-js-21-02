@@ -31,8 +31,8 @@ const User = ({ darkTheme, user, userDataLoading, posts, total, userPostsLoading
 
     const changePage = (page, limit) => {
         setCurrent(page);
-        setPageSize(limit);
-        loadUserPostList(user.id, page - 1, limit);
+        setPageSize(6);
+        loadUserPostList(user.id, page - 1, 6);
     }
 
     const openModal = (post) => {
