@@ -1,0 +1,26 @@
+.img-sizes {
+  width: 100%;
+  height: 100%;
+}
+.user__container {
+  width: 300px;
+  max-height: 300px;
+  padding: 20px;
+  background: #ffff;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+}
+.user__container .user__picture {
+  width: 260px;
+  height: 200px;
+  border-radius: 20px;
+}
+.user__container .user__picture img {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  object-fit: contain;
+}

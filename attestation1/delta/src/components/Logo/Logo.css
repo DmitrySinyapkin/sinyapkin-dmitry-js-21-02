@@ -1,0 +1,15 @@
+.logo__container {
+  display: flex;
+  gap: 10px;
+}
+@media (max-width: 768px) {
+  .logo__container {
+    display: none;
+  }
+}
+.logo__container h1 {
+  font-size: 25px;
+}
+.logo__container .h1_dark {
+  color: #ffff;
+}
