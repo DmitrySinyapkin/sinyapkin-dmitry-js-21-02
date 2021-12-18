@@ -1,0 +1,77 @@
+15:42:04.682 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+15:42:04.682 INFO   [UserRepository.getUserListy] result="{\"data\":[{\"id\":123,\"firstName\":\"Vasya\",\"lastName\":\"Pupkin\"},{\"id\":456,\"firstName\":\"Harley\",\"lastName\":\"Davidson\"}]}" 
+16:01:06.182 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:01:06.183 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:11:30.720 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:11:30.721 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:11:30.731 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:11:30.731 INFO   [UserRepository.getUserListy] result={"error":"Api error"} 
+16:12:03.422 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:12:03.423 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:12:03.435 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:12:03.435 INFO   [UserRepository.getUserListy] result={"error":"Api error"} 
+16:16:23.090 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:16:23.091 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:16:23.101 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:16:23.101 ERROR  [UserRepository.getUserList] error=[object Object] 
+16:18:08.637 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:18:08.638 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:18:08.648 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:18:08.648 ERROR  [UserRepository.getUserList] error=Api error 
+16:32:29.003 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:32:29.004 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:32:29.014 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:32:29.015 INFO   [UserRepository.getUserListy] result="Api error" 
+16:33:38.703 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:33:38.703 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:33:38.714 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:33:38.714 INFO   [UserRepository.getUserListy] result="Api error" 
+16:36:35.021 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:36:35.022 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:37:56.138 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:37:56.139 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:37:56.149 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:37:56.149 ERROR  [UserRepository.getUserList] error=[object Object] 
+16:40:42.390 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:40:42.390 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:40:42.401 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:40:42.401 ERROR  [UserRepository.getUserList] error=Api error 
+16:43:35.300 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:43:35.301 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:43:35.313 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:43:35.313 ERROR  [UserRepository.getUserList] error=Api error 
+16:44:04.894 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:44:04.895 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:44:04.905 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:44:04.905 ERROR  [UserRepository.getUserList] error=Api error 
+16:44:55.368 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:44:55.368 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:44:55.379 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:44:55.379 ERROR  [UserRepository.getUserList] error=Api error 
+16:50:56.908 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:50:56.908 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:50:56.926 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:50:56.926 ERROR  [UserRepository.getUserList] error=Api error 
+16:50:56.927 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:50:56.927 INFO   [UserRepository.getUser] reply={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"1979-11-25T21:56:06.020Z"} 
+16:50:56.930 INFO   [UserRepository.getUser] result={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"26.11.1979","registerDate":"18.12.2021","updatedDate":"18.12.2021"} 
+16:51:01.939 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:51:01.940 ERROR  [UserRepository.getUser] error=Api error 
+16:53:11.005 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:53:11.006 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:53:11.016 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:53:11.017 ERROR  [UserRepository.getUserList] error=Api error 
+16:53:11.017 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:53:11.017 INFO   [UserRepository.getUser] reply={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"1979-11-25T21:56:06.020Z"} 
+16:53:11.021 INFO   [UserRepository.getUser] result={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"26.11.1979","registerDate":"18.12.2021","updatedDate":"18.12.2021"} 
+16:53:16.030 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:53:16.030 ERROR  [UserRepository.getUser] error=Api error 
+16:55:02.465 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:55:02.466 INFO   [UserRepository.getUserListy] result={"data":[{"id":123,"firstName":"Vasya","lastName":"Pupkin"},{"id":456,"firstName":"Harley","lastName":"Davidson"}]} 
+16:55:02.477 INFO   [UserRepository.getUserList] invoked dummyApi.getUserList 
+16:55:02.477 ERROR  [UserRepository.getUserList] error=Api error 
+16:55:02.478 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:55:02.478 INFO   [UserRepository.getUser] reply={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"1979-11-25T21:56:06.020Z","registerDate":"1979-11-25T21:56:06.020Z","updatedDate":"1979-11-25T21:56:06.020Z"} 
+16:55:02.481 INFO   [UserRepository.getUser] result={"id":123,"firstName":"Vasya","lastName":"Pupkin","dateOfBirth":"26.11.1979","registerDate":"26.11.1979","updatedDate":"26.11.1979"} 
+16:55:02.482 INFO   [UserRepository.getUser] invoked dummyApi.getUser 
+16:55:02.482 ERROR  [UserRepository.getUser] error=Api error 
