@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/3</span>
+                <span class='fraction'>3/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>0/14</span>
+                <span class='fraction'>14/14</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -87,54 +87,54 @@
 <a name='L22'></a><a href='#L22'>22</a>
 <a name='L23'></a><a href='#L23'>23</a>
 <a name='L24'></a><a href='#L24'>24</a>
-<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<a name='L25'></a><a href='#L25'>25</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const api = <span class="cstat-no" title="statement not covered" >require('../api/dummyApi');</span>
-const commentMapper = <span class="cstat-no" title="statement not covered" >require('../mappers/commentMapper');</span>
-const logger = <span class="cstat-no" title="statement not covered" >require('../logger');</span>
-const format = <span class="cstat-no" title="statement not covered" >require('string-format');</span>
-const { commentRepository: messages} = <span class="cstat-no" title="statement not covered" >require('../constants/loggerMessages');</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const api = require('../api/dummyApi');
+const commentMapper = require('../mappers/commentMapper');
+const logger = require('../logger');
+const format = require('string-format');
+const { commentRepository: messages} = require('../constants/loggerMessages');
 &nbsp;
 class CommentRepository {
-<span class="fstat-no" title="function not covered" >    ge</span>tComments(id, page, limit) {
-<span class="cstat-no" title="statement not covered" >        logger.info(messages.GET_COMMENTS_INVOKE);</span>
-<span class="cstat-no" title="statement not covered" >        return api.getComments(id, page, limit)</span>
-            .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
-<span class="cstat-no" title="statement not covered" >                logger.info(format(messages.GET_COMMENTS_REPLY_SUCCESS, JSON.stringify(response)));</span>
-                const result = <span class="cstat-no" title="statement not covered" >commentMapper.changeDatesFormat(response);</span>
-<span class="cstat-no" title="statement not covered" >                logger.info(format(messages.GET_COMMENTS_REPLY_RESULT, JSON.stringify(result)));</span>
-<span class="cstat-no" title="statement not covered" >                return result;</span>
+    getComments(id, page, limit) {
+        logger.info(messages.GET_COMMENTS_INVOKE);
+        return api.getComments(id, page, limit)
+            .then(response =&gt; {
+                logger.info(format(messages.GET_COMMENTS_REPLY_SUCCESS, JSON.stringify(response)));
+                const result = commentMapper.changeDatesFormat(response);
+                logger.info(format(messages.GET_COMMENTS_REPLY_RESULT, JSON.stringify(result)));
+                return result;
             })
-            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
-<span class="cstat-no" title="statement not covered" >                logger.error(format(messages.GET_COMMENTS_REPLY_ERROR, error));</span>
-<span class="cstat-no" title="statement not covered" >                Promise.reject(error);</span>
+            .catch(error =&gt; {
+                logger.error(format(messages.GET_COMMENTS_REPLY_ERROR, error));
+                Promise.reject(error);
             })
     }
 }
 &nbsp;
-<span class="cstat-no" title="statement not covered" >module.exports = new CommentRepository();</span>
+module.exports = new CommentRepository();
 &nbsp;</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
@@ -142,7 +142,7 @@ class CommentRepository {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Sat Dec 18 2021 16:55:04 GMT+0300 (Москва, стандартное время)
+                at Sat Dec 18 2021 17:29:41 GMT+0300 (Москва, стандартное время)
             </div>
         </div>
         <script src="../../prettify.js"></script>
