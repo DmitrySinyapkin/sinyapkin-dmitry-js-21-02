@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.31% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>5/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">0% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>0/6</span>
+                <span class='fraction'>6/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">26.31% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>5/19</span>
+                <span class='fraction'>19/19</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line low'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -98,71 +98,71 @@
 <a name='L33'></a><a href='#L33'>33</a>
 <a name='L34'></a><a href='#L34'>34</a>
 <a name='L35'></a><a href='#L35'>35</a>
-<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L36'></a><a href='#L36'>36</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const postRepository = require('../repositories/postRepository');
 const logger = require('../logger');
 const format = require('string-format');
 const { postService: messages} = require('../constants/loggerMessages');
 &nbsp;
 class PostService {
-<span class="fstat-no" title="function not covered" >    ge</span>tPostList(req, res) {
-<span class="cstat-no" title="statement not covered" >        logger.info(format(messages.GET_POST_LIST_PARAMS, req.query.page, req.query.limit));</span>
-<span class="cstat-no" title="statement not covered" >        postRepository.getPostList(req.query.page, req.query.limit)</span>
-            .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
-                const result = <span class="cstat-no" title="statement not covered" >JSON.stringify(response);</span>
-<span class="cstat-no" title="statement not covered" >                logger.info(format(messages.GET_POST_LIST_SUCCESS, result));</span>
-<span class="cstat-no" title="statement not covered" >                res.status(200).send(result);</span>
+    getPostList(req, res) {
+        logger.info(format(messages.GET_POST_LIST_PARAMS, req.query.page, req.query.limit));
+        postRepository.getPostList(req.query.page, req.query.limit)
+            .then(response =&gt; {
+                const result = JSON.stringify(response);
+                logger.info(format(messages.GET_POST_LIST_SUCCESS, result));
+                res.status(200).send(result);
             })
-            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
-<span class="cstat-no" title="statement not covered" >                logger.error(format(messages.GET_POST_LIST_ERROR, error));</span>
-<span class="cstat-no" title="statement not covered" >                res.status(520).json(error);</span>
+            .catch(error =&gt; {
+                logger.error(format(messages.GET_POST_LIST_ERROR, error));
+                res.status(520).json(error);
             })
     }
-<span class="fstat-no" title="function not covered" >    ge</span>tPostListByUser(req, res) {
-<span class="cstat-no" title="statement not covered" >        logger.info(format(messages.GET_POST_LIST_BY_USER_PARAMS, req.params.userId, req.query.page, req.query.limit));</span>
-<span class="cstat-no" title="statement not covered" >        postRepository.getPostListByUser(req.params.userId, req.query.page, req.query.limit)</span>
-            .then(<span class="fstat-no" title="function not covered" >re</span>sponse =&gt; {
-                const result = <span class="cstat-no" title="statement not covered" >JSON.stringify(response);</span>
-<span class="cstat-no" title="statement not covered" >                logger.info(format(messages.GET_POST_LIST_BY_USER_SUCCESS, result));</span>
-<span class="cstat-no" title="statement not covered" >                res.status(200).send(result);</span>
+    getPostListByUser(req, res) {
+        logger.info(format(messages.GET_POST_LIST_BY_USER_PARAMS, req.params.userId, req.query.page, req.query.limit));
+        postRepository.getPostListByUser(req.params.userId, req.query.page, req.query.limit)
+            .then(response =&gt; {
+                const result = JSON.stringify(response);
+                logger.info(format(messages.GET_POST_LIST_BY_USER_SUCCESS, result));
+                res.status(200).send(result);
             })
-            .catch(<span class="fstat-no" title="function not covered" >er</span>ror =&gt; {
-<span class="cstat-no" title="statement not covered" >                logger.error(format(messages.GET_POST_LIST_BY_USER_ERROR, error));</span>
-<span class="cstat-no" title="statement not covered" >                res.status(520).json(error);</span>
+            .catch(error =&gt; {
+                logger.error(format(messages.GET_POST_LIST_BY_USER_ERROR, error));
+                res.status(520).json(error);
             })
     }
 }
@@ -175,7 +175,7 @@ module.exports = new PostService();
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener">istanbul</a>
-                at Sat Dec 18 2021 20:00:28 GMT+0300 (Москва, стандартное время)
+                at Sun Dec 19 2021 14:34:17 GMT+0300 (Москва, стандартное время)
             </div>
         </div>
         <script src="../../prettify.js"></script>

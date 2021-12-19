@@ -16,7 +16,7 @@ class CommentRepository {
             })
             .catch(error => {
                 logger.error(format(messages.GET_COMMENTS_REPLY_ERROR, error));
-                Promise.reject(error);
+                return Promise.reject(error);
             })
     }
 }

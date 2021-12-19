@@ -16,7 +16,7 @@ class PostRepository {
             })
             .catch(error => {
                 logger.error(format(messages.GET_POST_LIST_REPLY_ERROR, error));
-                Promise.reject(error);
+                return Promise.reject(error);
             })
     }
     getPostListByUser(id, page, limit) {
@@ -30,7 +30,7 @@ class PostRepository {
             })
             .catch(error => {
                 logger.error(format(messages.GET_POST_LIST_BY_USER_REPLY_ERROR, error));
-                Promise.reject(error);
+                return Promise.reject(error);
             })
     }
 }
