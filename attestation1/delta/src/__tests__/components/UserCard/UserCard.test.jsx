@@ -39,7 +39,10 @@ describe('UserCard component', () => {
         expect(wrapper.find('div.user__info').find('h2').text()).toBe(`${title} ${firstName} ${lastName}`);
         expect(wrapper.find('div.user__id').find('span').last().text()).toBe(id);
         expect(wrapper.find('figure').find('img').prop('src')).toBe(picture);
-        expect(wrapper.find('div.info__line').first().find('span').last().text()).toBe(gender);
-        expect(wrapper.find('div.info__line').last().find('span').last().text()).toBe(phone);
+        expect(wrapper.find('div.gender').find('span').last().text()).toBe(gender);
+        expect(wrapper.find('div.birthday').find('span').last().text()).toBe(dateOfBirth);
+        expect(wrapper.find('div.regday').find('span').last().text()).toBe(registerDate);
+        expect(wrapper.find('div.email').find('span').last().text()).toBe(email);
+        expect(wrapper.find('div.phone').find('span').last().text()).toBe(phone);
     });
 });
