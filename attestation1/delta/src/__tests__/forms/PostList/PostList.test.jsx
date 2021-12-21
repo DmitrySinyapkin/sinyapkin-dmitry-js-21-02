@@ -4,9 +4,6 @@ import thunk from 'redux-thunk';
 import { render, mount } from 'enzyme';
 import PostList from "../../../forms/PostList/PostList";
 import * as actions from '../../../actions/loadPostList';
-import PostPreview from '../../../components/PostPreview/PostPreview';
-import Loader from '../../../components/Loader/Loader';
-import ModalWrapper from '../../../wrappers/ModalWrapper/ModalWrapper';
 
 window.matchMedia = window.matchMedia || function() {
     return {
