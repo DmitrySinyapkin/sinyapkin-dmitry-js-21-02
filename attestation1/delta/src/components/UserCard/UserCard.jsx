@@ -13,8 +13,8 @@ const UserCard = (props) => {
                 <div className="user__info">
                     <h2 className={props.darkTheme && 'user_dark'}>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</h2>
                     <div className="info__line"><span className="info__title">{`${t('user.gender')}: `}</span><span>{props.gender}</span></div>
-                    <div className="info__line"><span className="info__title">{`${t('user.birthday')}: `}</span><span>{props.dateOfBirth && props.dateOfBirth.slice(0, 10)}</span></div>
-                    <div className="info__line"><span className="info__title">{`${t('user.regday')}: `}</span><span>{props.registerDate && props.registerDate.slice(0, 10)}</span></div>
+                    <div className="info__line"><span className="info__title">{`${t('user.birthday')}: `}</span><span>{props.dateOfBirth}</span></div>
+                    <div className="info__line"><span className="info__title">{`${t('user.regday')}: `}</span><span>{props.registerDate}</span></div>
                     <div className="info__line"><span className="info__title">E-mail: </span><span>{props.email}</span></div>
                     <div className="info__line"><span className="info__title">{`${t('user.phone')}: `}</span><span>{props.phone}</span></div>
                 </div>

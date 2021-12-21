@@ -11,7 +11,7 @@ const PostPreview = (props) => {
             <HelperWrapper text={props.id}>
                 <div className={`post__name ${props.hidden && "hidden"}`}><Link to={`/users/${props.id}`}>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</Link></div>
             </HelperWrapper>
-            <div className={`post__date ${props.hidden && "hidden"}`}>{props.date.slice(0, 10)}</div>
+            <div className={`post__date ${props.hidden && "hidden"}`}>{props.date}</div>
             <figure className="post__picture">
                 <img src={props.picture} alt="Load error" />
             </figure>
