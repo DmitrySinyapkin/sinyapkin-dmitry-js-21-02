@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot 1`] = `
+<div
+  className="footer"
+>
+  <span
+    className="footer__copyright"
+  >
+    Delta world © 2021
+  </span>
+  <div
+    className="footer__changers"
+  >
+    <LanguageChanger />
+    <Connect(ThemeChanger) />
+  </div>
+</div>
+`;
