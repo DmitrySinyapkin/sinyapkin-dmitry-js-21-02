@@ -1,0 +1,37 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PostPreview component snapshot test 1`] = `
+<div
+  className="post__container undefined"
+>
+  <Avatar
+    className="post__avatar undefined"
+    shape="circle"
+    size="default"
+  />
+  <HelperWrapper>
+    <div
+      className="post__name undefined"
+    >
+      <Link
+        to="/users/undefined"
+      >
+        undefined undefined
+      </Link>
+    </div>
+  </HelperWrapper>
+  <div
+    className="post__date undefined"
+  />
+  <figure
+    className="post__picture"
+  >
+    <img
+      alt="Load error"
+    />
+  </figure>
+  <div
+    className="post__text-preview"
+  />
+</div>
+`;

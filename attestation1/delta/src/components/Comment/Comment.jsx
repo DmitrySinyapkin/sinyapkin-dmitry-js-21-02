@@ -13,7 +13,7 @@ const Comment = (props) => {
                     <HelperWrapper text={props.id}>
                         <div className="comment__owner"><Link to={`/users/${props.id}`}>{props.title ? `${props.title} ${props.firstName} ${props.lastName}` : `${props.firstName} ${props.lastName}`}</Link></div>
                     </HelperWrapper>
-                    <div className="comment__date">{props.publishDate && props.publishDate.slice(0, 10)}</div>
+                    <div className="comment__date">{props.publishDate}</div>
                 </div>
                 <div className="comment__text">{props.text}</div>
             </div>

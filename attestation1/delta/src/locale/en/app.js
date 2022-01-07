@@ -32,7 +32,7 @@ export const APP_EN = {
         placeholders: {
             name: 'Enter name',
             surname: 'Enter surname',
-            birthday: 'YYYY-MM-DD',
+            birthday: 'DD.MM.YYYY',
             phone: 'Enter phone number',
         }
     },
@@ -45,7 +45,7 @@ export const APP_EN = {
     },
     validation: {
         latters: 'Only Latin and Russian letters',
-        birthday: 'Enter your birthday in format YYYY-MM-DD',
+        birthday: 'Enter your birthday in format DD.MM.YYYY',
         email: 'Enter correct E-mail!',
         phone: 'Enter correct phone number',
         gender: 'Mark your gender',
