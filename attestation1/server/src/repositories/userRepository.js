@@ -14,7 +14,7 @@ class UserRepository {
             })
             .catch(error => {
                 logger.error(format(messages.GET_USER_LIST_REPLY_ERROR, error));
-                Promise.reject(error);
+                return Promise.reject(error);
             })
     }
     getUser(id) {
@@ -28,7 +28,7 @@ class UserRepository {
             })
             .catch(error => {
                 logger.error(format(messages.GET_USER_REPLY_ERROR, error));
-                Promise.reject(error);
+                return Promise.reject(error);
             })
     }
 }

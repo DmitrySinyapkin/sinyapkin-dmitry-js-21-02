@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`UserCard component snapshot test 1`] = `
+<div
+  className="user__container undefined"
+>
+  <figure>
+    <img
+      alt="Load Error"
+    />
+  </figure>
+  <div
+    className="user__data"
+  >
+    <div
+      className="user__info"
+    >
+      <h2>
+        undefined undefined
+      </h2>
+      <div
+        className="info__line gender"
+      >
+        <span
+          className="info__title"
+        >
+          user.gender: 
+        </span>
+        <span />
+      </div>
+      <div
+        className="info__line birthday"
+      >
+        <span
+          className="info__title"
+        >
+          user.birthday: 
+        </span>
+        <span />
+      </div>
+      <div
+        className="info__line regday"
+      >
+        <span
+          className="info__title"
+        >
+          user.regday: 
+        </span>
+        <span />
+      </div>
+      <div
+        className="info__line email"
+      >
+        <span
+          className="info__title"
+        >
+          E-mail: 
+        </span>
+        <span />
+      </div>
+      <div
+        className="info__line phone"
+      >
+        <span
+          className="info__title"
+        >
+          user.phone: 
+        </span>
+        <span />
+      </div>
+    </div>
+    <div
+      className="user__id"
+    >
+      <span
+        className="info__title"
+      >
+        ID: 
+      </span>
+      <span />
+    </div>
+  </div>
+  <div
+    className="user__edit user__edit_visible"
+  >
+    <ForwardRef(FormOutlined) />
+    <span
+      className="edit__text"
+    >
+      user.edit
+    </span>
+  </div>
+</div>
+`;
