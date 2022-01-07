@@ -1,0 +1,51 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`authorization menu should render menu 1`] = `
+<div
+  class="auth-menu"
+>
+  <div
+    class="auth-menu__first"
+  >
+    <a
+      href="/auth"
+    >
+      login.enter
+    </a>
+  </div>
+  <div
+    class="auth-menu__second"
+  >
+    <a
+      href="/reg"
+    >
+      login.reg
+    </a>
+  </div>
+</div>
+`;
+
+exports[`authorization menu snapshot 1`] = `
+<div
+  class="auth-menu"
+>
+  <div
+    class="auth-menu__first"
+  >
+    <a
+      href="/auth"
+    >
+      login.enter
+    </a>
+  </div>
+  <div
+    class="auth-menu__second"
+  >
+    <a
+      href="/reg"
+    >
+      login.reg
+    </a>
+  </div>
+</div>
+`;

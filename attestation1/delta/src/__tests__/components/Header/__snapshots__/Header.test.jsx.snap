@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot 1`] = `
+<div
+  className="header"
+>
+  <Logo />
+  <TopMenu />
+  <Connect(AuthorizationMenu) />
+</div>
+`;
