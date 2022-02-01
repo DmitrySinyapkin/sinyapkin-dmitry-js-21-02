@@ -1,4 +1,4 @@
-import { getUserDataApi } from "../api/dummyProxyApi";
+import { getUserDataApi } from "../api/dummyApi";
 
 const authUserAction = (user) => ({
     type: 'AUTH_FORM/AUTHORIZE_USER',

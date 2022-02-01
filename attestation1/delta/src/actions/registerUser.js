@@ -1,4 +1,4 @@
-import { addUserApi } from "../api/dummyProxyApi";
+import { addUserApi } from "../api/dummyApi";
 
 const addUserAction = (userId) => ({
     type: 'REG_FORM/ADD_USER',

@@ -1,4 +1,4 @@
-import { getUserListApi } from "../api/dummyProxyApi";
+import { getUserListApi } from "../api/dummyApi";
 
 const showLoadingAction = () => ({
     type: 'USER_LIST/SHOW_LOADING',
