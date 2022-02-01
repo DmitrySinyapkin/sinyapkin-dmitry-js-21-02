@@ -1,4 +1,9 @@
 const app = require('./app');
-const {host, port} = require('../config/serverConfig');
+//const {host, port} = require('../config/serverConfig');
 
-app.listen(port, host, () => console.log(`Server started at http://${host}:${port}`));
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 8000;
+}
+
+app.listen(port, () => console.log(`Server started...`));
