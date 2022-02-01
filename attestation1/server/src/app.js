@@ -1,6 +1,6 @@
 const express = require('express');
 const router = require('./routes/index');
-const logger = require('./logger');
+//const logger = require('./logger');
 const context = require('request-context');
 const { v4: generateUUID } = require('uuid');
 
@@ -19,11 +19,11 @@ app.use((req, res, next) => {
 
 app.use('/', router);
 
-app.use((err, req, res, next) => {
+/*app.use((err, req, res, next) => {
   console.log(err);
   logger.fatal(err);
   res.status(500).send(err.toString());
   next();
-})
+})*/
 
 module.exports = app;
