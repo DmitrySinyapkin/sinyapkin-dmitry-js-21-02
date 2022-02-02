@@ -9783,3 +9783,7 @@ attestation1/server/node_modules/yargs-parser/build/lib/yargs-parser-types.js
 attestation1/server/node_modules/yargs-parser/build/lib/yargs-parser.js
 .gitignore
 .gitignore
+attestation1/delta/.firebaserc
+attestation1/delta/firebase-debug.log
+attestation1/delta/firebase.json
+attestation1/delta/.firebase/hosting.YnVpbGQ.cache

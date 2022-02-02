@@ -1,10 +1,12 @@
 @card-height: 400px;
+@card-height-small: 370px; 
 @card-padding: 20px;
 @container-gap: 20px;
 @text-gap: 10px;
 @name-font-size: 25px;
 @font-size: 14px;
 @edit-font-size: 10px;
+@small-font-size: 7px;
 @card-radius: 20px;
 @picture-radius: 16px;
 .img-sizes {
@@ -30,9 +32,14 @@
         .img-sizes;
         border-radius: @picture-radius;
 
-        @media (max-width: 800px) {
+        @media (min-width: 451px) and (max-width: 800px) {
             width: 180px;
             height: 180px;
+        }
+
+        @media (max-width: 450px) {
+            width: 100px;
+            height: 100px;
         }
 
         img {
@@ -55,8 +62,12 @@
             font-size: @name-font-size;
             margin-bottom: @container-gap;
 
-            @media (max-width: 800px) {
+            @media (min-width: 451px) and (max-width: 800px) {
                 font-size: @font-size;
+            }
+
+            @media (max-width: 450px) {
+                font-size: @edit-font-size;
             }
         }
 
@@ -64,16 +75,24 @@
             font-size: @font-size;
             margin-bottom: @text-gap;
 
-            @media (max-width: 800px) {
+            @media (min-width: 451px) and (max-width: 800px) {
                 font-size: @edit-font-size;
+            }
+
+            @media (max-width: 450px) {
+                font-size: @small-font-size;
             }
         }
 
         .user__id {
             font-size: @font-size;
 
-            @media (max-width: 800px) {
+            @media (min-width: 451px) and (max-width: 800px) {
                 font-size: @edit-font-size;
+            }
+
+            @media (max-width: 450px) {
+                font-size: @small-font-size;
             }
         }
     }
