@@ -1,4 +1,4 @@
-import { getPostListApi } from "../api/dummyApi";
+import { getPostListApi } from "../api/dummyProxyApi";
 
 const showLoadingAction = () => ({
     type: 'POST_LIST/SHOW_LOADING',
