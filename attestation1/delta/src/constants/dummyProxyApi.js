@@ -1,4 +1,4 @@
-const BASE_URL = 'http://127.0.0.1:8080/';
+const BASE_URL = 'https://powerful-tor-03816.herokuapp.com/';
 
 export const USER_LIST_URL = `${BASE_URL}user`;
 
